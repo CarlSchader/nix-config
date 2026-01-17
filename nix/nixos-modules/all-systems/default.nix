@@ -14,5 +14,6 @@ flake-utils.lib.meld inputs [
   ./rust-overlay-module.nix
   ./saronic-builders.nix
   ./tailscaled.nix
+  ./thunderbolt.nix
   ./xrdp-gnome.nix
 ]
