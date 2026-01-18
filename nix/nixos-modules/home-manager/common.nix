@@ -13,6 +13,7 @@ let
     self.nixosModules.home
     self.nixosModules.rust-overlay-home
     self.nixosModules.shell-configs-home
+    self.nixosModules.ssh-home
     self.nixosModules.wezterm-home
     neovim-config.nixosModules.home-manager
   ];
