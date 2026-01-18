@@ -6,6 +6,8 @@
       ## user applications
       ledger # cli tool for accounting
       yubikey-manager
+      obsidian
+      brave
 
       ## dev tools
       git
@@ -33,7 +35,6 @@
       nload
       gdb
       jwt-cli
-      xclip
       mdbook
       gh
       tokei

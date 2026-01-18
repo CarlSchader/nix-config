@@ -8,7 +8,10 @@
 let
   system = "x86_64-linux";
 
-  pkgs = import nixpkgs { inherit system; };
+  pkgs = import nixpkgs { 
+    inherit system;
+    config = { allowUnfree = true; };
+  };
   pkgs-2505 = import nixpkgs-2505 { inherit system; };
 in
 {
@@ -18,8 +21,6 @@ in
       cococrawl.packages.${system}.default
       pkgs-2505.tailscale
       pkgs.binutils
-      pkgs.brave
-      # pkgs.obsidian
     ];
 
     system-packages = with pkgs; [
@@ -29,6 +30,8 @@ in
       linuxPackages.v4l2loopback
       v4l-utils
       htop
+      wl-clipboard
+      xclip
     ];
   };
 }
