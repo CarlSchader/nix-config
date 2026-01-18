@@ -13,6 +13,7 @@ flake-utils.lib.meld inputs [
   ./parallelism.nix
   ./rust-overlay-module.nix
   ./saronic-builders.nix
+  ./sway.nix
   ./tailscaled.nix
   ./thunderbolt.nix
   ./xrdp-gnome.nix

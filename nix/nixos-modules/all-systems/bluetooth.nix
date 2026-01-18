@@ -1,6 +1,6 @@
 { ... }:
 {
-  nixosModules.gnome = { ... }:
+  nixosModules.bluetooth = { ... }:
   {
     hardware.bluetooth = {
       enable = true;

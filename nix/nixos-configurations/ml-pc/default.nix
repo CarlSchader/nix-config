@@ -15,13 +15,15 @@ in
       ./hardware-configuration.nix
 
       self.nixosModules.x86_64-linux-system-packages
+      self.nixosModules.bluetooth
       self.nixosModules.experimental-features
       self.nixosModules.git-server
       self.nixosModules.git-shared-server
-      self.nixosModules.gnome
+      # self.nixosModules.gnome
       self.nixosModules.carls-ml-pc-motd
       self.nixosModules.nix-ld
       self.nixosModules.openssh
+      self.nixosModules.sway
       self.nixosModules.parallelism
       self.nixosModules.thunderbolt
       self.nixosModules.xrdp-gnome
