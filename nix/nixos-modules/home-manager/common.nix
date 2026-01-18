@@ -57,6 +57,8 @@ in
     {
       imports = [
         self.nixosModules.rust-overlay-module
+        self.nixosModules.sway
+        self.nixosModules.kanshi
         home-manager.nixosModules.home-manager
       ];
 
@@ -89,6 +91,8 @@ in
     {
       imports = [
         self.nixosModules.rust-overlay-module
+        self.nixosModules.sway
+        self.nixosModules.kanshi
         home-manager.nixosModules.home-manager
       ];
 
