@@ -8,9 +8,11 @@
 let
   system = "x86_64-linux";
 
-  pkgs = import nixpkgs { 
+  pkgs = import nixpkgs {
     inherit system;
-    config = { allowUnfree = true; };
+    config = {
+      allowUnfree = true;
+    };
   };
   pkgs-2505 = import nixpkgs-2505 { inherit system; };
 in

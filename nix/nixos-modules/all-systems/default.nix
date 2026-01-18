@@ -7,6 +7,7 @@ flake-utils.lib.meld inputs [
   ./git-shared-server.nix
   ./gnome.nix
   ./greetd.nix
+  ./kanshi.nix
   ./motd.nix
   ./nginx-reverse-proxy.nix
   ./nix-ld.nix

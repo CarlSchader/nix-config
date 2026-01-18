@@ -1,85 +1,86 @@
 { ... }:
 {
-  nixosModules.home = { pkgs, ... }:
-  {
-    home.packages = with pkgs; [
-      ## user applications
-      ledger # cli tool for accounting
-      yubikey-manager
-      obsidian
-      brave
+  nixosModules.home =
+    { pkgs, ... }:
+    {
+      home.packages = with pkgs; [
+        ## user applications
+        ledger # cli tool for accounting
+        yubikey-manager
+        obsidian
+        brave
 
-      ## dev tools
-      git
-      gnumake
-      cmake
-      tmux
-      vim
-      ripgrep
-      kubectl
-      jq
-      zstd
-      unzip
-      pigz
-      ffmpeg
-      nmap
-      pnpm
-      gnumake
-      pwgen
-      watch
-      nix-index
-      lsof
-      direnv
-      ncdu
-      netcat
-      nload
-      gdb
-      jwt-cli
-      mdbook
-      gh
-      tokei
+        ## dev tools
+        git
+        gnumake
+        cmake
+        tmux
+        vim
+        ripgrep
+        kubectl
+        jq
+        zstd
+        unzip
+        pigz
+        ffmpeg
+        nmap
+        pnpm
+        gnumake
+        pwgen
+        watch
+        nix-index
+        lsof
+        direnv
+        ncdu
+        netcat
+        nload
+        gdb
+        jwt-cli
+        mdbook
+        gh
+        tokei
 
-      # encryption
-      sops
-      age
-      gnupg
-      openssh
-      opkssh
+        # encryption
+        sops
+        age
+        gnupg
+        openssh
+        opkssh
 
-      # ai tools
-      claude-code
-      codex
-      opencode
+        # ai tools
+        claude-code
+        codex
+        opencode
 
-      # libraries
-      boost
-      libfido2 # FIDO2 library for hardware security keys
+        # libraries
+        boost
+        libfido2 # FIDO2 library for hardware security keys
 
-      # databases
-      postgresql
+        # databases
+        postgresql
 
-      # saronic
-      mcap-cli
+        # saronic
+        mcap-cli
 
-      ## compilers and runtimes
-      nodejs_24
-      deno
-      bun
-      python312
-      luajitPackages.luarocks-nix
-      lua51Packages.lua
-      go
+        ## compilers and runtimes
+        nodejs_24
+        deno
+        bun
+        python312
+        luajitPackages.luarocks-nix
+        lua51Packages.lua
+        go
 
-      # linters
-      ruff
-      prettierd
-      nixfmt-tree
+        # linters
+        ruff
+        prettierd
+        nixfmt-tree
 
-      # packaging and project management
-      uv
-    ];
-    programs.home-manager.enable = true;
+        # packaging and project management
+        uv
+      ];
+      programs.home-manager.enable = true;
 
-    home.stateVersion = "25.05";
-  };
+      home.stateVersion = "25.05";
+    };
 }

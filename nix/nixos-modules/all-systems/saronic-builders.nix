@@ -4,7 +4,7 @@
     { ... }:
     {
       nix.buildMachines = [
-        
+
         # These builders will slow you down due to network latency unless on company wifi
 
         # {
@@ -32,7 +32,6 @@
         #   ];
         #   mandatoryFeatures = [ ];
         # }
-
 
         {
           hostName = "turbo5";

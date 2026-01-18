@@ -19,12 +19,14 @@ in
       self.nixosModules.experimental-features
       self.nixosModules.git-server
       self.nixosModules.git-shared-server
-      # self.nixosModules.gnome
+      self.nixosModules.gnome
       self.nixosModules.greetd
+      self.nixosModules.kanshi
       self.nixosModules.carls-ml-pc-motd
       self.nixosModules.nix-ld
       self.nixosModules.openssh
       self.nixosModules.parallelism
+      self.nixosModules.polkit
       self.nixosModules.sway
       self.nixosModules.thunderbolt
       self.nixosModules.xrdp-gnome
@@ -38,7 +40,10 @@ in
       self.nixosModules."${system}-carl-user"
       self.nixosModules."${system}-connor-user"
 
-      (self.nixosModules.common-home-manager-nixos [ "carl" "connor" ])
+      (self.nixosModules.sway-home-manager-nixos [
+        "carl"
+        "connor"
+      ])
     ];
   };
 }

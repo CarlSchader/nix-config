@@ -64,7 +64,6 @@
 
   environment.pathsToLink = [ "/libexec" ];
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

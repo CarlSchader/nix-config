@@ -19,7 +19,7 @@ in
       self.nixosModules.carls-macbook-motd
       self.nixosModules.parallelism
       self.nixosModules.saronic-builders
-      
+
     ];
   };
 

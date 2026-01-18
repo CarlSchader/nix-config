@@ -1,9 +1,10 @@
 { ... }:
 {
-  nixosModules.rust-overlay-home = { pkgs, ... }:
-  {
-    home.packages = with pkgs; [
-      (rust-bin.stable.latest.default.override { extensions = [ "rust-src" ]; })
-    ];
-  };
+  nixosModules.rust-overlay-home =
+    { pkgs, ... }:
+    {
+      home.packages = with pkgs; [
+        (rust-bin.stable.latest.default.override { extensions = [ "rust-src" ]; })
+      ];
+    };
 }
