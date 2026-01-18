@@ -9,6 +9,7 @@
         yubikey-manager
         obsidian
         brave
+        element-desktop
 
         ## dev tools
         git
