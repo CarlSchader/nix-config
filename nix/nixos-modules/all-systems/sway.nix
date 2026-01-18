@@ -16,18 +16,7 @@
       programs.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
-      };
-
-      # programs.regreet.enable = true;
-
-      services.greetd = {
-        enable = true;
-        settings = {
-          default_session = {
-            command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd 'sway --unsupported-gpu'";
-            user = "greeter";
-          };
-        };
+        extraOptions = [ "--unsupported-gpu" ];
       };
     };
 }

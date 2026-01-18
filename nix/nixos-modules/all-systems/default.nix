@@ -6,11 +6,13 @@ flake-utils.lib.meld inputs [
   ./git-server.nix
   ./git-shared-server.nix
   ./gnome.nix
+  ./greetd.nix
   ./motd.nix
   ./nginx-reverse-proxy.nix
   ./nix-ld.nix
   ./openssh.nix
   ./parallelism.nix
+  ./polkit.nix
   ./rust-overlay-module.nix
   ./saronic-builders.nix
   ./sway.nix
