@@ -25,6 +25,7 @@ let
 
   sway-home-manager-modules = [
     self.nixosModules.sway-home
+    self.nixosModules.gnome-keyring-home
   ];
 
   common-home-modules = lib.mkMerge common-home-manager-modules;

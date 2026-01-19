@@ -19,7 +19,7 @@ in
       self.nixosModules.experimental-features
       self.nixosModules.git-server
       self.nixosModules.git-shared-server
-      self.nixosModules.gnome
+      # self.nixosModules.gnome
       self.nixosModules.greetd
       self.nixosModules.carls-ml-pc-motd
       self.nixosModules.nix-ld
@@ -27,7 +27,7 @@ in
       self.nixosModules.parallelism
       self.nixosModules.polkit
       self.nixosModules.thunderbolt
-      self.nixosModules.xrdp-gnome
+      # self.nixosModules.xrdp-gnome
 
       disko.nixosModules.disko
       ./disko-config.nix
