@@ -18,9 +18,14 @@
             forwardAgent = true;
             forwardX11 = true;
           };
+          "linode-headscale" = {
+            hostname = "198.58.104.63";
+            user = "root";
+            forwardAgent = true;
+            forwardX11 = true;
+          };
         };
       };
-
       home.file.".ssh/sockets/.keep".text = "";
     };
 }

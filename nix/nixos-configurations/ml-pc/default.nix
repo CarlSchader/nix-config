@@ -26,6 +26,7 @@ in
       self.nixosModules.openssh
       self.nixosModules.parallelism
       self.nixosModules.polkit
+      self.nixosModules.tailscaled
       self.nixosModules.thunderbolt
       # self.nixosModules.xrdp-gnome
 
