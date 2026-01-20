@@ -7,7 +7,7 @@ let
       controlPersist = "1h";
     };
     "carl" = {
-      hostname = "carlschader.com";
+      hostname = "ml-pc";
       user = "carl";
       forwardAgent = true;
       forwardX11 = true;
