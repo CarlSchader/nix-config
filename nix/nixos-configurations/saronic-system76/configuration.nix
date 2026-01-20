@@ -64,6 +64,7 @@
 
   environment.pathsToLink = [ "/libexec" ];
 
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -86,7 +87,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.config.nvidia.acceptLicense = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
