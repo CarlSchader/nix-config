@@ -9,32 +9,43 @@
 let
   inherit (nixpkgs) lib;
 
-  common-home-manager-modules = [
+  shared-home-manager-modules = [
     self.nixosModules.home
     self.nixosModules.rust-overlay-home
     self.nixosModules.shell-configs-home
-    self.nixosModules.ssh-home
     self.nixosModules.wezterm-home
     neovim-config.nixosModules.home-manager
   ];
 
-  saronic-home-manager-modules = [
+  common-home-manager-modules = shared-home-manager-modules ++ [
+    self.nixosModules.ssh-home
+  ];
+
+  saronic-home-manager-modules = shared-home-manager-modules ++ [
+    self.nixosModules.ssh-saronic-home
     self.nixosModules.saronic-opk-home
     self.nixosModules.saronic-awscli-home
   ];
 
-  sway-home-manager-modules = [
+  sway-home-manager-modules = shared-home-manager-modules ++ [
+    self.nixosModules.ssh-home
+    self.nixosModules.sway-home
+    self.nixosModules.gnome-keyring-home
+  ];
+
+  saronic-sway-home-manager-modules = shared-home-manager-modules ++ [
+    self.nixosModules.ssh-saronic-home
+    self.nixosModules.saronic-opk-home
+    self.nixosModules.saronic-awscli-home
     self.nixosModules.sway-home
     self.nixosModules.gnome-keyring-home
   ];
 
   common-home-modules = lib.mkMerge common-home-manager-modules;
-  sway-home-modules = lib.mkMerge (common-home-manager-modules ++ sway-home-manager-modules);
+  sway-home-modules = lib.mkMerge sway-home-manager-modules;
 
-  saronic-home-modules = lib.mkMerge (common-home-manager-modules ++ saronic-home-manager-modules);
-  saronic-sway-home-modules = lib.mkMerge (
-    common-home-manager-modules ++ saronic-home-manager-modules ++ sway-home-manager-modules
-  );
+  saronic-home-modules = lib.mkMerge saronic-home-manager-modules;
+  saronic-sway-home-modules = lib.mkMerge saronic-sway-home-manager-modules;
 in
 {
   nixosModules.common-home-manager-nixos =
