@@ -26,6 +26,14 @@ let
       user = "saronic";
       forwardAgent = true;
       forwardX11 = true;
+      localForwards = [ 
+        {
+          bind.address = "localhost";
+          bind.port = 3000;
+          host.address = "localhost";
+          host.port = 3000;
+        }
+      ];
     };
   };
 in
