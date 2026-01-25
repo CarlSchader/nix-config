@@ -18,6 +18,12 @@ let
       forwardAgent = true;
       forwardX11 = true;
     };
+    "remarkable" = {
+      hostname = "192.168.0.106";
+      user = "root";
+      forwardAgent = true;
+      forwardX11 = true;
+    };
   };
 
   saronicMatchblocks = commonMatchBlocks // {
