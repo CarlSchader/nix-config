@@ -2,7 +2,7 @@
   nixpkgs,
   nixpkgs-2505,
   refresh-auth-sock,
-  cococrawl,
+  # cococrawl,
   ...
 }:
 let
@@ -20,7 +20,7 @@ in
   common.${system} = {
     user-packages = [
       refresh-auth-sock.packages.${system}.default
-      cococrawl.packages.${system}.default
+      # cococrawl.packages.${system}.default
       pkgs-2505.tailscale
       pkgs.binutils
     ];
