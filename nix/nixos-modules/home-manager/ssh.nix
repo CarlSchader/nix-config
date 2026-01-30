@@ -41,6 +41,12 @@ let
         }
       ];
     };
+    "sim" = {
+      hostname = "carl-ssh.sim.fleet.saronicsw.com";
+      user = "saronic";
+      forwardAgent = true;
+      forwardX11 = true;
+    };
   };
 in
 {
