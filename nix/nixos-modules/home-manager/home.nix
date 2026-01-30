@@ -9,7 +9,6 @@
         yubikey-manager
         obsidian
         brave
-        element-desktop
 
         ## dev tools
         git
@@ -35,7 +34,6 @@
         ncdu
         netcat
         nload
-        gdb
         jwt-cli
         mdbook
         gh
