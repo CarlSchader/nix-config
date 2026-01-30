@@ -37,11 +37,11 @@ in
       }
 
       self.nixosModules."${system}-carl-user"
-      self.nixosModules."${system}-connor-user"
+      self.nixosModules."${system}-saronic-user"
 
       (self.nixosModules.sway-home-manager-nixos [
         "carl"
-        "connor"
+        "saronic"
       ])
     ];
   };
