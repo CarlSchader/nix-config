@@ -13,7 +13,7 @@ in
         home = "/var/lib/git-server";
         createHome = true;
         shell = "${pkgs.git}/bin/git-shell";
-        openssh.authorizedKeys.keys = keys.carl;
+        openssh.authorizedKeys.keys = keys.carl ++ keys.saronic;
       };
 
       users.groups.git = { };
