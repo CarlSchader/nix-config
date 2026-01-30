@@ -37,12 +37,12 @@ in
       }
 
       self.nixosModules."${system}-carl-user"
+
+      (self.nixosModules.sway-home-manager-nixos [ "carl" ])
+
       self.nixosModules."${system}-saronic-user"
 
-      (self.nixosModules.sway-home-manager-nixos [
-        "carl"
-        "saronic"
-      ])
+      (self.nixosModules.saronic-sway-home-manager-nixos [ "saronic" ])
     ];
   };
 }
