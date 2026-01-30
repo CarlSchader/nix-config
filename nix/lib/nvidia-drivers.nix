@@ -1,6 +1,7 @@
 { pkgs, ... }:
 rec {
   baseNvidia = pkgs.linuxPackages.nvidiaPackages.latest;
+  beta = pkgs.linuxPackages.nvidiaPackages.beta;
 
   nvidia575_64_05 = baseNvidia.overrideAttrs (old: {
     version = "575.64.05";
@@ -23,6 +24,14 @@ rec {
     src = pkgs.fetchurl {
       url = "https://download.nvidia.com/XFree86/Linux-x86_64/580.95.05/NVIDIA-Linux-x86_64-580.95.05.run";
       sha256 = "sha256-hJ7w746EK5gGss3p8RwTA9VPGpp2lGfk5dlhsv4Rgqc=";
+    };
+  });
+
+  nvidia590_48_01 = baseNvidia.overrideAttrs (old: {
+    version = "590.48.01";
+    src = pkgs.fetchurl {
+      url = "https://us.download.nvidia.com/XFree86/Linux-x86_64/590.48.01/NVIDIA-Linux-x86_64-590.48.01.run";
+      sha256 = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
     };
   });
 }

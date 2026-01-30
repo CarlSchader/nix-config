@@ -82,6 +82,6 @@ in
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     # package = nvidia-drivers.nvidia580_95_05;
-    package = nvidia-drivers.baseNvidia;
+    package = nvidia-drivers.beta;
   };
 }
