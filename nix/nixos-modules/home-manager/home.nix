@@ -42,6 +42,7 @@
         # encryption
         sops
         age
+        ssh-to-age
         gnupg
         openssh
         opkssh
