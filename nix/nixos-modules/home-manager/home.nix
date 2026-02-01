@@ -38,6 +38,7 @@
         mdbook
         gh
         tokei
+        feh
 
         # encryption
         sops
