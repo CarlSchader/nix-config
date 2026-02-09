@@ -20,4 +20,5 @@ flake-utils.lib.meld inputs [
   ./tailscaled.nix
   ./thunderbolt.nix
   ./xrdp-gnome.nix
+  ./yubikey.nix
 ]

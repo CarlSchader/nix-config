@@ -45,6 +45,7 @@
         age
         ssh-to-age
         gnupg
+        pinentry-tty
         openssh
         opkssh
 
