@@ -62,7 +62,7 @@ in
     {
       users.defaultUserShell = pkgs.zsh;
       programs.zsh.enable = true;
-      users.users.connor = {
+      users.users.openclaw = {
         isNormalUser = true;
         description = "openclaw";
         extraGroups = [ ];
