@@ -1,7 +1,6 @@
 {
   self,
   nixpkgs,
-  disko,
   ...
 }:
 let
@@ -29,12 +28,6 @@ in
       self.nixosModules.tailscaled
       self.nixosModules.thunderbolt
       # self.nixosModules.xrdp-gnome
-
-      disko.nixosModules.disko
-      ./disko-config.nix
-      {
-        disko.devices.disk.main.device = "/dev/nvme0n1"; # overridden on install from cli
-      }
 
       self.nixosModules."${system}-carl-user"
 
