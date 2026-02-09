@@ -16,6 +16,7 @@ flake-utils.lib.meld inputs [
   ./polkit.nix
   ./rust-overlay-module.nix
   ./saronic-builders.nix
+  ./swap-file.nix
   ./sway.nix
   ./tailscaled.nix
   ./thunderbolt.nix
