@@ -11,6 +11,7 @@
         brave
 
         ## dev tools
+        home-manager
         git
         gnumake
         cmake
