@@ -24,7 +24,6 @@
     "sr_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.supportedFilesystems = [ "ext4" ];
   boot.kernelModules = [
     "kvm-amd"
     "v4l2loopback"
@@ -35,7 +34,7 @@
   '';
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/e3be8648-8f7a-8fef-39ec23d2dc87";
+    device = "/dev/disk/by-uuid/e3be8648-8f7a-4287-8fef-39ec23d2dc87";
     fsType = "ext4";
   };
 
