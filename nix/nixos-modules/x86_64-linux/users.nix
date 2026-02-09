@@ -56,4 +56,19 @@ in
         openssh.authorizedKeys.keys = keys.connor ++ keys.carl;
       };
     };
+
+  nixosModules."${system}-openclaw-user" =
+    { pkgs, ... }:
+    {
+      users.defaultUserShell = pkgs.zsh;
+      programs.zsh.enable = true;
+      users.users.connor = {
+        isNormalUser = true;
+        description = "openclaw";
+        extraGroups = [ ];
+        hashedPassword = "$6$6jUvopSCt2atJSO4$/30G5zsdEvUk/TFUVHPs.ErzL/CR6Zka.SE3UpLF1PtMx3XmUyVcLJgd4rD3uZmBFY4RjpUQ/YIUSf1R.SGLD1";
+        packages = self.common.${system}.user-packages;
+        openssh.authorizedKeys.keys = keys.carl;
+      };
+    };
 }
