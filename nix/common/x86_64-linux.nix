@@ -23,7 +23,6 @@ in
       # cococrawl.packages.${system}.default
       pkgs-2505.tailscale
       pkgs.binutils
-      pkgs.steam
     ];
 
     system-packages = with pkgs; [
