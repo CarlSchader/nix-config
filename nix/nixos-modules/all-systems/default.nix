@@ -4,7 +4,6 @@ flake-utils.lib.meld inputs [
   ./dockerd.nix
   ./experimental-featurs.nix
   ./git-server.nix
-  ./git-shared-server.nix
   ./gnome.nix
   ./greetd.nix
   ./kanshi.nix

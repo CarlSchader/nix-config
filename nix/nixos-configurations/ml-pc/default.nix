@@ -17,7 +17,6 @@ in
       self.nixosModules.bluetooth
       self.nixosModules.experimental-features
       self.nixosModules.git-server
-      self.nixosModules.git-shared-server
       # self.nixosModules.gnome
       self.nixosModules.greetd
       self.nixosModules.carls-ml-pc-motd
