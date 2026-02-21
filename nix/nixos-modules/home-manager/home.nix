@@ -40,6 +40,7 @@
         gh
         tokei
         feh
+        protobuf
 
         # encryption
         sops
