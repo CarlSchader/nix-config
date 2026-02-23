@@ -18,7 +18,6 @@ in
       self.nixosModules.aarch64-darwin-system-packages
       self.nixosModules.carls-macbook-motd
       self.nixosModules.parallelism
-      self.nixosModules.saronic-builders
 
     ];
   };
@@ -33,7 +32,6 @@ in
       self.nixosModules.aarch64-darwin-system-packages
       self.nixosModules.carls-macbook-motd
       self.nixosModules.parallelism
-      self.nixosModules.saronic-builders
     ];
   };
 

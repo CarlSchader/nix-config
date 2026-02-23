@@ -35,6 +35,9 @@
       url = "github:carlschader/neovim-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # saronic builders
+    remote-builders.url = "git+ssh://git@github.com/saronic-technologies/remote-builders";
   };
 
   outputs =
