@@ -1,6 +1,6 @@
 { ... }:
 let
-  commonMatchBlocks = {
+  matchBlocks = {
     "*" = {
       controlMaster = "auto";
       controlPath = "~/.ssh/sockets/%r@%h-%p";
@@ -25,29 +25,6 @@ let
       forwardX11 = true;
     };
   };
-
-  saronicMatchblocks = commonMatchBlocks // {
-    "saronic" = {
-      hostname = "carls-system76";
-      user = "saronic";
-      forwardAgent = true;
-      forwardX11 = true;
-      localForwards = [ 
-        {
-          bind.address = "localhost";
-          bind.port = 3000;
-          host.address = "localhost";
-          host.port = 3000;
-        }
-      ];
-    };
-    "sim" = {
-      hostname = "carl-ssh.sim.fleet.saronicsw.com";
-      user = "saronic";
-      forwardAgent = true;
-      forwardX11 = true;
-    };
-  };
 in
 {
   nixosModules.ssh-home =
@@ -56,18 +33,7 @@ in
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
-        matchBlocks = commonMatchBlocks;
-      };
-      home.file.".ssh/sockets/.keep".text = "";
-    };
-
-  nixosModules.ssh-saronic-home =
-    { ... }:
-    {
-      programs.ssh = {
-        enable = true;
-        enableDefaultConfig = false;
-        matchBlocks = saronicMatchblocks;
+        inherit matchBlocks;
       };
       home.file.".ssh/sockets/.keep".text = "";
     };

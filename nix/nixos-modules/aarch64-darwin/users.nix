@@ -25,16 +25,4 @@ in
         packages = self.common.${system}.user-packages;
       };
     };
-
-  # my saronic user on my work macbooks
-  nixosModules."${system}-carl.schader-user" =
-    { ... }:
-    {
-      users.users."carl.schader" = {
-        name = "carl.schader";
-        uid = 501;
-        home = "/Users/carl.schader";
-        packages = self.common.${system}.user-packages;
-      };
-    };
 }

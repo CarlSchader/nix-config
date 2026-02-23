@@ -63,7 +63,6 @@
         # databases
         postgresql
 
-        # saronic
         mcap-cli
 
         ## compilers and runtimes

@@ -25,24 +25,6 @@ in
       };
     };
 
-  nixosModules."${system}-saronic-user" =
-    { pkgs, ... }:
-    {
-      users.defaultUserShell = pkgs.zsh;
-      programs.zsh.enable = true;
-      users.users.saronic = {
-        isNormalUser = true;
-        description = "saronic";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-        ];
-        hashedPassword = "$6$E8XllxzOhDwbVmut$vJpPNdzaMsFHc0jZU56IY7AS1peXXVLJ0lH6OFEfnrsJzt/1CReRuJ5l0nr87GGhhp5WrvUovDfrT7bQtU8fh0";
-        packages = self.common.${system}.user-packages;
-        openssh.authorizedKeys.keys = keys.saronic;
-      };
-    };
-
   nixosModules."${system}-connor-user" =
     { pkgs, ... }:
     {

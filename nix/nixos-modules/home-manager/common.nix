@@ -21,31 +21,14 @@ let
     self.nixosModules.ssh-home
   ];
 
-  saronic-home-manager-modules = shared-home-manager-modules ++ [
-    self.nixosModules.ssh-saronic-home
-    self.nixosModules.saronic-opk-home
-    self.nixosModules.saronic-awscli-home
-  ];
-
   sway-home-manager-modules = shared-home-manager-modules ++ [
     self.nixosModules.ssh-home
     self.nixosModules.sway-home
     self.nixosModules.gnome-keyring-home
   ];
 
-  saronic-sway-home-manager-modules = shared-home-manager-modules ++ [
-    self.nixosModules.ssh-saronic-home
-    self.nixosModules.saronic-opk-home
-    self.nixosModules.saronic-awscli-home
-    self.nixosModules.sway-home
-    self.nixosModules.gnome-keyring-home
-  ];
-
   common-home-modules = lib.mkMerge common-home-manager-modules;
   sway-home-modules = lib.mkMerge sway-home-manager-modules;
-
-  saronic-home-modules = lib.mkMerge saronic-home-manager-modules;
-  saronic-sway-home-modules = lib.mkMerge saronic-sway-home-manager-modules;
 in
 {
   nixosModules.common-home-manager-nixos =
@@ -82,40 +65,6 @@ in
       };
     };
 
-  nixosModules.saronic-home-manager-nixos =
-    users:
-    { lib, ... }:
-    {
-      imports = [
-        self.nixosModules.rust-overlay-module
-        home-manager.nixosModules.home-manager
-      ];
-
-      config = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users = lib.genAttrs users (_: saronic-home-modules);
-      };
-    };
-
-  nixosModules.saronic-sway-home-manager-nixos =
-    users:
-    { lib, ... }:
-    {
-      imports = [
-        self.nixosModules.rust-overlay-module
-        self.nixosModules.sway
-        self.nixosModules.kanshi
-        home-manager.nixosModules.home-manager
-      ];
-
-      config = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users = lib.genAttrs users (_: saronic-sway-home-modules);
-      };
-    };
-
   nixosModules.common-home-manager-darwin =
     users:
     { lib, ... }:
@@ -129,22 +78,6 @@ in
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.users = lib.genAttrs users (_: common-home-modules);
-      };
-    };
-
-  nixosModules.saronic-home-manager-darwin =
-    users:
-    { lib, ... }:
-    {
-      imports = [
-        self.nixosModules.rust-overlay-module
-        home-manager.darwinModules.home-manager
-      ];
-
-      config = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users = lib.genAttrs users (_: saronic-home-modules);
       };
     };
 }

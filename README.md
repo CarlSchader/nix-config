@@ -8,9 +8,9 @@ Personal Nix flake configuration for macOS and NixOS machines.
 |---------|----------|-------|
 | `Carls-MacBook-Pro-2` | aarch64-darwin | carlschader |
 | `Carls-MacBook-Air-2` | aarch64-darwin | carl |
-| `Carls-MacBook-Pro` | aarch64-darwin | carlschader, saronic |
+| `Carls-MacBook-Pro` | aarch64-darwin | carlschader |
 | `Carls-MacBook-Air` | aarch64-darwin | carl.schader |
-| `ml-pc` | x86_64-linux | carl, saronic, connor |
+| `ml-pc` | x86_64-linux | carl, connor |
 
 ## Structure
 

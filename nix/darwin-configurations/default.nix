@@ -34,34 +34,4 @@ in
       self.nixosModules.parallelism
     ];
   };
-
-  # work laptop
-  darwinConfigurations."Carls-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-    modules = [
-      darwin-module
-
-      self.nixosModules."${system}-carlschader-user"
-      (self.nixosModules.saronic-home-manager-darwin [ "carlschader" ])
-
-      self.nixosModules.aarch64-darwin-system-packages
-      self.nixosModules.carls-macbook-motd
-      self.nixosModules.parallelism
-      self.nixosModules.saronic-builders
-    ];
-  };
-
-  # work laptop 2
-  darwinConfigurations."Carls-MacBook-Air" = nix-darwin.lib.darwinSystem {
-    modules = [
-      darwin-module
-
-      self.nixosModules."${system}-carl.schader-user"
-      (self.nixosModules.saronic-home-manager-darwin [ "carl.schader" ])
-
-      self.nixosModules.aarch64-darwin-system-packages
-      self.nixosModules.carls-macbook-motd
-      self.nixosModules.parallelism
-      self.nixosModules.saronic-builders
-    ];
-  };
 }
