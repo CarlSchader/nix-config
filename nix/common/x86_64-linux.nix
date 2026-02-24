@@ -34,6 +34,7 @@ in
       htop
       wl-clipboard
       xclip
+      icu
     ];
   };
 }
