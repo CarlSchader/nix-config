@@ -73,6 +73,7 @@
         luajitPackages.luarocks-nix
         lua51Packages.lua
         go
+        lean4
 
         # linters
         ruff
