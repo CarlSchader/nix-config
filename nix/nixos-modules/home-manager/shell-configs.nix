@@ -54,9 +54,9 @@ let
 in
 {
   nixosModules.shell-configs-home =
-    { lib, ... }:
+    { pkgs, lib, ... }:
     let
-      system = builtins.currentSystem;
+      system = pkgs.stdenv.hostPlatform.system;
 
       shellAliases = if builtins.elem system [ "x86_64-linux" "aarch64-linux" ] then
         lib.mkMerge [ commonShellAliases linuxShellAliases ]
