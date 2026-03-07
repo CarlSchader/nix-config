@@ -1,55 +1,71 @@
 { ... }:
+let
+  commonSessionVariables = {
+    EDITOR = "nvim";
+    SOPS_EDITOR = "vim";
+  };
+
+  commonInitContent = ''
+    export ANTHROPIC_API_KEY=$(cat ~/.secrets/anthropic-api-key)
+    export OPENAI_API_KEY=$(cat ~/.secrets/openai-api-key)
+    export GEMINI_API_KEY=$(cat ~/.secrets/gemini-api-key)
+    export GPG_TTY=$(tty)
+
+    eval "$(direnv hook zsh)"
+
+    # only run this code if we're not in an ssh session 
+    if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [ -z "$SSH_CONNECTION" ]; then
+      source <(ssh-agent)
+      ssh-add
+      ssh-add ~/.ssh/id_ed25519_sk_rk
+    fi
+  '';
+
+  commonShellAliases = {
+    n = "nvim";
+    t = "tmux";
+    ll = "ls -lh";
+    l = "ls";
+    g = "grep";
+    k = "kubectl";
+
+    # git aliases
+    gfa = "git fetch --all";
+    ga = "git add .";
+    gca = "git add . && git commit -am";
+    gpo = "git push origin";
+    gpob = "git push origin $(git branch | grep \\* | awk '{ print $2 }')";
+    gp = "git pull";
+    gs = "git status";
+    gsw = "git switch";
+    gclean = "git branch -D $(git branch | grep -v \\* | grep -v main | grep -v master)";
+
+    tarz = "tar --zstd";
+    venv = "source .venv/bin/activate";
+    necho = "echo -n";
+
+    pwgen-secure = "pwgen -1cns 16";
+  };
+
+  linuxShellAliases = {
+    pbcopy = "xclip -in -sel clip";
+    pbpaste = "xclip -out -sel clip";
+  };
+in
 {
   nixosModules.shell-configs-home =
-    { ... }:
+    { lib, ... }:
     let
-      sessionVariables = {
-        EDITOR = "nvim";
-        SOPS_EDITOR = "vim";
-      };
+      system = builtins.currentSystem;
 
-      initContent = ''
-        export ANTHROPIC_API_KEY=$(cat ~/.secrets/anthropic-api-key)
-        export OPENAI_API_KEY=$(cat ~/.secrets/openai-api-key)
-        export GEMINI_API_KEY=$(cat ~/.secrets/gemini-api-key)
-        export GPG_TTY=$(tty)
+      shellAliases = if builtins.elem system [ "x86_64-linux" "aarch64-linux" ] then
+        lib.mkMerge [ commonShellAliases linuxShellAliases ]
+      else
+        commonShellAliases;
 
-        eval "$(direnv hook zsh)"
-
-        # only run this code if we're not in an ssh session 
-        if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [ -z "$SSH_CONNECTION" ]; then
-          source <(ssh-agent)
-          ssh-add
-          ssh-add ~/.ssh/id_ed25519_sk_rk
-        fi
-      '';
-
-      shellAliases = {
-        n = "nvim";
-        t = "tmux";
-        ll = "ls -lh";
-        l = "ls";
-        g = "grep";
-        k = "kubectl";
-
-        # git aliases
-        gfa = "git fetch --all";
-        ga = "git add .";
-        gca = "git add . && git commit -am";
-        gpo = "git push origin";
-        gpob = "git push origin $(git branch | grep \\* | awk '{ print $2 }')";
-        gp = "git pull";
-        gs = "git status";
-        gsw = "git switch";
-        gclean = "git branch -D $(git branch | grep -v \\* | grep -v main | grep -v master)";
-
-        tarz = "tar --zstd";
-        venv = "source .venv/bin/activate";
-        necho = "echo -n";
-
-        pwgen-secure = "pwgen -1cns 16";
-      };
-    in
+      sessionVariables = commonSessionVariables;
+      initContent = commonInitContent;
+    in 
     {
       home.shell.enableZshIntegration = true;
 
