@@ -9,10 +9,5 @@
         mouse = true;
         keyMode = "vi";
       };
-      
-      extraConfig = ''
-        set -g default-terminal "wezterm"
-        set -g terminal-overrides 'xterm*:Tc'
-      '';
     };
 }
