@@ -7,5 +7,6 @@ flake-utils.lib.meld inputs [
   ./shell-configs.nix
   ./ssh.nix
   ./sway-home.nix
+  ./tmux.nix
   ./wezterm.nix
 ]
