@@ -16,10 +16,10 @@
           bind l select-pane -R
 
           # Vim-style pane resizing (hold to repeat)
-          bind -r C-h resize-pane -L 5
-          bind -r C-j resize-pane -D 5
-          bind -r C-k resize-pane -U 5
-          bind -r C-l resize-pane -R 5
+          bind -r H resize-pane -L 5
+          bind -r J resize-pane -D 5
+          bind -r K resize-pane -U 5
+          bind -r L resize-pane -R 5
 
           # Split panes using vim keys
           bind | split-window -h
