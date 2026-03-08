@@ -16,13 +16,13 @@
           bind l select-pane -R
 
           # Vim-style pane resizing (hold to repeat)
-          bind -r H resize-pane -L 5
-          bind -r J resize-pane -D 5
-          bind -r K resize-pane -U 5
-          bind -r L resize-pane -R 5
+          bind -r C-h resize-pane -L 5
+          bind -r C-j resize-pane -D 5
+          bind -r C-k resize-pane -U 5
+          bind -r C-l resize-pane -R 5
 
-          # Reload config
-          bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded"
+          # Reload config with prefix + r
+          bind r source-file ~/.tmux.conf \; display "Config reloaded!"
 
           # Split panes using vim keys
           bind | split-window -h
