@@ -21,6 +21,9 @@
           bind -r K resize-pane -U 5
           bind -r L resize-pane -R 5
 
+          # Reload config
+          bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded"
+
           # Split panes using vim keys
           bind | split-window -h
           bind - split-window -v
