@@ -8,6 +8,9 @@
   modulesPath,
   ...
 }:
+let
+  nvidia-drivers = import ../../lib/nvidia-drivers.nix { inherit pkgs; };
+in
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -88,7 +91,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    # package = nvidia-drivers.nvidia580_95_05;
-    package = pkgs.linuxPackages.nvidiaPackages.latest;
+    package = nvidia-drivers.nvidia590_48_01;
+    # package = pkgs.linuxPackages.nvidiaPackages.latest;
   };
 }
