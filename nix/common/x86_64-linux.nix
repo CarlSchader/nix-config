@@ -35,7 +35,7 @@ in
       wl-clipboard
       xclip
       icu
-      lspci
+      pciutils
     ];
   };
 }
