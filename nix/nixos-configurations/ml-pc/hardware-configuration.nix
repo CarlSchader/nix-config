@@ -91,7 +91,7 @@ in
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = nvidia-drivers.nvidia590_48_01;
-    # package = pkgs.linuxPackages.nvidiaPackages.latest;
+    # package = nvidia-drivers.nvidia590_48_01;
+    package = pkgs.linuxPackages.nvidiaPackages.latest;
   };
 }
