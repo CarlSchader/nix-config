@@ -80,10 +80,9 @@
 
   security.rtkit.enable = true;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.config.nvidia.acceptLicense = false;
+  nixpkgs.config.nvidia.acceptLicense = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
