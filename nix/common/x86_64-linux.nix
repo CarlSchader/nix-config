@@ -1,7 +1,6 @@
 {
   nixpkgs,
-  nixpkgs-2505,
-  refresh-auth-sock,
+  # refresh-auth-sock,
   # cococrawl,
   ...
 }:
@@ -14,14 +13,13 @@ let
       allowUnfree = true;
     };
   };
-  pkgs-2505 = import nixpkgs-2505 { inherit system; };
 in
 {
   common.${system} = {
     user-packages = [
-      refresh-auth-sock.packages.${system}.default
+      # refresh-auth-sock.packages.${system}.default
       # cococrawl.packages.${system}.default
-      pkgs-2505.tailscale
+      pkgs.tailscale
       pkgs.binutils
     ];
 

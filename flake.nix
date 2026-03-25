@@ -3,9 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-2505.url = "github:NixOS/nixpkgs/nixos-25.05";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     flake-utils = {
       url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -19,21 +20,17 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pyproject-nix = {
-      url = "github:nix-community/pyproject.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     refresh-auth-sock = {
       url = "github:carlschader/refresh-auth-sock";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     cococrawl = {
       url = "github:carlschader/cococrawl";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-config = {
       url = "github:carlschader/neovim-config";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
