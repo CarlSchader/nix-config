@@ -16,6 +16,9 @@
             # the tradeoff is increased power consumption. Defaults to
             # 'false'.
             FastConnectable = true;
+
+            # ControllerMode tells the Bluetooth adapter which Bluetooth version to use. The default is 'dual', which means that the adapter will use both Bluetooth Low Energy (BLE) and Bluetooth Basic Rate/Enhanced Data Rate (BR/EDR) modes. Setting it to 'bredr' will disable BLE and only use BR/EDR mode, which may be necessary for compatibility with certain devices that do not support BLE. However, it may also result in increased power consumption.
+            ControllerMode = "dual"; # Airpods require bredr
           };
           Policy = {
             # Enable all controllers when they are found. This includes
