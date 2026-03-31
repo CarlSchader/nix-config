@@ -31,10 +31,7 @@ in
       self.nixosModules.yubikey
 
       self.nixosModules."${system}-carl-user"
-      (self.nixosModules.sway-home-manager-nixos [ "carl" ])
-
-      self.nixosModules."${system}-openclaw-user"
-      (self.nixosModules.sway-home-manager-nixos [ "openclaw" ])
+      # self.nixosModules."${system}-openclaw-user"
     ];
   };
 }

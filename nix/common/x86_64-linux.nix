@@ -16,11 +16,12 @@ let
 in
 {
   common.${system} = {
-    user-packages = [
+    user-packages = with pkgs; [
       # refresh-auth-sock.packages.${system}.default
       # cococrawl.packages.${system}.default
-      pkgs.tailscale
-      pkgs.binutils
+      tailscale
+      binutils
+      home-manager
     ];
 
     system-packages = with pkgs; [

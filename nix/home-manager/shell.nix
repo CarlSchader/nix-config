@@ -53,54 +53,53 @@ let
   };
 in
 {
-  nixosModules.shell-configs-home =
-    { pkgs, lib, ... }:
-    let
-      system = pkgs.stdenv.hostPlatform.system;
+  homeModules.shell = { pkgs, lib, ... }:
+  let
+    system = pkgs.stdenv.hostPlatform.system;
 
-      shellAliases = if builtins.elem system [ "x86_64-linux" "aarch64-linux" ] then
-        lib.mkMerge [ commonShellAliases linuxShellAliases ]
-      else
-        commonShellAliases;
+    shellAliases = if builtins.elem system [ "x86_64-linux" "aarch64-linux" ] then
+      lib.mkMerge [ commonShellAliases linuxShellAliases ]
+    else
+      commonShellAliases;
 
-      sessionVariables = commonSessionVariables;
-      initContent = commonInitContent;
-    in 
-    {
-      home.shell.enableZshIntegration = true;
+    sessionVariables = commonSessionVariables;
+    initContent = commonInitContent;
+  in
+  {
+    home.shell.enableZshIntegration = true;
 
-      programs.zsh = {
-        enable = true;
-        autosuggestion.enable = true;
-        enableCompletion = true;
-        enableVteIntegration = true;
+    programs.zsh = {
+      enable = true;
+      autosuggestion.enable = true;
+      enableCompletion = true;
+      enableVteIntegration = true;
 
-        history = {
-          append = true;
-          expireDuplicatesFirst = true;
-          extended = true;
-        };
-
-        oh-my-zsh = {
-          enable = true;
-          theme = "clean";
-          # plugins = [ ];
-        };
-
-        syntaxHighlighting = {
-          enable = true;
-          highlighters = [
-            "main"
-            "brackets"
-            "root"
-            "cursor"
-            "line"
-          ];
-        };
-
-        inherit sessionVariables;
-        inherit initContent;
-        inherit shellAliases;
+      history = {
+        append = true;
+        expireDuplicatesFirst = true;
+        extended = true;
       };
+
+      oh-my-zsh = {
+        enable = true;
+        theme = "clean";
+        # plugins = [ ];
+      };
+
+      syntaxHighlighting = {
+        enable = true;
+        highlighters = [
+          "main"
+          "brackets"
+          "root"
+          "cursor"
+          "line"
+        ];
+      };
+
+      inherit sessionVariables;
+      inherit initContent;
+      inherit shellAliases;
     };
+  };
 }

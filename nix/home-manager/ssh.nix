@@ -27,14 +27,12 @@ let
   };
 in
 {
-  nixosModules.ssh-home =
-    { ... }:
-    {
-      programs.ssh = {
-        enable = true;
-        enableDefaultConfig = false;
-        inherit matchBlocks;
-      };
-      home.file.".ssh/sockets/.keep".text = "";
+  homeModules.ssh = { ... }: {
+    programs.ssh = {
+      enable = true;
+      enableDefaultConfig = false;
+      inherit matchBlocks;
     };
+    home.file.".ssh/sockets/.keep".text = "";
+  };
 }
