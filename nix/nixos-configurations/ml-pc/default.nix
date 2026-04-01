@@ -25,6 +25,7 @@ in
       self.nixosModules.parallelism
       self.nixosModules.polkit
       self.nixosModules.swap-file
+      self.nixosModules.sway
       self.nixosModules.tailscaled
       self.nixosModules.thunderbolt
       # self.nixosModules.xrdp-gnome
