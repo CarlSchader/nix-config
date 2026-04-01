@@ -3,6 +3,7 @@ flake-utils.lib.meld inputs [
   ./configurations.nix
   ./gnome-keyring.nix
   ./packages.nix
+  ./permissions.nix
   ./preamble.nix
   ./shell.nix
   ./ssh.nix

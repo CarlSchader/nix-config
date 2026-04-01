@@ -61,17 +61,11 @@
       # databases
       postgresql
 
-      mcap-cli
-
       ## compilers and runtimes
       nodejs_24
-      deno
-      bun
       python312
       luajitPackages.luarocks-nix
       lua51Packages.lua
-      go
-      lean4
 
       # linters
       ruff

@@ -13,12 +13,10 @@ in
       darwin-module
 
       self.nixosModules."${system}-carlschader-user"
-      (self.nixosModules.common-home-manager-darwin [ "carlschader" ])
 
       self.nixosModules.aarch64-darwin-system-packages
       self.nixosModules.carls-macbook-motd
       self.nixosModules.parallelism
-
     ];
   };
 
@@ -27,7 +25,6 @@ in
       darwin-module
 
       self.nixosModules."${system}-carl-user"
-      (self.nixosModules.common-home-manager-darwin [ "carl" ])
 
       self.nixosModules.aarch64-darwin-system-packages
       self.nixosModules.carls-macbook-motd

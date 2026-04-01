@@ -6,7 +6,12 @@ let
       allowUnfree = true;
     };
   };
-  aarch64-darwin-pkgs = import nixpkgs { system = "aarch64-darwin"; };
+  aarch64-darwin-pkgs = import nixpkgs { 
+    system = "aarch64-darwin"; 
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   homeConfigurations."x86_64-linux-carl" = home-manager.lib.homeManagerConfiguration {
@@ -33,11 +38,16 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.permissions
       self.homeModules.shell
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm
       neovim-config.homeModules.default
+      {
+        home.username = "carl";
+        home.homeDirectory = "/Users/carl";
+      }
     ];
   };
 }

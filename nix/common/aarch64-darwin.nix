@@ -21,6 +21,7 @@ in
       cococrawl.packages.${system}.default
       pkgs.tailscale
       pkgs.darwin.binutils
+      pkgs.home-manager
     ];
 
     system-packages = with pkgs; [
