@@ -19,12 +19,13 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.ghostty
       self.homeModules.gnome-keyring
       self.homeModules.shell
       self.homeModules.ssh
       self.homeModules.sway
       self.homeModules.tmux
-      self.homeModules.wezterm
+      # self.homeModules.wezterm
       neovim-config.homeModules.default
       {
         home.username = "carl";
@@ -38,11 +39,12 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.ghostty
       self.homeModules.permissions
       self.homeModules.shell
       self.homeModules.ssh
       self.homeModules.tmux
-      self.homeModules.wezterm
+      # self.homeModules.wezterm
       neovim-config.homeModules.default
       {
         home.username = "carl";
