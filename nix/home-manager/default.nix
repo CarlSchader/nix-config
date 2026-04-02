@@ -1,6 +1,7 @@
 { flake-utils, ... }@inputs:
 flake-utils.lib.meld inputs [
   ./configurations.nix
+	./ghostty.nix
   ./gnome-keyring.nix
   ./packages.nix
   ./permissions.nix
