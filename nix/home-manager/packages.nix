@@ -16,6 +16,7 @@
       tmux
       vim
       ripgrep
+			fzf
       kubectl
       jq
       zstd
@@ -39,6 +40,7 @@
       tokei
       feh
       protobuf
+			tree-sitter
 
       # encryption
       sops
@@ -66,6 +68,7 @@
       python312
       luajitPackages.luarocks-nix
       lua51Packages.lua
+			clang
 
       # linters
       ruff

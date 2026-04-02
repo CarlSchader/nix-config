@@ -22,6 +22,7 @@ in
       tailscale
       binutils
       home-manager
+			spotify
     ];
 
     system-packages = with pkgs; [
