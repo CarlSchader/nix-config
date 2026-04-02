@@ -8,7 +8,6 @@
       yubikey-manager
       obsidian
       brave
-      ghostty
 
       ## dev tools
       git
