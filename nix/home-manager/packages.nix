@@ -53,8 +53,6 @@
       opkssh
 
       # ai tools
-      claude-code
-      codex
       opencode
 
       # libraries
