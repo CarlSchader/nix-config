@@ -11,12 +11,13 @@
 
       ## dev tools
       git
+      neovim
       gnumake
       cmake
       tmux
       vim
       ripgrep
-			fzf
+      fzf
       kubectl
       jq
       zstd
@@ -40,7 +41,7 @@
       tokei
       feh
       protobuf
-			tree-sitter
+      tree-sitter
 
       # encryption
       sops
