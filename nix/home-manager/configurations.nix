@@ -34,17 +34,16 @@ in
     ];
   };
 
-  homeConfigurations."aarch64-darwin" = home-manager.lib.homeManagerConfiguration {
+  homeConfigurations."aarch64-darwin-carl" = home-manager.lib.homeManagerConfiguration {
     pkgs = aarch64-darwin-pkgs;
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
-      self.homeModules.ghostty
       self.homeModules.permissions
       self.homeModules.shell
       self.homeModules.ssh
       self.homeModules.tmux
-      # self.homeModules.wezterm
+      self.homeModules.wezterm
       neovim-config.homeModules.default
       {
         home.username = "carl";
