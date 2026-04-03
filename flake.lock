@@ -134,11 +134,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1775194630,
-        "narHash": "sha256-8VJ0WKYMGsP2A9cQIxxmayj9YfYpVRJnTC1ArFQM9h0=",
+        "lastModified": 1775202096,
+        "narHash": "sha256-MXRx9OBAlE7NTXbwwkhHvuFZmiyoTsGqHrL4P/SA9GU=",
         "owner": "carlschader",
         "repo": "neovim-config",
-        "rev": "b455ac996369bff3d7e92bbb87cbb4f98338ad7a",
+        "rev": "f902e5dc5e505298f3264ad6642a73e708a9ebec",
         "type": "github"
       },
       "original": {
