@@ -1,13 +1,19 @@
-{ self, nixpkgs, home-manager, neovim-config, ... }:
+{
+  self,
+  nixpkgs,
+  home-manager,
+  neovim-config,
+  ...
+}:
 let
-  x86_64-linux-pkgs = import nixpkgs { 
-    system = "x86_64-linux"; 
+  x86_64-linux-pkgs = import nixpkgs {
+    system = "x86_64-linux";
     config = {
       allowUnfree = true;
     };
   };
-  aarch64-darwin-pkgs = import nixpkgs { 
-    system = "aarch64-darwin"; 
+  aarch64-darwin-pkgs = import nixpkgs {
+    system = "aarch64-darwin";
     config = {
       allowUnfree = true;
     };
@@ -19,13 +25,13 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
-      self.homeModules.ghostty
+      # self.homeModules.ghostty
       self.homeModules.gnome-keyring
       self.homeModules.shell
       self.homeModules.ssh
       self.homeModules.sway
       self.homeModules.tmux
-      # self.homeModules.wezterm
+      self.homeModules.wezterm
       neovim-config.homeModules.default
       {
         home.username = "carl";
