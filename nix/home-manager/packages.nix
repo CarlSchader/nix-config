@@ -12,6 +12,7 @@
 
         ## dev tools
         git
+        jujutsu
         neovim
         gnumake
         cmake
