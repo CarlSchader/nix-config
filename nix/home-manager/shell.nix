@@ -28,6 +28,8 @@ let
     l = "ls";
     g = "grep";
     k = "kubectl";
+    jfu = "journalctl -f -u";
+    slu = "sudo systemctl list-units";
 
     # git aliases
     gfa = "git fetch --all";
@@ -53,53 +55,63 @@ let
   };
 in
 {
-  homeModules.shell = { pkgs, lib, ... }:
-  let
-    system = pkgs.stdenv.hostPlatform.system;
+  homeModules.shell =
+    { pkgs, lib, ... }:
+    let
+      system = pkgs.stdenv.hostPlatform.system;
 
-    shellAliases = if builtins.elem system [ "x86_64-linux" "aarch64-linux" ] then
-      lib.mkMerge [ commonShellAliases linuxShellAliases ]
-    else
-      commonShellAliases;
+      shellAliases =
+        if
+          builtins.elem system [
+            "x86_64-linux"
+            "aarch64-linux"
+          ]
+        then
+          lib.mkMerge [
+            commonShellAliases
+            linuxShellAliases
+          ]
+        else
+          commonShellAliases;
 
-    sessionVariables = commonSessionVariables;
-    initContent = commonInitContent;
-  in
-  {
-    home.shell.enableZshIntegration = true;
+      sessionVariables = commonSessionVariables;
+      initContent = commonInitContent;
+    in
+    {
+      home.shell.enableZshIntegration = true;
 
-    programs.zsh = {
-      enable = true;
-      autosuggestion.enable = true;
-      enableCompletion = true;
-      enableVteIntegration = true;
-
-      history = {
-        append = true;
-        expireDuplicatesFirst = true;
-        extended = true;
-      };
-
-      oh-my-zsh = {
+      programs.zsh = {
         enable = true;
-        theme = "clean";
-        # plugins = [ ];
-      };
+        autosuggestion.enable = true;
+        enableCompletion = true;
+        enableVteIntegration = true;
 
-      syntaxHighlighting = {
-        enable = true;
-        highlighters = [
-          "main"
-          "brackets"
-          "root"
-          "cursor"
-          "line"
-        ];
-      };
+        history = {
+          append = true;
+          expireDuplicatesFirst = true;
+          extended = true;
+        };
 
-      inherit sessionVariables;
-      inherit initContent;
-      inherit shellAliases;
+        oh-my-zsh = {
+          enable = true;
+          theme = "clean";
+          # plugins = [ ];
+        };
+
+        syntaxHighlighting = {
+          enable = true;
+          highlighters = [
+            "main"
+            "brackets"
+            "root"
+            "cursor"
+            "line"
+          ];
+        };
+
+        inherit sessionVariables;
+        inherit initContent;
+        inherit shellAliases;
+      };
     };
-  };
 }
