@@ -5,8 +5,8 @@
     {
       programs.tmux = {
         enable = true;
-        prefix = "C-a";
-        # prefix = "C-b";
+        # prefix = "C-a";
+        prefix = "C-b";
         mouse = true;
         keyMode = "vi";
         extraConfig = ''
