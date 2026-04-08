@@ -1,6 +1,6 @@
 {
   nixpkgs,
-  # refresh-auth-sock,
+  refresh-auth-sock,
   # cococrawl,
   ...
 }:
@@ -17,12 +17,12 @@ in
 {
   common.${system} = {
     user-packages = with pkgs; [
-      # refresh-auth-sock.packages.${system}.default
+      refresh-auth-sock.packages.${system}.default
       # cococrawl.packages.${system}.default
       tailscale
       binutils
       home-manager
-			spotify
+      spotify
     ];
 
     system-packages = with pkgs; [
