@@ -1,7 +1,7 @@
 { flake-utils, ... }@inputs:
 flake-utils.lib.meld inputs [
   ./configurations.nix
-	./ghostty.nix
+  ./ghostty.nix
   ./gnome-keyring.nix
   ./packages.nix
   ./permissions.nix
@@ -10,5 +10,4 @@ flake-utils.lib.meld inputs [
   ./ssh.nix
   ./sway.nix
   ./tmux.nix
-  ./wezterm.nix
 ]
