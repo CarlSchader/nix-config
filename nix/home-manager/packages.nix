@@ -3,12 +3,18 @@
   homeModules.packages =
     { pkgs, ... }:
     {
+      # nixpkgs.config.allowUnsupportedSystem = true;
+      # nixpkgs.config.allowUnfree = true;
+      # nixpkgs.config.allowBroken = true;
+
       home.packages = with pkgs; [
         ## user applications
         ledger # cli tool for accounting
         yubikey-manager
         obsidian
         brave
+        # openscad
+        # freecad
 
         ## dev tools
         git
