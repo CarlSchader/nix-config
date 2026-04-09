@@ -94,7 +94,7 @@ in
 
         oh-my-zsh = {
           enable = true;
-          theme = "clean";
+          theme = "bira";
           # plugins = [ ];
         };
 
