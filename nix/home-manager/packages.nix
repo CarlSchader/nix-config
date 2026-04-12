@@ -24,6 +24,7 @@
         cmake
         tmux
         vim
+        iperf3
         ripgrep
         fzf
         kubectl
