@@ -29,6 +29,7 @@
         kubectl
         jq
         zstd
+        xz
         unzip
         pigz
         ffmpeg
