@@ -20,6 +20,7 @@
         git
         jujutsu
         neovim
+        nix-output-monitor
         gnumake
         cmake
         tmux

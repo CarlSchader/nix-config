@@ -1,2 +1,6 @@
 .DS_Store
 result
+*.zst
+*.zstd
+*.img
+*.iso

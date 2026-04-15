@@ -26,6 +26,9 @@ let
       {
         networking.hostName = "rpi4";
 
+        # Allocate more ram for initd, otherwise it will fail when trying to put in nixos modules in RAM. Not sure why the raspberry-pi nixos people haven't dealt with this.
+        boot.kernelParams = [ "ramdisk_size=131072" ];
+
         system.nixos.tags =
           let
             cfg = config.boot.loader.raspberry-pi;
@@ -45,7 +48,7 @@ in
   # (sudo may be needed on ml-pc to use QEMU)
   #
   # Then just use dd to flash the sd card
-  # sudo zstdcat result/sd-image/*.img.zst | sudo dd of=/dev/sdX bs=1M status=progress
+  # sudo zstdcat result/sd-image/*.img.zst | sudo dd of=/dev/sdX bs=1M status=progress && sync
   nixosConfigurations.rpi4-installer = nixos-raspberry-pi.lib.nixosInstaller {
     inherit system;
     modules = pi4-modules;
