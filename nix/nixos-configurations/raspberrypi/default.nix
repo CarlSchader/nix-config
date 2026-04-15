@@ -1,5 +1,5 @@
 { flake-utils, ... }@inputs:
 flake-utils.lib.meld inputs [
-  ./ml-pc
-  ./raspberrypi
+  ./rpi4.nix
+  ./rpi5.nix
 ]
