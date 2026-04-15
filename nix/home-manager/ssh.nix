@@ -30,6 +30,10 @@ let
       forwardAgent = true;
       forwardX11 = true;
     };
+    "rpi*" = {
+      forwardAgent = true;
+      forwardX11 = true;
+    };
   };
 in
 {
