@@ -31,6 +31,7 @@ let
       forwardX11 = true;
     };
     "rpi*" = {
+      username = "pi";
       forwardAgent = true;
       forwardX11 = true;
     };
