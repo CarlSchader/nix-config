@@ -1,7 +1,7 @@
 {
   self,
   nixpkgs,
-  nixos-raspberrypi,
+  nixos-raspberry-pi,
   ...
 }:
 let
@@ -9,7 +9,7 @@ let
 
   modules = [
     {
-      imports = with nixos-raspberrypi.nixosModules; [
+      imports = with nixos-raspberry-pi.nixosModules; [
         raspberry-pi-5.base
         raspberry-pi-5.page-size-16k
         raspberry-pi-5.display-vc4
@@ -65,12 +65,12 @@ in
   # nix build .#nixosConfigurations.rpi5-installer.config.system.build.sdImage
   #
   # Then just use dd to flash the sd card
-  nixosConfigurations.rpi5-installer = nixos-raspberrypi.lib.nixosInstaller {
+  nixosConfigurations.rpi5-installer = nixos-raspberry-pi.lib.nixosInstaller {
     inherit system;
     inherit modules;
   };
 
-  nixosConfigurations.rpi5 = nixos-raspberrypi.lib.nixosSystem {
+  nixosConfigurations.rpi5 = nixos-raspberry-pi.lib.nixosSystem {
     inherit system;
     inherit modules;
   };
