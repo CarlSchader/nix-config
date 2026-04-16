@@ -36,6 +36,9 @@ in
     options v4l2loopback nr_devices=8 video_nr=4,5,6,7,8,9,10,11 card_label=v4l2lo0,v4l2lo1,v4l2lo2,v4l2lo3,v4l2lo4,v4l2lo5,v4l2lo6,v4l2lo7
   '';
 
+  # # This pins the kernel to 6.12 which is more compatible with the latest Nvidia drivers. Feel free to comment this out in the future if you want to try updating the kernel.
+  # boot.kernelPackages = pkgs.linuxPackages_6_12;
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/e3be8648-8f7a-4287-8fef-39ec23d2dc87";
     fsType = "ext4";
@@ -44,7 +47,10 @@ in
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/C4B7-14CB";
     fsType = "vfat";
-    options = [ "fmask=0077" "dmask=0077" ];
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

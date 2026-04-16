@@ -15,6 +15,7 @@ in
 
       self.nixosModules.x86_64-linux-system-packages
       self.nixosModules.bluetooth
+      self.nixosModules.download-buffer
       self.nixosModules.experimental-features
       self.nixosModules.git-server
       # self.nixosModules.gnome

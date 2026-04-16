@@ -2,6 +2,7 @@
 flake-utils.lib.meld inputs [
   ./bluetooth.nix
   ./dockerd.nix
+  ./download-buffer.nix
   ./experimental-featurs.nix
   ./git-server.nix
   ./gnome.nix

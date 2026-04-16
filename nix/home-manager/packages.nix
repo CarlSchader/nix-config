@@ -54,6 +54,7 @@
         zathura
         protobuf
         tree-sitter
+        htop
 
         # encryption
         sops
