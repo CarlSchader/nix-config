@@ -1,7 +1,7 @@
 local config = wezterm.config_builder()
 
 local DARK_COLOR_SCHEME = "deep"
-local LIGHT_COLOR_SCHEME = "dayfox"
+local LIGHT_COLOR_SCHEME = "One Light (base16)"
 
 local THEME_PATH = os.getenv("HOME") .. "/.local/state/theme"
 
