@@ -1,15 +1,51 @@
 local config = wezterm.config_builder()
 
-local dark_color_scheme = "deep"
-local light_color_scheme = "dayfox"
+local DARK_COLOR_SCHEME = "deep"
+local LIGHT_COLOR_SCHEME = "dayfox"
+
+local THEME_PATH = os.getenv("HOME") .. "/.local/state/theme"
+
+local function read_theme()
+	local content = "dark"
+	local theme_file, err = io.open(THEME_PATH, "r")
+	if theme_file then
+		content = theme_file:read("*a")
+		theme_file:close()
+	else
+		print(err)
+	end
+	return content
+end
+
+local function write_theme(theme_text)
+	local theme_file, err = io.open(THEME_PATH, "w")
+	if theme_file then
+		theme_file:write(theme_text)
+		theme_file:close()
+	else
+		print(err)
+	end
+end
 
 wezterm.on("toggle-colorscheme", function(window, pane)
 	local overrides = window:get_config_overrides() or {}
-	if not overrides.color_scheme or overrides.color_scheme == dark_color_scheme then
-		overrides.color_scheme = light_color_scheme
+
+	-- Overwrite theme file.
+	local current_theme = read_theme()
+	if current_theme == "dark" then
+		write_theme("light")
 	else
-		overrides.color_scheme = dark_color_scheme
+		write_theme("dark")
 	end
+
+	-- Set current theme based on theme file.
+	current_theme = read_theme()
+	if current_theme == "light" then
+		overrides.color_scheme = LIGHT_COLOR_SCHEME
+	else
+		overrides.color_scheme = DARK_COLOR_SCHEME
+	end
+
 	window:set_config_overrides(overrides)
 end)
 
