@@ -6,6 +6,7 @@
   ...
 }:
 let
+  motd-strings = import ../lib/motd.nix;
   x86_64-linux-pkgs = import nixpkgs {
     system = "x86_64-linux";
     config = {
@@ -47,6 +48,10 @@ in
       self.homeModules.packages
       self.homeModules.permissions
       self.homeModules.shell
+      {
+        programs.shell.enable = true;
+        programs.shell.motd = motd-strings.macbook-air;
+      }
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm

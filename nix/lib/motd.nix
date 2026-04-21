@@ -1,6 +1,5 @@
-{ ... }:
-let
-  carls-macbook-string = ''
+{
+  macbook-air = ''
 
      ____                     ___    __
     /\  _`\                  /\_ \  /\ \
@@ -22,7 +21,7 @@ let
 
   '';
 
-  carls-ml-pc-string = ''
+  ml-pc = ''
 
        ______           ___      
       / ____/___ ______/ ( )_____ 
@@ -36,23 +35,4 @@ let
                      /_/
 
   '';
-
-  shellInit = ''
-    if [ -z "$MOTD_SHOWN" ]; then
-      cat /etc/motd
-      export MOTD_SHOWN=1
-    fi
-  '';
-
-  make-motd-module =
-    motd-string:
-    { ... }:
-    {
-      environment.etc.motd.text = motd-string;
-      environment.loginShellInit = shellInit;
-    };
-in
-{
-  nixosModules.carls-macbook-motd = make-motd-module carls-macbook-string;
-  nixosModules.carls-ml-pc-motd = make-motd-module carls-ml-pc-string;
 }

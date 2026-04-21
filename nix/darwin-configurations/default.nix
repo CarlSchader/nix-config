@@ -15,7 +15,6 @@ in
       self.nixosModules."${system}-carlschader-user"
 
       self.nixosModules.aarch64-darwin-system-packages
-      self.nixosModules.carls-macbook-motd
       self.nixosModules.parallelism
     ];
   };
@@ -27,7 +26,6 @@ in
       self.nixosModules."${system}-carl-user"
 
       self.nixosModules.aarch64-darwin-system-packages
-      self.nixosModules.carls-macbook-motd
       self.nixosModules.parallelism
     ];
   };

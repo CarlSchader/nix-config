@@ -7,6 +7,11 @@
       swapFileSize = 8 * 1024;
     in
     {
-      swapDevices = [ { device = "/var/lib/swapfile"; size = swapFileSize; } ];
+      swapDevices = [
+        {
+          device = "/var/lib/swapfile";
+          size = swapFileSize;
+        }
+      ];
     };
 }

@@ -1,11 +1,11 @@
 { ... }:
 let
-  commonSessionVariables = {
+  sessionVariables = {
     EDITOR = "nvim";
     SOPS_EDITOR = "vim";
   };
 
-  commonInitContent = ''
+  initContent = ''
     			export ANTHROPIC_API_KEY=$(cat ~/.secrets/anthropic-api-key)
     			export OPENAI_API_KEY=$(cat ~/.secrets/openai-api-key)
     			export GEMINI_API_KEY=$(cat ~/.secrets/gemini-api-key)
@@ -27,7 +27,7 @@ let
     			export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
   '';
 
-  commonShellAliases = {
+  shellAliases = {
     n = "nvim";
     t = "tmux";
     ll = "ls -lh";
@@ -54,70 +54,77 @@ let
 
     pwgen-secure = "pwgen -1cns 16";
   };
-
-  linuxShellAliases = {
-    pbcopy = "xclip -in -sel clip";
-    pbpaste = "xclip -out -sel clip";
-  };
 in
 {
   homeModules.shell =
-    { pkgs, lib, ... }:
-    let
-      system = pkgs.stdenv.hostPlatform.system;
-
-      shellAliases =
-        if
-          builtins.elem system [
-            "x86_64-linux"
-            "aarch64-linux"
-          ]
-        then
-          lib.mkMerge [
-            commonShellAliases
-            linuxShellAliases
-          ]
-        else
-          commonShellAliases;
-
-      sessionVariables = commonSessionVariables;
-      initContent = commonInitContent;
-    in
     {
-      home.shell.enableZshIntegration = true;
-
-      programs.zsh = {
-        enable = true;
-        autosuggestion.enable = true;
-        enableCompletion = true;
-        enableVteIntegration = true;
-
-        history = {
-          append = true;
-          expireDuplicatesFirst = true;
-          extended = true;
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
+    {
+      options.programs.shell = {
+        enable = lib.mkEnableOption "Enable shell config";
+        motd = lib.mkOption {
+          type = lib.types.nullOr lib.types.str;
+          description = "The message of the day to show on login";
+          default = null;
         };
-
-        oh-my-zsh = {
-          enable = true;
-          theme = "dallas";
-          # plugins = [ ];
-        };
-
-        syntaxHighlighting = {
-          enable = true;
-          highlighters = [
-            "main"
-            "brackets"
-            "root"
-            "cursor"
-            "line"
-          ];
-        };
-
-        inherit sessionVariables;
-        inherit initContent;
-        inherit shellAliases;
       };
+
+      config = lib.mkIf config.programs.shell.enable (
+        lib.mkMerge [
+          {
+            home.shell.enableZshIntegration = true;
+
+            programs.zsh = {
+              enable = true;
+              autosuggestion.enable = true;
+              enableCompletion = true;
+              enableVteIntegration = true;
+
+              history = {
+                append = true;
+                expireDuplicatesFirst = true;
+                extended = true;
+              };
+
+              oh-my-zsh = {
+                enable = true;
+                theme = "dallas";
+                # plugins = [ ];
+              };
+
+              syntaxHighlighting = {
+                enable = true;
+                highlighters = [
+                  "main"
+                  "brackets"
+                  "root"
+                  "cursor"
+                  "line"
+                ];
+              };
+
+              inherit sessionVariables;
+              inherit shellAliases;
+            };
+          }
+
+          (lib.mkIf (config.programs.shell.motd == null) {
+            programs.zsh.initContent = initContent;
+          })
+
+          (lib.mkIf (config.programs.shell.motd != null) {
+            xdg.configFile."motd".text = config.programs.shell.motd;
+            programs.zsh.initContent = initContent + ''
+              message_of_the_day="$(cat ${config.xdg.configHome}/motd)"
+              echo "$message_of_the_day"
+            '';
+          })
+        ]
+      );
+
     };
 }

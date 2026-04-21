@@ -8,7 +8,7 @@
         powerOnBoot = true;
         settings = {
           General = {
-            Enable =  "Source,Sink,Media,Socket";
+            Enable = "Source,Sink,Media,Socket";
             # Shows battery charge of connected devices on supported
             # Bluetooth adapters. Defaults to 'false'.
             Experimental = true;
