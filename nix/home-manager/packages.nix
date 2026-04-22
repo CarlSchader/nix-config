@@ -81,6 +81,7 @@
         luajitPackages.luarocks-nix
         lua51Packages.lua
         clang
+        cargo
 
         # linters
         ruff
