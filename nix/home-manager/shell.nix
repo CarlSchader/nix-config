@@ -71,11 +71,20 @@ in
           description = "The message of the day to show on login";
           default = null;
         };
+        neofetch = lib.mkOption {
+          type = lib.types.bool;
+          description = "Whether to show neofetch on login";
+          default = true;
+        };
       };
 
       config = lib.mkIf config.programs.shell.enable (
         lib.mkMerge [
           {
+            home.packages = with pkgs; [
+              fastfetch
+            ];
+
             home.shell.enableZshIntegration = true;
 
             programs.zsh = {
@@ -112,8 +121,10 @@ in
             };
           }
 
-          (lib.mkIf (config.programs.shell.motd == null) {
-            programs.zsh.initContent = initContent;
+          (lib.mkIf config.programs.shell.neofetch {
+            programs.zsh.initContent = initContent + ''
+              							fastfetch
+              						'';
           })
 
           (lib.mkIf (config.programs.shell.motd != null) {
@@ -122,6 +133,10 @@ in
               message_of_the_day="$(cat ${config.xdg.configHome}/motd)"
               echo "$message_of_the_day"
             '';
+          })
+
+          (lib.mkIf (config.programs.shell.motd == null && !config.programs.shell.neofetch) {
+            programs.zsh.initContent = initContent;
           })
         ]
       );

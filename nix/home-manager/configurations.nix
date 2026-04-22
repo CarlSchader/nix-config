@@ -6,7 +6,6 @@
   ...
 }:
 let
-  motd-strings = import ../lib/motd.nix;
   x86_64-linux-pkgs = import nixpkgs {
     system = "x86_64-linux";
     config = {
@@ -29,6 +28,9 @@ in
       # self.homeModules.ghostty
       self.homeModules.gnome-keyring
       self.homeModules.shell
+      {
+        programs.shell.enable = true;
+      }
       self.homeModules.spotify-player
       self.homeModules.ssh
       self.homeModules.sway
@@ -51,7 +53,6 @@ in
       self.homeModules.shell
       {
         programs.shell.enable = true;
-        programs.shell.motd = motd-strings.macbook-air;
       }
       self.homeModules.spotify-player
       self.homeModules.ssh

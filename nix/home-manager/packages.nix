@@ -13,8 +13,6 @@
         yubikey-manager
         obsidian
         brave
-        # openscad
-        # freecad
 
         ## dev tools
         git

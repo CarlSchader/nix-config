@@ -20,7 +20,6 @@ in
       self.nixosModules.git-server
       # self.nixosModules.gnome
       self.nixosModules.greetd
-      self.nixosModules.carls-ml-pc-motd
       self.nixosModules.nix-ld
       self.nixosModules.openssh
       self.nixosModules.parallelism
