@@ -29,6 +29,7 @@ in
       # self.homeModules.ghostty
       self.homeModules.gnome-keyring
       self.homeModules.shell
+      self.homeModules.spotify-player
       self.homeModules.ssh
       self.homeModules.sway
       self.homeModules.tmux
@@ -52,6 +53,7 @@ in
         programs.shell.enable = true;
         programs.shell.motd = motd-strings.macbook-air;
       }
+      self.homeModules.spotify-player
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm

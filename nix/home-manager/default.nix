@@ -7,6 +7,7 @@ flake-utils.lib.meld inputs [
   ./permissions.nix
   ./preamble.nix
   ./shell.nix
+  ./spotify-player.nix
   ./ssh.nix
   ./sway.nix
   ./tmux.nix
