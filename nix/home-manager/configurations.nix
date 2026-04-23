@@ -50,6 +50,7 @@ in
       self.homeModules.preamble
       self.homeModules.packages
       self.homeModules.permissions
+      self.homeModules.minecraft-client
       self.homeModules.shell
       {
         programs.shell.enable = true;
