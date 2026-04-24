@@ -2,7 +2,8 @@
   description = "main flake for all my configs";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/b86751bc4085f48661017fa226dee99fab6c651b"; # nvidia 590
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     flake-utils = {
       url = "github:numtide/flake-utils";
