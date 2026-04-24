@@ -27,6 +27,7 @@ in
       self.homeModules.packages
       # self.homeModules.ghostty
       self.homeModules.gnome-keyring
+      self.homeModules.minecraft-client
       self.homeModules.shell
       {
         programs.shell.enable = true;
