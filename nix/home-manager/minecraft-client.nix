@@ -5,6 +5,7 @@
     {
       home.packages = with pkgs; [
         prismlauncher
+        # openjdk21
         openjdk25
       ];
     };

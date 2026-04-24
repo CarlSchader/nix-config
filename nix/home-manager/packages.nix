@@ -53,6 +53,7 @@
         protobuf
         tree-sitter
         htop
+        stress-ng
 
         # encryption
         sops
