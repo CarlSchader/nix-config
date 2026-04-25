@@ -3,6 +3,7 @@
   ...
 }:
 let
+  keys = import ../../lib/keys.nix;
   system = "aarch64-darwin";
 in
 {
@@ -13,6 +14,7 @@ in
         name = "carl";
         home = "/Users/carl";
         packages = self.common.${system}.user-packages;
+        openssh.authorizedKeys.keys = keys.carl;
       };
     };
 
@@ -23,6 +25,7 @@ in
         name = "carlschader";
         home = "/Users/carlschader";
         packages = self.common.${system}.user-packages;
+        openssh.authorizedKeys.keys = keys.carl;
       };
     };
 }

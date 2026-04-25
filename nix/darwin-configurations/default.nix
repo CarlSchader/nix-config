@@ -17,6 +17,7 @@ in
       self.nixosModules.aarch64-darwin-system-packages
       self.nixosModules.parallelism
       self.nixosModules.tailscaled-darwin
+      self.nixosModules.openssh-darwin
     ];
   };
 
