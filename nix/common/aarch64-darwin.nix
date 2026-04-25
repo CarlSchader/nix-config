@@ -22,6 +22,7 @@ in
       pkgs.tailscale
       pkgs.darwin.binutils
       pkgs.home-manager
+      pkgs.darwin.PowerManagement
     ];
 
     system-packages = with pkgs; [
