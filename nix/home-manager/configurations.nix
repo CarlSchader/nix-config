@@ -67,4 +67,27 @@ in
       }
     ];
   };
+
+  homeConfigurations."aarch64-darwin-carlschader" = home-manager.lib.homeManagerConfiguration {
+    pkgs = aarch64-darwin-pkgs;
+    modules = [
+      self.homeModules.preamble
+      self.homeModules.packages
+      self.homeModules.permissions
+      self.homeModules.minecraft-client
+      self.homeModules.shell
+      {
+        programs.shell.enable = true;
+      }
+      self.homeModules.spotify-player
+      self.homeModules.ssh
+      self.homeModules.tmux
+      self.homeModules.wezterm
+      neovim-config.homeModules.default
+      {
+        home.username = "carlschader";
+        home.homeDirectory = "/Users/carlschader";
+      }
+    ];
+  };
 }

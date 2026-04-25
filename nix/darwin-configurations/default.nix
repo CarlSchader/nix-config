@@ -8,7 +8,7 @@ let
   darwin-module = import ./darwin.nix;
 in
 {
-  darwinConfigurations."Carls-MacBook-Pro-2" = nix-darwin.lib.darwinSystem {
+  darwinConfigurations."macbook-pro-m1" = nix-darwin.lib.darwinSystem {
     modules = [
       darwin-module
 
@@ -19,7 +19,7 @@ in
     ];
   };
 
-  darwinConfigurations."Carls-MacBook-Air-2" = nix-darwin.lib.darwinSystem {
+  darwinConfigurations."macbook-air-m4" = nix-darwin.lib.darwinSystem {
     modules = [
       darwin-module
 
