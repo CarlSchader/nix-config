@@ -18,6 +18,12 @@ let
       forwardAgent = true;
       forwardX11 = true;
     };
+    "personal-ampere" = {
+      hostname = "129.153.207.106";
+      user = "ubuntu";
+      forwardAgent = true;
+      forwardX11 = true;
+    };
     "remarkable" = {
       hostname = "192.168.0.106";
       user = "root";
