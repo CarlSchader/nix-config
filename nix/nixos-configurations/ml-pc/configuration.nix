@@ -4,8 +4,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # This allows this machine to use QEMU to build aarch64-linux packages (raspberry pi installer images)
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  # # This allows this machine to use QEMU to build aarch64-linux packages (raspberry pi installer images)
+  # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # Disable the GNOME3/GDM auto-suspend feature that cannot be disabled in GUI!
   # If no user is logged in, the machine will power down after 20 minutes.
