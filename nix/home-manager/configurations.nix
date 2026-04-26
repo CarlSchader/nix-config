@@ -18,6 +18,12 @@ let
       allowUnfree = true;
     };
   };
+  aarch64-linux-pkgs = import nixpkgs {
+    system = "aarch64-linux";
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   homeConfigurations."x86_64-linux-carl" = home-manager.lib.homeManagerConfiguration {
@@ -37,6 +43,25 @@ in
       self.homeModules.sway
       self.homeModules.tmux
       self.homeModules.wezterm
+      neovim-config.homeModules.default
+      {
+        home.username = "carl";
+        home.homeDirectory = "/home/carl";
+      }
+    ];
+  };
+
+  homeConfigurations."aarch64-linux-carl" = home-manager.lib.homeManagerConfiguration {
+    pkgs = x86_64-linux-pkgs;
+    modules = [
+      self.homeModules.preamble
+      self.homeModules.packages
+      self.homeModules.shell
+      {
+        programs.shell.enable = true;
+      }
+      self.homeModules.ssh
+      self.homeModules.tmux
       neovim-config.homeModules.default
       {
         home.username = "carl";
