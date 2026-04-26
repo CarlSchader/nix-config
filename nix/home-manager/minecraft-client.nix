@@ -6,7 +6,8 @@
       home.packages = with pkgs; [
         prismlauncher
         # openjdk21
-        openjdk25
+        # openjdk25
+        javaPackages.compiler.temurin-bin.jdk-21
       ];
     };
 }
