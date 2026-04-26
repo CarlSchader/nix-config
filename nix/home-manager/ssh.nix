@@ -14,6 +14,7 @@ let
     };
     "macbook-pro-m1" = {
       hostname = "macbook-pro";
+      user = "carlschader";
       forwardAgent = true;
       forwardX11 = true;
     };
