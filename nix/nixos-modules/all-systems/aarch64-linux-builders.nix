@@ -6,7 +6,7 @@
       nix.distributedBuilds = true;
       nix.buildMachines = [
         {
-          hostName = "ampere-a1";
+          hostName = "129.153.207.106";
           system = "aarch64-linux";
           maxJobs = 4;
           speedFactor = 8;
@@ -16,7 +16,7 @@
             "nixos-test"
             "benchmark"
           ];
-          sshUser = "carl";
+          sshUser = "nixbuild";
           sshKey = "/root/.ssh/nixbuild-key"; # This must be manually added to the local machine at the path
         }
       ];
