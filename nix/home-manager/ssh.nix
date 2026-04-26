@@ -12,6 +12,11 @@ let
       forwardAgent = true;
       forwardX11 = true;
     };
+    "macbook-pro-m1" = {
+      hostname = "macbook-pro";
+      forwardAgent = true;
+      forwardX11 = true;
+    };
     "linode-headscale" = {
       hostname = "198.58.104.63";
       user = "root";
