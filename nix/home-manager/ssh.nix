@@ -24,9 +24,9 @@ let
       forwardAgent = true;
       forwardX11 = true;
     };
-    "personal-ampere" = {
+    "ampere-a1" = {
       hostname = "129.153.207.106";
-      user = "ubuntu";
+      user = "carl";
       forwardAgent = true;
       forwardX11 = true;
     };
