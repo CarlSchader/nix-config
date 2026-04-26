@@ -38,6 +38,7 @@ let
   shellAliases = {
     n = "nvim";
     t = "tmux";
+    ts = "tailscale";
     ll = "ls -lh";
     l = "ls";
     g = "grep";
