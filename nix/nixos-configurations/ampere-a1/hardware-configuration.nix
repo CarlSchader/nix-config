@@ -20,7 +20,7 @@
     "usbhid"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-" ];
+  boot.kernelModules = [ "kvm" ];
   boot.extraModulePackages = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
