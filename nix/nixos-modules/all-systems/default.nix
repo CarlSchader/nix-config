@@ -1,6 +1,7 @@
 { flake-utils, ... }@inputs:
 flake-utils.lib.meld inputs [
   ./bluetooth.nix
+  ./aarch64-linux-builders.nix
   ./dockerd.nix
   ./download-buffer.nix
   ./experimental-featurs.nix

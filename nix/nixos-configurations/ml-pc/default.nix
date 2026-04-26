@@ -14,6 +14,7 @@ in
       ./hardware-configuration.nix
 
       self.nixosModules.x86_64-linux-system-packages
+      self.nixosModules.aarch64-linux-builders
       self.nixosModules.bluetooth
       self.nixosModules.download-buffer
       self.nixosModules.experimental-features

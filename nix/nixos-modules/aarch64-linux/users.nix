@@ -24,4 +24,20 @@ in
         openssh.authorizedKeys.keys = keys.carl;
       };
     };
+
+  nixosModules."${system}-nixbuild-user" =
+    { pkgs, ... }:
+    {
+      users.defaultUserShell = pkgs.zsh;
+      programs.zsh.enable = true;
+      users.users.nixbuild = {
+        isNormalUser = true;
+        description = "builder user for nix distributed builds";
+        extraGroups = [
+          "kvm"
+        ];
+        openssh.authorizedKeys.keys = keys.nixbuild;
+      };
+      nix.settings.trustedUsers = [ "nixbuild" ];
+    };
 }
