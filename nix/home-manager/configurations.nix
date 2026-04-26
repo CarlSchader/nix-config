@@ -52,7 +52,7 @@ in
   };
 
   homeConfigurations."aarch64-linux-carl" = home-manager.lib.homeManagerConfiguration {
-    pkgs = x86_64-linux-pkgs;
+    pkgs = aarch64-linux-pkgs;
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
