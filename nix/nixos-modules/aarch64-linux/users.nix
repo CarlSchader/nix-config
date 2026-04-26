@@ -38,6 +38,6 @@ in
         ];
         openssh.authorizedKeys.keys = keys.nixbuild;
       };
-      nix.settings.trustedUsers = [ "nixbuild" ];
+      nix.settings.trusted-users = [ "nixbuild" ];
     };
 }
