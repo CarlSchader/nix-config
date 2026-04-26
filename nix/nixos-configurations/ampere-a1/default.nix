@@ -26,6 +26,7 @@ in
       self.nixosModules.tailscaled
 
       self.nixosModules."${system}-carl-user"
+      self.nixosModules."${system}-nixbuild-user"
     ];
   };
 }
