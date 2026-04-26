@@ -17,9 +17,6 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-raspberry-pi = {
-      url = "github:nvmd/nixos-raspberrypi/main";
-    };
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,16 +33,10 @@
       url = "github:carlschader/neovim-config";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-
-  # Binary cache for raspberrypi
-  nixConfig = {
-    extra-substituters = [
-      "https://nixos-raspberrypi.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
-    ];
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
