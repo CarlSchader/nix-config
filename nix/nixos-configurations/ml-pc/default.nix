@@ -5,6 +5,7 @@
 }:
 let
   system = "x86_64-linux";
+  keys = import ../../lib/keys.nix;
 in
 {
   nixosConfigurations.ml-pc = nixpkgs.lib.nixosSystem {
@@ -18,7 +19,15 @@ in
       self.nixosModules.bluetooth
       self.nixosModules.download-buffer
       self.nixosModules.experimental-features
+
       self.nixosModules.git-server
+      {
+        services.git-server = {
+          enable = true;
+          ssh-keys = keys.carl;
+        };
+      }
+
       # self.nixosModules.gnome
       self.nixosModules.greetd
       self.nixosModules.nix-ld
