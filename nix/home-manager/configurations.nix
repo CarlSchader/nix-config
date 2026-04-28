@@ -129,7 +129,7 @@ in
         programs.shell.enable = true;
       }
       self.homeModules.spotify-player
-      self.homeModules.ssh
+      self.homeModules.acs-ssh
       self.homeModules.sway
       self.homeModules.tmux
       self.homeModules.wezterm

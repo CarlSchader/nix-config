@@ -1,5 +1,6 @@
 { flake-utils, ... }@inputs:
 flake-utils.lib.meld inputs [
+  ./acs-ssh.nix
   ./configurations.nix
   ./ghostty.nix
   ./gnome-keyring.nix
