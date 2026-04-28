@@ -115,4 +115,38 @@ in
       }
     ];
   };
+
+  homeConfigurations."acs" = home-manager.lib.homeManagerConfiguration {
+    pkgs = x86_64-linux-pkgs;
+    modules = [
+      self.homeModules.preamble
+      self.homeModules.packages
+      # self.homeModules.ghostty
+      self.homeModules.gnome-keyring
+      self.homeModules.minecraft-client
+      self.homeModules.shell
+      {
+        programs.shell.enable = true;
+      }
+      self.homeModules.spotify-player
+      self.homeModules.ssh
+      self.homeModules.sway
+      self.homeModules.tmux
+      self.homeModules.wezterm
+      neovim-config.homeModules.default
+      {
+        home.username = "carl";
+        home.homeDirectory = "/home/carl";
+      }
+
+      (
+        { pkgs, ... }:
+        {
+          home.packages = with pkgs; [
+            slack
+          ];
+        }
+      )
+    ];
+  };
 }
