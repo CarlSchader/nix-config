@@ -99,6 +99,18 @@ in
               SHELL = "${pkgs.zsh}/bin/zsh";
             };
 
+            home.activation.setLoginShell = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+              if [ ! -f /etc/NIXOS ]; then
+                ZSH_PATH="$HOME/.nix-profile/bin/zsh"
+                if ! grep -qF "$ZSH_PATH" /etc/shells 2>/dev/null; then
+                  run echo "$ZSH_PATH" | /usr/bin/sudo tee -a /etc/shells
+                fi
+                if [ "$(getent passwd "$USER" | cut -d: -f7)" != "$ZSH_PATH" ]; then
+                  run /usr/bin/sudo chsh -s "$ZSH_PATH" "$USER"
+                fi
+              fi
+            '';
+
             programs.zsh = {
               enable = true;
               autosuggestion.enable = true;

@@ -8,7 +8,7 @@
       ...
     }:
     let
-      nixGLPkg = if nixgl != null then nixgl.packages.${pkgs.system}.nixGLIntel else null;
+      nixGLPkg = if nixgl != null then nixgl.packages.${pkgs.system}.nixGLDefault else null;
       swayPackage =
         if nixGLPkg != null
         then
@@ -21,7 +21,11 @@
               cat > $out/bin/sway << 'SWAYEOF'
               #!/bin/sh
               export PATH="$HOME/.nix-profile/bin:${pkgs.sway}/bin:$PATH"
-              exec ${nixGLPkg}/bin/nixGLIntel ${pkgs.sway}/bin/sway "$@"
+              # NVIDIA does not support hardware cursors on Wayland
+              if [ -d /proc/driver/nvidia ]; then
+                export WLR_NO_HARDWARE_CURSORS=1
+              fi
+              exec ${nixGLPkg}/bin/nixGL ${pkgs.sway}/bin/sway "$@"
               SWAYEOF
               chmod +x $out/bin/sway
             '';
@@ -54,6 +58,7 @@
       wayland.windowManager.sway = {
         enable = true;
         package = swayPackage;
+        checkConfig = false;
         wrapperFeatures.gtk = true;
         extraOptions = [ "--unsupported-gpu" ];
         config = {
