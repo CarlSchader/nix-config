@@ -3,6 +3,7 @@
   nixpkgs,
   home-manager,
   neovim-config,
+  nixgl,
   ...
 }:
 let
@@ -118,18 +119,27 @@ in
 
   homeConfigurations."acs" = home-manager.lib.homeManagerConfiguration {
     pkgs = x86_64-linux-pkgs;
+    extraSpecialArgs = { inherit nixgl; };
     modules = [
-      self.homeModules.preamble
-      self.homeModules.packages
-      # self.homeModules.ghostty
-      self.homeModules.gnome-keyring
-      self.homeModules.minecraft-client
+      {
+        targets.genericLinux.enable = true;
+        systemd.user.sessionVariables = {
+          PATH = "$HOME/.nix-profile/bin:$PATH";
+        };
+      }
+      self.homeModules.acs-ssh
       self.homeModules.acs-shell
       {
         programs.shell.enable = true;
       }
+
+      self.homeModules.preamble
+      self.homeModules.acs-packages
+      self.homeModules.gnome-keyring
+      self.homeModules.minecraft-client
+
       self.homeModules.spotify-player
-      self.homeModules.acs-ssh
+      self.homeModules.sway
       self.homeModules.tmux
       self.homeModules.wezterm
       neovim-config.homeModules.default
@@ -138,14 +148,6 @@ in
         home.homeDirectory = "/home/carl";
       }
 
-      (
-        { pkgs, ... }:
-        {
-          home.packages = with pkgs; [
-            slack
-          ];
-        }
-      )
     ];
   };
 }

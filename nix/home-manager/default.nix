@@ -1,6 +1,7 @@
 { flake-utils, ... }@inputs:
 flake-utils.lib.meld inputs [
-	./acs-shell.nix
+  ./acs-packages.nix
+  ./acs-shell.nix
   ./acs-ssh.nix
   ./configurations.nix
   ./ghostty.nix

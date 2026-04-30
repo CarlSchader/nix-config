@@ -1,5 +1,7 @@
 local config = wezterm.config_builder()
 
+config.default_prog = { os.getenv("HOME") .. "/.nix-profile/bin/zsh" }
+
 local DARK_COLOR_SCHEME = "deep"
 local LIGHT_COLOR_SCHEME = "One Light (base16)"
 

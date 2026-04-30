@@ -1,8 +1,13 @@
 { ... }:
 let
   matchBlocks = {
+    "*" = {
+      extraOptions = {
+        IgnoreUnknown = "GSSAPIAuthentication,GSSAPIDelegateCredentials";
+      };
+    };
     "acs-desktop" = {
-      hostname = "10.0.29.145";
+      hostname = "10.0.20.145";
       user = "carl";
       forwardAgent = true;
       forwardX11 = true;

@@ -37,6 +37,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixgl.url = "github:nix-community/nixGL";
   };
 
   outputs =

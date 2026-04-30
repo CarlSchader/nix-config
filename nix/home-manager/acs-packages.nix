@@ -1,6 +1,6 @@
 { ... }:
 {
-  homeModules.packages =
+  homeModules.acs-packages =
     { pkgs, ... }:
     {
       # nixpkgs.config.allowUnsupportedSystem = true;
@@ -11,8 +11,6 @@
         ## user applications
         ledger # cli tool for accounting
         yubikey-manager
-        obsidian
-        brave
 
         ## dev tools
         git
@@ -65,6 +63,7 @@
 
         # ai tools
         opencode
+        claude-code
 
         # libraries
         boost

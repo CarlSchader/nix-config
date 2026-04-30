@@ -90,70 +90,66 @@ in
       config = lib.mkIf config.programs.shell.enable (
         lib.mkMerge [
           {
-            # home.packages = with pkgs; [
-            #   fastfetch
-            # ];
+            home.packages = with pkgs; [
+              fastfetch
+            ];
 
-            # home.shell.enableZshIntegration = true;
+            home.shell.enableZshIntegration = true;
+            home.sessionVariables = {
+              SHELL = "${pkgs.zsh}/bin/zsh";
+            };
 
-            # programs.zsh = {
-            #   enable = true;
-            #   autosuggestion.enable = true;
-            #   enableCompletion = true;
-            #   enableVteIntegration = true;
-            #
-            #   history = {
-            #     append = true;
-            #     expireDuplicatesFirst = true;
-            #     extended = true;
-            #   };
-            #
-            #   oh-my-zsh = {
-            #     enable = true;
-            #     theme = "dallas";
-            #     # plugins = [ ];
-            #   };
-            #
-            #   syntaxHighlighting = {
-            #     enable = true;
-            #     highlighters = [
-            #       "main"
-            #       "brackets"
-            #       "root"
-            #       "cursor"
-            #       "line"
-            #     ];
-            #   };
-            #
-            #   inherit sessionVariables;
-            #   inherit shellAliases;
-            # };
-
-            programs.bash = {
+            programs.zsh = {
               enable = true;
+              autosuggestion.enable = true;
+              enableCompletion = true;
+              enableVteIntegration = true;
+
+              history = {
+                append = true;
+                expireDuplicatesFirst = true;
+                extended = true;
+              };
+
+              oh-my-zsh = {
+                enable = true;
+                theme = "dallas";
+                # plugins = [ ];
+              };
+
+              syntaxHighlighting = {
+                enable = true;
+                highlighters = [
+                  "main"
+                  "brackets"
+                  "root"
+                  "cursor"
+                  "line"
+                ];
+              };
 
               inherit sessionVariables;
               inherit shellAliases;
             };
           }
 
-          # (lib.mkIf config.programs.shell.neofetch {
-          #   programs.zsh.initContent = initContent + ''
-          #     							fastfetch
-          #     						'';
-          # })
+          (lib.mkIf config.programs.shell.neofetch {
+            programs.zsh.initContent = initContent + ''
+              							fastfetch
+              						'';
+          })
 
-          # (lib.mkIf (config.programs.shell.motd != null) {
-          #   xdg.configFile."motd".text = config.programs.shell.motd;
-          #   programs.zsh.initContent = initContent + ''
-          #     message_of_the_day="$(cat ${config.xdg.configHome}/motd)"
-          #     echo "$message_of_the_day"
-          #   '';
-          # })
+          (lib.mkIf (config.programs.shell.motd != null) {
+            xdg.configFile."motd".text = config.programs.shell.motd;
+            programs.zsh.initContent = initContent + ''
+              message_of_the_day="$(cat ${config.xdg.configHome}/motd)"
+              echo "$message_of_the_day"
+            '';
+          })
 
-          # (lib.mkIf (config.programs.shell.motd == null && !config.programs.shell.neofetch) {
-          #   programs.zsh.initContent = initContent;
-          # })
+          (lib.mkIf (config.programs.shell.motd == null && !config.programs.shell.neofetch) {
+            programs.zsh.initContent = initContent;
+          })
         ]
       );
 
