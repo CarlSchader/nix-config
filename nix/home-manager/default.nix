@@ -3,6 +3,7 @@ flake-utils.lib.meld inputs [
   ./acs-packages.nix
   ./acs-shell.nix
   ./acs-ssh.nix
+  ./bluetooth.nix
   ./configurations.nix
   ./ghostty.nix
   ./gnome-keyring.nix

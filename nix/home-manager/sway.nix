@@ -10,8 +10,7 @@
     let
       nixGLPkg = if nixgl != null then nixgl.packages.${pkgs.system}.nixGLDefault else null;
       swayPackage =
-        if nixGLPkg != null
-        then
+        if nixGLPkg != null then
           pkgs.symlinkJoin {
             name = "sway-nixgl";
             paths = [ pkgs.sway ];
@@ -30,7 +29,8 @@
               chmod +x $out/bin/sway
             '';
           }
-        else pkgs.sway;
+        else
+          pkgs.sway;
     in
     {
       home.packages = with pkgs; [

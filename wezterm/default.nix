@@ -10,21 +10,25 @@
     let
       nixGLPkg = if nixgl != null then nixgl.packages.${pkgs.system}.nixGLIntel else null;
       weztermGL =
-        if nixGLPkg != null
-        then
+        if nixGLPkg != null then
           pkgs.writeShellScriptBin "wezterm-gl" ''
             exec ${nixGLPkg}/bin/nixGLIntel ${pkgs.wezterm}/bin/wezterm "$@"
           ''
-        else pkgs.writeShellScriptBin "wezterm-gl" ''
-          exec ${pkgs.wezterm}/bin/wezterm "$@"
-        '';
+        else
+          pkgs.writeShellScriptBin "wezterm-gl" ''
+            exec ${pkgs.wezterm}/bin/wezterm "$@"
+          '';
       desktopExec =
-        if nixGLPkg != null
-        then "${nixGLPkg}/bin/nixGLIntel ${pkgs.wezterm}/bin/wezterm start --cwd ."
-        else "${pkgs.wezterm}/bin/wezterm start --cwd .";
+        if nixGLPkg != null then
+          "${nixGLPkg}/bin/nixGLIntel ${pkgs.wezterm}/bin/wezterm start --cwd ."
+        else
+          "${pkgs.wezterm}/bin/wezterm start --cwd .";
     in
     {
-      home.packages = with pkgs; [ wezterm weztermGL ];
+      home.packages = with pkgs; [
+        wezterm
+        weztermGL
+      ];
 
       programs.wezterm = {
         enable = true;

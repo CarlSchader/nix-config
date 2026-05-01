@@ -1,12 +1,8 @@
-{ ... }:
+{ neovim-config, ... }:
 {
   homeModules.packages =
     { pkgs, ... }:
     {
-      # nixpkgs.config.allowUnsupportedSystem = true;
-      # nixpkgs.config.allowUnfree = true;
-      # nixpkgs.config.allowBroken = true;
-
       home.packages = with pkgs; [
         ## user applications
         ledger # cli tool for accounting
@@ -16,7 +12,7 @@
 
         ## dev tools
         git
-        neovim
+        neovim-config.packages."${pkgs.stdenv.system}".default
         nix-output-monitor
         gnumake
         cmake
@@ -24,7 +20,6 @@
         vim
         iperf3
         ripgrep
-        fzf
         kubectl
         jq
         zstd

@@ -2,7 +2,6 @@
   self,
   nixpkgs,
   home-manager,
-  neovim-config,
   nixgl,
   ...
 }:
@@ -44,7 +43,6 @@ in
       self.homeModules.sway
       self.homeModules.tmux
       self.homeModules.wezterm
-      neovim-config.homeModules.default
       {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
@@ -63,7 +61,6 @@ in
       }
       self.homeModules.ssh
       self.homeModules.tmux
-      neovim-config.homeModules.default
       {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
@@ -86,7 +83,6 @@ in
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm
-      neovim-config.homeModules.default
       {
         home.username = "carl";
         home.homeDirectory = "/Users/carl";
@@ -109,7 +105,6 @@ in
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm
-      neovim-config.homeModules.default
       {
         home.username = "carlschader";
         home.homeDirectory = "/Users/carlschader";
@@ -134,15 +129,16 @@ in
       }
 
       self.homeModules.preamble
+      self.homeModules.packages
       self.homeModules.acs-packages
       self.homeModules.gnome-keyring
       self.homeModules.minecraft-client
 
       self.homeModules.spotify-player
       self.homeModules.sway
+      self.homeModules.bluetooth
       self.homeModules.tmux
       self.homeModules.wezterm
-      neovim-config.homeModules.default
       {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
