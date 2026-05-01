@@ -116,12 +116,16 @@ in
     pkgs = x86_64-linux-pkgs;
     extraSpecialArgs = { inherit nixgl; };
     modules = [
-      {
-        targets.genericLinux.enable = true;
-        systemd.user.sessionVariables = {
-          PATH = "$HOME/.nix-profile/bin:$PATH";
-        };
-      }
+      (
+        { lib, ... }:
+        {
+          targets.genericLinux.enable = true;
+          systemd.user.sessionVariables = {
+            PATH = "$HOME/.nix-profile/bin:$PATH";
+          };
+          home.sessionVariables.SHELL = lib.mkForce "$HOME/.nix-profile/bin/zsh";
+        }
+      )
       self.homeModules.acs-ssh
       self.homeModules.acs-shell
       {
