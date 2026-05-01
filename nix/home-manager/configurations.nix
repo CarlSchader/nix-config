@@ -136,7 +136,6 @@ in
 
       self.homeModules.spotify-player
       self.homeModules.sway
-      self.homeModules.bluetooth
       self.homeModules.tmux
       self.homeModules.wezterm
       {
