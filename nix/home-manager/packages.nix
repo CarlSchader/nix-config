@@ -48,6 +48,7 @@
         tree-sitter
         htop
         stress-ng
+        msgpack-tools
 
         # encryption
         sops
