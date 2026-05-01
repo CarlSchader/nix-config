@@ -65,6 +65,13 @@
           modifier = "Mod4";
           terminal = "wezterm-gl";
           menu = "${pkgs.wofi}/bin/wofi --show drun";
+          bars = [
+            {
+              position = "bottom";
+              statusCommand = "${pkgs.i3status}/bin/i3status";
+              trayOutput = "*";
+            }
+          ];
           startup = [
             {
               command = "dbus-update-activation-environment --systemd PATH=$HOME/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin GNOME_KEYRING_CONTROL=/run/user/$(id -u)/keyring";
