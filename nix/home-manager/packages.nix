@@ -12,29 +12,29 @@
         neovim-config.packages."${system}".default
         tmux
         vim
-        iperf3
         ripgrep
         kubectl
         jq
         ffmpeg
-        nmap
-        pnpm
         watch
         lsof
         direnv
         ncdu
-        netcat
-        nload
-        jwt-cli
         gh
         tokei
         feh
         zathura
-        protobuf
         htop
         stress-ng
         msgpack-tools
         ledger
+
+        # networking
+        netcat
+        nload
+        iperf3
+        nmap
+        jwt-cli
 
         # compression
         zstd
@@ -73,6 +73,7 @@
         lua51Packages.lua
         clang
         cargo
+        protobuf
 
         # nix
         nix-output-monitor
