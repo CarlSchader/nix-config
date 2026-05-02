@@ -31,9 +31,8 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
-      # self.homeModules.ghostty
+      self.homeModules.gui-apps
       self.homeModules.gnome-keyring
-      self.homeModules.minecraft-client
       self.homeModules.shell
       {
         programs.shell.enable = true;
@@ -55,6 +54,7 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.gui-apps
       self.homeModules.shell
       {
         programs.shell.enable = true;
@@ -73,8 +73,8 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.gui-apps
       self.homeModules.permissions
-      self.homeModules.minecraft-client
       self.homeModules.shell
       {
         programs.shell.enable = true;
@@ -95,8 +95,8 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.gui-apps
       self.homeModules.permissions
-      self.homeModules.minecraft-client
       self.homeModules.shell
       {
         programs.shell.enable = true;
@@ -136,7 +136,6 @@ in
       self.homeModules.packages
       self.homeModules.acs-packages
       self.homeModules.gnome-keyring
-      self.homeModules.minecraft-client
 
       self.homeModules.spotify-player
       self.homeModules.sway-non-nixos

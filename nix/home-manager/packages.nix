@@ -2,55 +2,47 @@
 {
   homeModules.packages =
     { pkgs, ... }:
+    let
+      system = pkgs.stdenv.system;
+    in
     {
       home.packages = with pkgs; [
-        ## user applications
-        ledger # cli tool for accounting
-        yubikey-manager
-        obsidian
-        brave
-
         ## dev tools
         git
-        neovim-config.packages."${pkgs.stdenv.system}".default
-        nix-output-monitor
-        gnumake
-        cmake
+        neovim-config.packages."${system}".default
         tmux
         vim
         iperf3
         ripgrep
         kubectl
         jq
-        zstd
-        xz
-        unzip
-        pigz
         ffmpeg
         nmap
         pnpm
-        gnumake
-        pwgen
         watch
-        nix-index
         lsof
         direnv
         ncdu
         netcat
         nload
         jwt-cli
-        mdbook
         gh
         tokei
         feh
         zathura
         protobuf
-        tree-sitter
         htop
         stress-ng
         msgpack-tools
+        ledger
 
-        # encryption
+        # compression
+        zstd
+        xz
+        unzip
+        pigz
+
+        # security
         sops
         age
         ssh-to-age
@@ -58,6 +50,10 @@
         pinentry-tty
         openssh
         opkssh
+        yubikey-manager
+        pwgen
+        gnumake
+        cmake
 
         # ai tools
         opencode
@@ -69,21 +65,18 @@
         # databases
         postgresql
 
-        ## compilers and runtimes
+        ## language tools
         nodejs_24
         python312
+        uv
         luajitPackages.luarocks-nix
         lua51Packages.lua
         clang
         cargo
 
-        # linters
-        ruff
-        prettierd
-        nixfmt-tree
-
-        # packaging and project management
-        uv
+        # nix
+        nix-output-monitor
+        nix-index
       ];
     };
 }
