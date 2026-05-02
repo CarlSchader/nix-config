@@ -139,9 +139,9 @@ in
       self.homeModules.minecraft-client
 
       self.homeModules.spotify-player
-      self.homeModules.sway
+      self.homeModules.sway-non-nixos
       self.homeModules.tmux
-      self.homeModules.wezterm
+      self.homeModules.wezterm-non-nixos
       {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
