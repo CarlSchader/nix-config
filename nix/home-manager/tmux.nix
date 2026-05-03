@@ -36,6 +36,8 @@
           							set-option -sg escape-time 10
           							set-option -g focus-events on
           							set-option -g default-terminal "screen-256color"
+          							set -gq allow-passthrough on
+          							set -g visual-activity off
           							
           							# Prevent tmux from managing the ssh session
           							set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
