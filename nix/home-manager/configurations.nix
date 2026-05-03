@@ -31,6 +31,7 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.gpg-agent
       self.homeModules.gui-apps
       self.homeModules.gnome-keyring
       self.homeModules.shell
@@ -54,6 +55,7 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.gpg-agent
       self.homeModules.gui-apps
       self.homeModules.shell
       {
@@ -73,6 +75,7 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.gpg-agent
       self.homeModules.gui-apps
       self.homeModules.permissions
       self.homeModules.shell
@@ -95,6 +98,7 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.gpg-agent
       self.homeModules.gui-apps
       self.homeModules.permissions
       self.homeModules.shell
@@ -126,6 +130,8 @@ in
           home.sessionVariables.SHELL = lib.mkForce "$HOME/.nix-profile/bin/zsh";
         }
       )
+
+      self.homeModules.acs-packages
       self.homeModules.acs-ssh
       self.homeModules.acs-shell
       {
@@ -134,7 +140,7 @@ in
 
       self.homeModules.preamble
       self.homeModules.packages
-      self.homeModules.acs-packages
+      self.homeModules.gpg-agent
 
       self.homeModules.spotify-player
       self.homeModules.sway-non-nixos

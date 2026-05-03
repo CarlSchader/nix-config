@@ -6,33 +6,24 @@ let
   };
 
   initContent = ''
-            			export ANTHROPIC_API_KEY=$(cat ~/.secrets/anthropic-api-key)
-            			export OPENAI_API_KEY=$(cat ~/.secrets/openai-api-key)
-            			export GEMINI_API_KEY=$(cat ~/.secrets/gemini-api-key)
-            			export GPG_TTY=$(tty)
+    			export ANTHROPIC_API_KEY=$(cat ~/.secrets/anthropic-api-key)
+    			export OPENAI_API_KEY=$(cat ~/.secrets/openai-api-key)
+    			export GEMINI_API_KEY=$(cat ~/.secrets/gemini-api-key)
 
-            			eval "$(direnv hook zsh)"
+    			eval "$(direnv hook zsh)"
 
-            			# only run this code if we're not in an ssh session 
-            			if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [ -z "$SSH_CONNECTION" ]; then
-            				source <(ssh-agent)
-            				ssh-add
-            				ssh-add ~/.ssh/id_ed25519_sk_rk
-            			fi
+    			# only run this code if we're not in an ssh session 
+    			if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [ -z "$SSH_CONNECTION" ]; then
+    				source <(ssh-agent)
+    				ssh-add
+    				ssh-add ~/.ssh/id_ed25519_sk_rk
+    			fi
 
-            			# If this is an SSH session, symlink the current agent socket to a static path
-            			if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
-            					ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
-            			fi
-            			export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
-
-        					gpg-ssh() {
-    								local remote="$1"; shift
-    								local local_sock="$(gpgconf --list-dir agent-extra-socket)"
-    								local remote_sock="$(ssh "$remote" gpgconf --list-dir agent-socket)"
-    								ssh "$remote" "systemctl --user stop gpg-agent.socket gpg-agent.service"
-    								ssh -R "$remote_sock:$local_sock" "$remote" "$@"
-    							}
+    			# If this is an SSH session, symlink the current agent socket to a static path
+    			if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
+    					ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+    			fi
+    			export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
   '';
 
   shellAliases = {

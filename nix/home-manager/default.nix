@@ -7,6 +7,7 @@ flake-utils.lib.meld inputs [
   ./configurations.nix
   ./ghostty.nix
   ./gnome-keyring.nix
+  ./gpg-agent.nix
   ./gui-apps.nix
   ./minecraft-client.nix
   ./packages.nix
