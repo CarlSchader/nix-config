@@ -4,6 +4,8 @@
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIMIssaCueh863XJ1p8wVWNScHOehySTPmrZPjyK9PDJAAAAABHNzaDo= carls-yubikey-2"
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAID5SFmX6iIuILf/Xljssm1C8QgEv0jUQW2aoEh1h6WRHAAAABHNzaDo= yubikey3"
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIHuG0LK/0zJ0aShQ9o83SJX+q/N3Cm+QvIW+XVHDPrPLAAAABHNzaDo= yubikey4"
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIBeJ0Vm8rOx2X9SX/X5YB7OIN+4w/km88OOuyEeiGSwwAAAABHNzaDo= carlschader@proton.me-27509234"
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIOx0SJUY/G8RqBOuJUJnZXDkgHmIzziZl56PNd33fXM3AAAABHNzaDo= carlschader@proton.me-27509235"
   ];
 
   nixbuild = [
