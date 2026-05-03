@@ -51,13 +51,22 @@ let
 in
 {
   homeModules.ssh =
-    { ... }:
+    { pkgs, ... }:
     {
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
         inherit matchBlocks;
       };
+
       home.file.".ssh/sockets/.keep".text = "";
+
+      home.packages = [ pkgs.x11_ssh_askpass ];
+
+      home.sessionVariables = {
+        SSH_ASKPASS = "${pkgs.x11_ssh_askpass}/libexec/x11-ssh-askpass";
+        # Often needed to trigger the popup correctly in headless-ish environments
+        SSH_ASKPASS_REQUIRE = "prefer";
+      };
     };
 }

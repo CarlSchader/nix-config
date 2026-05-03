@@ -32,6 +32,8 @@ in
         inherit matchBlocks;
       };
 
+      home.file.".ssh/sockets/.keep".text = "";
+
       home.packages = [ pkgs.x11_ssh_askpass ];
 
       home.sessionVariables = {
