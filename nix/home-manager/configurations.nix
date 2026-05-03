@@ -135,7 +135,6 @@ in
       self.homeModules.preamble
       self.homeModules.packages
       self.homeModules.acs-packages
-      self.homeModules.gnome-keyring
 
       self.homeModules.spotify-player
       self.homeModules.sway-non-nixos

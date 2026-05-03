@@ -13,7 +13,7 @@ let
 
             			eval "$(direnv hook zsh)"
 
-            			# only run this code if we're not in an ssh session 
+            			# only run this code if we're not in an ssh session
             			if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [ -z "$SSH_CONNECTION" ]; then
             				source <(ssh-agent)
             				ssh-add
