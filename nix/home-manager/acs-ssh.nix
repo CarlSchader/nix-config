@@ -9,8 +9,15 @@ let
         IgnoreUnknown = "GSSAPIAuthentication,GSSAPIDelegateCredentials";
       };
     };
-    "desktop" = {
+    "desktop-cisco" = {
       hostname = "10.0.20.145";
+      user = "carl";
+      forwardAgent = true;
+      forwardX11 = true;
+      identityFile = "~/.ssh/id_ed25519";
+    };
+    "desktop-ts" = {
+      hostname = "acs-desktop";
       user = "carl";
       forwardAgent = true;
       forwardX11 = true;
