@@ -31,6 +31,7 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.bluetooth
       self.homeModules.gpg-agent
       self.homeModules.gui-apps
       self.homeModules.gnome-keyring
