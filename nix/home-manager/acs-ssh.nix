@@ -2,6 +2,9 @@
 let
   matchBlocks = {
     "*" = {
+      controlMaster = "auto";
+      controlPath = "~/.ssh/sockets/%r@%h-%p";
+      controlPersist = "1h";
       extraOptions = {
         IgnoreUnknown = "GSSAPIAuthentication,GSSAPIDelegateCredentials";
       };
