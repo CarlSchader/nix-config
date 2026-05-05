@@ -12,6 +12,13 @@ let
 
     			eval "$(direnv hook zsh)"
 
+    			# Start ssh-agent and add keys if not in an SSH session
+    			if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [ -z "$SSH_CONNECTION" ]; then
+    				source <(ssh-agent)
+    				ssh-add
+    				ssh-add ~/.ssh/id_ed25519_sk_rk
+    			fi
+
     			# If this is an SSH session, symlink the current agent socket to a static path
     			if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
     					ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"

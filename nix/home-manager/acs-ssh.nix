@@ -25,10 +25,8 @@ let
     };
     "ml-pc" = {
       hostname = "100.64.0.5";
-      user = "carl";
       forwardAgent = true;
       forwardX11 = true;
-      # identityFile = "~/.ssh/id_ed25519_sk_rk";
     };
   };
 in
