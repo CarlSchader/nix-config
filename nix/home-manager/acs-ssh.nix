@@ -14,21 +14,21 @@ let
       user = "carl";
       forwardAgent = true;
       forwardX11 = true;
-      identityFile = "~/.ssh/id_ed25519";
+      # identityFile = "~/.ssh/id_ed25519";
     };
     "desktop-ts" = {
       hostname = "100.64.0.18";
       user = "carl";
       forwardAgent = true;
       forwardX11 = true;
-      identityFile = "~/.ssh/id_ed25519";
+      # identityFile = "~/.ssh/id_ed25519";
     };
     "ml-pc" = {
       hostname = "ml-pc";
       user = "100.64.0.5";
       forwardAgent = true;
       forwardX11 = true;
-      identityFile = "~/.ssh/id_ed25519_sk_rk";
+      # identityFile = "~/.ssh/id_ed25519_sk_rk";
     };
   };
 in
