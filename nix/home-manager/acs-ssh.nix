@@ -24,8 +24,8 @@ let
       # identityFile = "~/.ssh/id_ed25519";
     };
     "ml-pc" = {
-      hostname = "ml-pc";
-      user = "100.64.0.5";
+      hostname = "100.64.0.5";
+      user = "carl";
       forwardAgent = true;
       forwardX11 = true;
       # identityFile = "~/.ssh/id_ed25519_sk_rk";
