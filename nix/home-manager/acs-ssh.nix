@@ -17,7 +17,7 @@ let
       identityFile = "~/.ssh/id_ed25519";
     };
     "desktop-ts" = {
-      hostname = "acs-desktop";
+      hostname = "100.64.0.18";
       user = "carl";
       forwardAgent = true;
       forwardX11 = true;
@@ -25,7 +25,7 @@ let
     };
     "ml-pc" = {
       hostname = "ml-pc";
-      user = "carl";
+      user = "100.64.0.5";
       forwardAgent = true;
       forwardX11 = true;
       identityFile = "~/.ssh/id_ed25519_sk_rk";
