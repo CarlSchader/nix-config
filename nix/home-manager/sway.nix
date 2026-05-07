@@ -49,6 +49,17 @@
     }:
     let
       nixGLPkg = if nixgl != null then nixgl.packages.${pkgs.system}.nixGLDefault else null;
+      multiarch = if pkgs.stdenv.hostPlatform.isx86_64 then "x86_64-linux-gnu"
+        else if pkgs.stdenv.hostPlatform.isAarch64 then "aarch64-linux-gnu"
+        else pkgs.stdenv.hostPlatform.config;
+      nvidiaEglVendor = pkgs.writeText "10_nvidia.json" ''
+        {
+          "file_format_version" : "1.0.0",
+          "ICD" : {
+            "library_path" : "/usr/lib/${multiarch}/libEGL_nvidia.so.0"
+          }
+        }
+      '';
       swayPackage =
         if nixGLPkg != null then
           pkgs.symlinkJoin {
@@ -60,11 +71,21 @@
               cat > $out/bin/sway << 'SWAYEOF'
               #!/bin/sh
               export PATH="$HOME/.nix-profile/bin:${pkgs.sway}/bin:$PATH"
-              # NVIDIA does not support hardware cursors on Wayland
               if [ -d /proc/driver/nvidia ]; then
                 export WLR_NO_HARDWARE_CURSORS=1
+                export __EGL_VENDOR_LIBRARY_FILENAMES=${nvidiaEglVendor}
+                export GBM_BACKENDS_PATH=/usr/lib/${multiarch}/gbm
+                # Build a temp dir with only nvidia libs to avoid glibc conflicts
+                NVIDIA_LIBS=$(mktemp -d)
+                trap "rm -rf $NVIDIA_LIBS" EXIT
+                for lib in /usr/lib/${multiarch}/libnvidia*.so* /usr/lib/${multiarch}/libcuda*.so* /usr/lib/${multiarch}/libEGL_nvidia*.so* /usr/lib/${multiarch}/libGLX_nvidia*.so* /usr/lib/${multiarch}/libGLESv2_nvidia*.so*; do
+                  [ -e "$lib" ] && ln -sf "$lib" "$NVIDIA_LIBS/"
+                done
+                export LD_LIBRARY_PATH="$NVIDIA_LIBS''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+                exec ${pkgs.sway}/bin/sway --unsupported-gpu "$@"
+              else
+                exec ${nixGLPkg}/bin/nixGL ${pkgs.sway}/bin/sway "$@"
               fi
-              exec ${nixGLPkg}/bin/nixGL ${pkgs.sway}/bin/sway "$@"
               SWAYEOF
               chmod +x $out/bin/sway
             '';
