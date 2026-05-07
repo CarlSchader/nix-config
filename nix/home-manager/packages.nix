@@ -23,6 +23,7 @@
         ledger
         htop
         stress-ng
+        android-tools
         ncdu
 
         # video/audio
