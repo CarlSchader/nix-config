@@ -15,19 +15,21 @@
         ripgrep
         kubectl
         jq
-        ffmpeg
         watch
         lsof
         direnv
-        ncdu
         gh
         tokei
-        feh
-        zathura
+        ledger
         htop
         stress-ng
-        msgpack-tools
-        ledger
+        ncdu
+
+        # video/audio
+        ffmpeg
+        vlc
+        zathura
+        feh
 
         # networking
         netcat
@@ -41,6 +43,7 @@
         xz
         unzip
         pigz
+        msgpack-tools
 
         # security
         sops
