@@ -1,7 +1,7 @@
 { neovim-config, ... }:
 {
   homeModules.packages =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     let
       system = pkgs.stdenv.system;
     in
@@ -27,7 +27,8 @@
         ncdu
 
         # video/audio
-        ffmpeg
+        ffmpeg-full
+        mpv
         vlc
         zathura
         feh
@@ -75,7 +76,8 @@
         uv
         luajitPackages.luarocks-nix
         lua51Packages.lua
-        clang
+        (lib.hiPrio clang)
+        gcc
         cargo
         protobuf
 
