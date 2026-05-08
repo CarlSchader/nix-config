@@ -31,7 +31,8 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
-      self.homeModules.bluetooth
+      self.homeModules.bluetooth-applet
+      self.homeModules.network-manager-applet
       self.homeModules.gpg-agent
       self.homeModules.gui-apps
       self.homeModules.gnome-keyring
@@ -139,6 +140,8 @@ in
         programs.shell.enable = true;
       }
 
+      self.homeModules.bluetooth-applet
+      self.homeModules.network-manager-applet
       self.homeModules.preamble
       self.homeModules.packages
       self.homeModules.gpg-agent

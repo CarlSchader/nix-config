@@ -1,6 +1,6 @@
 { ... }:
 {
-  homeModules.bluetooth =
+  homeModules.bluetooth-applet =
     { ... }:
     {
       services.blueman-applet = {
