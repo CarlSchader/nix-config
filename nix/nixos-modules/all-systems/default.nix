@@ -17,7 +17,6 @@ flake-utils.lib.meld inputs [
   ./polkit.nix
   ./rust-overlay-module.nix
   ./swap-file.nix
-  ./sway.nix
   ./tailscaled.nix
   ./thunderbolt.nix
   ./xrdp-gnome.nix

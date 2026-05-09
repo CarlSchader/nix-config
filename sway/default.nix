@@ -1,52 +1,57 @@
 { ... }:
 {
-  homeModules.sway =
+  nixosModules.sway =
+    { pkgs, ... }:
     {
-      pkgs,
-      config,
-      lib,
-      ...
-    }:
+      environment.systemPackages = import ./packages.nix { inherit pkgs; };
+
+      services.gnome.gnome-keyring = {
+        enable = true;
+      };
+
+      security.pam.services.gdm.enableGnomeKeyring = true;
+
+      programs.sway = {
+        enable = true;
+        wrapperFeatures.gtk = true;
+        extraOptions = [ "--unsupported-gpu" ];
+      };
+
+      services.greetd = {
+        enable = true;
+        settings = rec {
+          initial_session = {
+            command = "${pkgs.tuigreet}/bin/tuigreet --time";
+            user = "greeter";
+          };
+          default_session = initial_session;
+        };
+      };
+    };
+
+  homeModules.sway =
+    { pkgs, ... }@inputs:
     {
       # programs.ghostty.enable = true;
       programs.wezterm.enable = true;
 
-      wayland.windowManager.sway =
-        let
-          mod = config.wayland.windowManager.sway.config.modifier;
-        in
-        {
-          enable = true;
-          wrapperFeatures.gtk = true;
-          extraOptions = [ "--unsupported-gpu" ];
-          config = {
-            modifier = "Mod4";
-            # terminal = "ghostty";
-            terminal = "wezterm";
-            menu = "${pkgs.wofi}/bin/wofi --show drun";
-            startup = [
-              {
-                command = "dbus-update-activation-environment --systemd GNOME_KEYRING_CONTROL=/run/user/$(id -u)/keyring";
-              }
-            ];
-            keybindings = lib.mkOptionDefault {
-              "${mod}+ctrl+2" = "resize set width 50 ppt";
-              "${mod}+ctrl+3" = "resize set width 33 ppt";
-              "${mod}+ctrl+4" = "resize set width 25 ppt";
-              "${mod}+ctrl+5" = "resize set width 20 ppt";
-            };
-          };
-        };
+      home.packages = import ./packages.nix { inherit pkgs; };
+
+      wayland.windowManager.sway = {
+        enable = true;
+        wrapperFeatures.gtk = true;
+        extraOptions = [ "--unsupported-gpu" ];
+        config = import ./nixos-config.nix inputs;
+      };
     };
 
   homeModules.sway-non-nixos =
     {
       pkgs,
-      config,
       lib,
       nixgl ? null,
       ...
-    }:
+    }@inputs:
     let
       nixGLPkg = if nixgl != null then nixgl.packages.${pkgs.system}.nixGLDefault else null;
       multiarch =
@@ -98,17 +103,7 @@
           pkgs.sway;
     in
     {
-      home.packages = with pkgs; [
-        grim
-        slurp
-        wl-clipboard
-        mako
-        wofi
-        wdisplays
-        kanshi
-        brightnessctl
-        playerctl
-      ];
+      home.packages = import ./packages.nix { inherit pkgs; };
 
       home.activation.swayWaylandSession = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         if [ ! -f /etc/NIXOS ]; then
@@ -122,39 +117,13 @@
         fi
       '';
 
-      wayland.windowManager.sway =
-        let
-          mod = config.wayland.windowManager.sway.config.modifier;
-        in
-        {
-          enable = true;
-          package = swayPackage;
-          checkConfig = false;
-          wrapperFeatures.gtk = true;
-          extraOptions = [ "--unsupported-gpu" ];
-          config = {
-            modifier = "Mod4";
-            terminal = "wezterm-gl";
-            menu = "${pkgs.wofi}/bin/wofi --show drun";
-            bars = [
-              {
-                position = "bottom";
-                statusCommand = "${pkgs.i3status}/bin/i3status";
-                trayOutput = "*";
-              }
-            ];
-            startup = [
-              {
-                command = "dbus-update-activation-environment --systemd PATH=$HOME/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin GNOME_KEYRING_CONTROL=/run/user/$(id -u)/keyring";
-              }
-            ];
-            keybindings = lib.mkOptionDefault {
-              "${mod}+ctrl+2" = "resize set width 50 ppt";
-              "${mod}+ctrl+3" = "resize set width 33 ppt";
-              "${mod}+ctrl+4" = "resize set width 25 ppt";
-              "${mod}+ctrl+5" = "resize set width 20 ppt";
-            };
-          };
-        };
+      wayland.windowManager.sway = {
+        enable = true;
+        package = swayPackage;
+        checkConfig = false;
+        wrapperFeatures.gtk = true;
+        extraOptions = [ "--unsupported-gpu" ];
+        config = import ./non-nixos-config.nix inputs;
+      };
     };
 }
