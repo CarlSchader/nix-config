@@ -5,6 +5,7 @@ flake-utils.lib.meld inputs [
   ./acs-ssh.nix
   ./bluetooth-applet.nix
   ./configurations.nix
+  ./darwin-permissions.nix
   ./ghostty.nix
   ./gnome-keyring.nix
   ./gpg-agent.nix
@@ -12,11 +13,9 @@ flake-utils.lib.meld inputs [
   ./minecraft-client.nix
   ./network-manager-applet.nix
   ./packages.nix
-  ./permissions.nix
   ./preamble.nix
   ./shell.nix
   ./spotify-player.nix
   ./ssh.nix
-  ./sway.nix
   ./tmux.nix
 ]

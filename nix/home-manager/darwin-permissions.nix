@@ -1,6 +1,6 @@
 { ... }:
 {
-  homeModules.permissions =
+  homeModules.darwin-permissions =
     { lib, ... }:
     {
       home.activation = {

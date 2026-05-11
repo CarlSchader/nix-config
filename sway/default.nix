@@ -37,6 +37,10 @@
 
       home.packages = import ./packages.nix { inherit pkgs; };
 
+      services.swayosd = {
+        enable = true;
+      };
+
       wayland.windowManager.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
@@ -116,6 +120,10 @@
         EOF
         fi
       '';
+
+      services.swayosd = {
+        enable = true;
+      };
 
       wayland.windowManager.sway = {
         enable = true;

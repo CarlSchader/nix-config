@@ -79,7 +79,7 @@ in
       self.homeModules.packages
       self.homeModules.gpg-agent
       self.homeModules.gui-apps
-      self.homeModules.permissions
+      self.homeModules.darwin-permissions
       self.homeModules.shell
       {
         programs.shell.enable = true;
@@ -102,7 +102,7 @@ in
       self.homeModules.packages
       self.homeModules.gpg-agent
       self.homeModules.gui-apps
-      self.homeModules.permissions
+      self.homeModules.darwin-permissions
       self.homeModules.shell
       {
         programs.shell.enable = true;
