@@ -17,5 +17,4 @@ flake-utils.lib.meld inputs [
   ./shell.nix
   ./spotify-player.nix
   ./ssh.nix
-  ./tmux.nix
 ]

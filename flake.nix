@@ -45,6 +45,7 @@
     flake-utils.lib.meld inputs [
       ./nix
       ./sway
+      ./tmux
       ./wezterm
     ];
 }
