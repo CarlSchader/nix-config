@@ -85,8 +85,17 @@
               #!/bin/sh
               export PATH="$HOME/.nix-profile/bin:${pkgs.sway}/bin:$PATH"
               if [ -d /proc/driver/nvidia ]; then
+                # Source nixGL env so child processes can find Mesa drivers
+                eval "$(grep '^export ' ${nixGLPkg}/bin/nixGL)"
+                # Point Mesa apps at the non-NVIDIA render node
+                for _node in /sys/class/drm/renderD*; do
+                  if [ "$(cat "$_node/device/vendor" 2>/dev/null)" != "0x10de" ]; then
+                    export DRI_PRIME="$(basename "$(readlink -f "$_node/device")")"
+                    break
+                  fi
+                done
                 export WLR_NO_HARDWARE_CURSORS=1
-                export __EGL_VENDOR_LIBRARY_FILENAMES=${nvidiaEglVendor}
+                export __EGL_VENDOR_LIBRARY_FILENAMES="${nvidiaEglVendor}''${__EGL_VENDOR_LIBRARY_FILENAMES:+:$__EGL_VENDOR_LIBRARY_FILENAMES}"
                 export GBM_BACKENDS_PATH=/usr/lib/${multiarch}/gbm
                 # Build a temp dir with only nvidia libs to avoid glibc conflicts
                 NVIDIA_LIBS=$(mktemp -d)
