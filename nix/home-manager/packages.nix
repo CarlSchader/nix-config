@@ -27,6 +27,7 @@
         stress-ng
         android-tools
         ncdu
+        awscli2
 
         # video/audio
         ffmpeg-full
