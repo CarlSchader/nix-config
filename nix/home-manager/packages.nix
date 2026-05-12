@@ -6,6 +6,8 @@
       system = pkgs.stdenv.system;
     in
     {
+      nixpkgs.config.allowUnsupportedSystem = true;
+
       home.packages = with pkgs; [
         ## dev tools
         git
@@ -29,7 +31,6 @@
         # video/audio
         ffmpeg-full
         mpv
-        vlc
         zathura
         feh
 

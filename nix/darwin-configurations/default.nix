@@ -19,7 +19,7 @@ in
       self.nixosModules.tailscaled-darwin
       self.nixosModules.openssh-darwin
       self.nixosModules.aarch64-linux-builders
-      self.nixosModules.mullvad
+      # self.nixosModules.mullvad
     ];
   };
 
@@ -33,7 +33,7 @@ in
       self.nixosModules.parallelism
       self.nixosModules.tailscaled-darwin
       self.nixosModules.aarch64-linux-builders
-      self.nixosModules.mullvad
+      # self.nixosModules.mullvad
     ];
   };
 }

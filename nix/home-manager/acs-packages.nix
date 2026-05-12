@@ -6,6 +6,7 @@
       home.packages = with pkgs; [
         claude-code
         nixgl.packages.${pkgs.system}.nixGLDefault
+        vlc
       ];
     };
 }
