@@ -29,6 +29,7 @@
         android-tools
         ncdu
         awscli2
+        pavucontrol
 
         # video/audio
         ffmpeg-full
