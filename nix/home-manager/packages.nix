@@ -7,6 +7,7 @@
     in
     {
       nixpkgs.config.allowUnsupportedSystem = true;
+      nixpkgs.config.allowUnfree = true;
 
       home.packages = with pkgs; [
         ## dev tools
