@@ -7,6 +7,7 @@
       home.packages = with pkgs; [
         obsidian
         brave
+        protonmail-desktop
       ];
     };
 }

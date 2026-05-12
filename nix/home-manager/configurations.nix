@@ -58,7 +58,6 @@ in
       self.homeModules.preamble
       self.homeModules.packages
       self.homeModules.gpg-agent
-      self.homeModules.gui-apps
       self.homeModules.shell
       {
         programs.shell.enable = true;
