@@ -4,12 +4,8 @@
     { pkgs, lib, ... }:
     let
       system = pkgs.stdenv.system;
-    in
-    {
-      nixpkgs.config.allowUnsupportedSystem = true;
-      nixpkgs.config.allowUnfree = true;
 
-      home.packages = with pkgs; [
+      all-systems-packages = with pkgs; [
         ## dev tools
         git
         neovim-config.packages."${system}".default
@@ -29,13 +25,11 @@
         android-tools
         ncdu
         awscli2
-        pavucontrol
 
         # video/audio
         ffmpeg-full
         mpv
         zathura
-        feh
 
         # networking
         netcat
@@ -89,5 +83,20 @@
         nix-output-monitor
         nix-index
       ];
+
+      linux-packages = with pkgs; [
+        pavucontrol
+        feh
+        vlc
+      ];
+
+      home-packages =
+        all-systems-packages ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux linux-packages;
+    in
+    {
+      nixpkgs.config.allowUnsupportedSystem = true;
+      nixpkgs.config.allowUnfree = true;
+
+      home.packages = home-packages;
     };
 }
