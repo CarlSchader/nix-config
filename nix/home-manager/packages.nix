@@ -88,6 +88,7 @@
         pavucontrol
         feh
         vlc
+        loupe
       ];
 
       home-packages =
