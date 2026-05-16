@@ -76,6 +76,7 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.aerospace
       self.homeModules.gpg-agent
       self.homeModules.gui-apps
       self.homeModules.darwin-permissions
@@ -99,6 +100,7 @@ in
     modules = [
       self.homeModules.preamble
       self.homeModules.packages
+      self.homeModules.aerospace
       self.homeModules.gpg-agent
       self.homeModules.gui-apps
       self.homeModules.darwin-permissions
