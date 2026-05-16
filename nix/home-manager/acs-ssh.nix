@@ -1,5 +1,6 @@
 { ... }:
 let
+  keys = import ../lib/keys.nix;
   matchBlocks = {
     "*" = {
       controlMaster = "auto";
@@ -32,7 +33,7 @@ let
 in
 {
   homeModules.acs-ssh =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       programs.ssh = {
         enable = true;
@@ -48,6 +49,10 @@ in
         SSH_ASKPASS = "${pkgs.x11_ssh_askpass}/libexec/x11-ssh-askpass";
         # Often needed to trigger the popup correctly in headless-ish environments
         SSH_ASKPASS_REQUIRE = "prefer";
+      };
+
+      home.file.".ssh/authorized_keys" = {
+        text = lib.concatStringsSep "\n" (keys.carl ++ keys.acs);
       };
     };
 }
