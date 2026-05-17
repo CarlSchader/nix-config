@@ -48,7 +48,7 @@ let
       forwardX11 = true;
     };
     "github-acs" = {
-      hostname = "guthub.com";
+      hostname = "github.com";
       user = "git";
       identityFile = "~/.ssh/acs";
       identitiesOnly = true;
