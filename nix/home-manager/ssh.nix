@@ -47,6 +47,12 @@ let
       forwardAgent = true;
       forwardX11 = true;
     };
+    "github-acs" = {
+      hostname = "guthub.com";
+      user = "git";
+      identityFile = "~/.ssh/acs";
+      identitiesOnly = true;
+    };
   };
 in
 {
