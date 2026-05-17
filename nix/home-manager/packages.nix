@@ -25,6 +25,7 @@
         android-tools
         ncdu
         awscli2
+        sshfs
 
         # video/audio
         ffmpeg-full
