@@ -53,6 +53,13 @@ let
       identityFile = "~/.ssh/acs";
       identitiesOnly = true;
     };
+    "acs-desktop" = {
+      hostname = "acs-desktop";
+      user = "carl";
+      identityFile = "~/.ssh/acs";
+      forwardAgent = true;
+      forwardX11 = true;
+    };
   };
 in
 {
