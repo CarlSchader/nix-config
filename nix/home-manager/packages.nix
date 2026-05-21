@@ -78,6 +78,7 @@
         (lib.hiPrio clang)
         gcc
         cargo
+        rustc
         protobuf
 
         # nix
