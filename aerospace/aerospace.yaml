@@ -32,8 +32,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
     # Consider using 'join-with' command as a 'split' replacement if you want to enable
     # normalizations
-    cmd-v = 'split horizontal'
-    cmd-b = 'split vertical'
+    cmd-shift-v = 'split horizontal'
+    cmd-shift-b = 'split vertical'
 
     cmd-f = 'fullscreen'
 
