@@ -1,35 +1,6 @@
 { ... }:
 let
   keys = import ../lib/keys.nix;
-  matchBlocks = {
-    "*" = {
-      controlMaster = "auto";
-      controlPath = "~/.ssh/sockets/%r@%h-%p";
-      controlPersist = "1h";
-      extraOptions = {
-        IgnoreUnknown = "GSSAPIAuthentication,GSSAPIDelegateCredentials";
-      };
-    };
-    "desktop-cisco" = {
-      hostname = "10.0.20.145";
-      user = "carl";
-      forwardAgent = true;
-      forwardX11 = true;
-      # identityFile = "~/.ssh/id_ed25519";
-    };
-    "desktop-ts" = {
-      hostname = "100.64.0.18";
-      user = "carl";
-      forwardAgent = true;
-      forwardX11 = true;
-      # identityFile = "~/.ssh/id_ed25519";
-    };
-    "ml-pc" = {
-      hostname = "100.64.0.5";
-      forwardAgent = true;
-      forwardX11 = true;
-    };
-  };
 in
 {
   homeModules.acs-ssh =
@@ -38,7 +9,35 @@ in
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
-        inherit matchBlocks;
+        settings = {
+          "*" = {
+            ControlMaster = "auto";
+            ControlPath = "~/.ssh/sockets/%r@%h-%p";
+            ControlPersist = "1h";
+            ExtraOptions = {
+              IgnoreUnknown = "GSSAPIAuthentication,GSSAPIDelegateCredentials";
+            };
+          };
+          "desktop-cisco" = {
+            HostName = "10.0.20.145";
+            User = "carl";
+            ForwardAgent = true;
+            ForwardX11 = true;
+            # identityFile = "~/.ssh/id_ed25519";
+          };
+          "desktop-ts" = {
+            HostName = "100.64.0.18";
+            User = "carl";
+            ForwardAgent = true;
+            ForwardX11 = true;
+            # identityFile = "~/.ssh/id_ed25519";
+          };
+          "ml-pc" = {
+            HostName = "100.64.0.5";
+            ForwardAgent = true;
+            ForwardX11 = true;
+          };
+        };
       };
 
       home.file.".ssh/sockets/.keep".text = "";
