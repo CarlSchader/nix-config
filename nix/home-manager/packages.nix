@@ -24,6 +24,7 @@
         stress-ng
         android-tools
         ncdu
+        tree
         awscli2
         sshfs
 
