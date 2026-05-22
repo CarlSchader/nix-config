@@ -35,7 +35,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     cmd-shift-v = 'split horizontal'
     cmd-shift-b = 'split vertical'
 
-    cmd-f = 'fullscreen'
+    cmd-shift-f = 'fullscreen'
 
     cmd-shift-s = 'layout v_accordion' # 'layout stacking' in i3
     cmd-shift-w = 'layout h_accordion' # 'layout tabbed' in i3
