@@ -28,7 +28,7 @@
         awscli2
         sshfs
 
-        # video/audio
+        # image/video/audio
         ffmpeg-full
         mpv
         zathura
@@ -95,7 +95,7 @@
       ];
 
       home-packages =
-        all-systems-packages ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux linux-packages;
+        all-systems-packages ++ (lib.optionals pkgs.stdenv.hostPlatform.isLinux linux-packages);
     in
     {
       nixpkgs.config.allowUnsupportedSystem = true;
