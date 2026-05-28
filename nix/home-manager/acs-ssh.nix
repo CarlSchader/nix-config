@@ -14,9 +14,6 @@ in
             ControlMaster = "auto";
             ControlPath = "~/.ssh/sockets/%r@%h-%p";
             ControlPersist = "1h";
-            ExtraOptions = {
-              IgnoreUnknown = "GSSAPIAuthentication,GSSAPIDelegateCredentials";
-            };
           };
           "desktop-cisco" = {
             HostName = "10.0.20.145";
