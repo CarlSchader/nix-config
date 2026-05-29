@@ -4,8 +4,7 @@
   home-manager,
   nixgl,
   ...
-}:
-let
+}: let
   x86_64-linux-pkgs = import nixpkgs {
     system = "x86_64-linux";
     config = {
@@ -24,8 +23,7 @@ let
       allowUnfree = true;
     };
   };
-in
-{
+in {
   homeConfigurations."x86_64-linux-carl" = home-manager.lib.homeManagerConfiguration {
     pkgs = x86_64-linux-pkgs;
     modules = [
@@ -40,11 +38,14 @@ in
       {
         programs.shell.enable = true;
       }
+
       self.homeModules.spotify-player
       self.homeModules.ssh
       self.homeModules.sway
       self.homeModules.tmux
       self.homeModules.wezterm
+      self.homeModules.zathura
+
       {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
@@ -88,6 +89,7 @@ in
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm
+
       {
         home.username = "carl";
         home.homeDirectory = "/Users/carl";
@@ -112,6 +114,7 @@ in
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm
+
       {
         home.username = "carlschader";
         home.homeDirectory = "/Users/carlschader";
@@ -121,11 +124,10 @@ in
 
   homeConfigurations."acs" = home-manager.lib.homeManagerConfiguration {
     pkgs = x86_64-linux-pkgs;
-    extraSpecialArgs = { inherit nixgl; };
+    extraSpecialArgs = {inherit nixgl;};
     modules = [
       (
-        { lib, ... }:
-        {
+        {lib, ...}: {
           targets.genericLinux.enable = true;
           systemd.user.sessionVariables = {
             PATH = "$HOME/.nix-profile/bin:$PATH";
@@ -151,11 +153,12 @@ in
       self.homeModules.sway-non-nixos
       self.homeModules.tmux
       self.homeModules.wezterm-non-nixos
+      self.homeModules.zathura
+
       {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
       }
-
     ];
   };
 }
