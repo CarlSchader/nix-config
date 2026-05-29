@@ -4,7 +4,6 @@ with pkgs; [
   slurp
   wf-recorder
   wl-clipboard
-  mako
   wofi
   wdisplays
   kanshi
