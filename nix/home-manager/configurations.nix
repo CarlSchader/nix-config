@@ -46,6 +46,8 @@ in {
       self.homeModules.wezterm
       self.homeModules.zathura
 
+      self.homeModules.opencode
+
       {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
@@ -90,6 +92,8 @@ in {
       self.homeModules.tmux
       self.homeModules.wezterm
 
+      self.homeModules.opencode
+
       {
         home.username = "carl";
         home.homeDirectory = "/Users/carl";
@@ -114,6 +118,8 @@ in {
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm
+
+      self.homeModules.opencode
 
       {
         home.username = "carlschader";
@@ -154,6 +160,8 @@ in {
       self.homeModules.tmux
       self.homeModules.wezterm-non-nixos
       self.homeModules.zathura
+
+      self.homeModules.opencode
 
       {
         home.username = "carl";

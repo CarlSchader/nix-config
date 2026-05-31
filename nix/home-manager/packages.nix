@@ -60,8 +60,8 @@
       gnumake
       cmake
 
-      # ai tools
-      opencode
+      # ai
+      claude-code
 
       # libraries
       boost

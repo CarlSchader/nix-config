@@ -1,4 +1,4 @@
-{ flake-utils, ... }@inputs:
+{flake-utils, ...} @ inputs:
 flake-utils.lib.meld inputs [
   ./acs-packages.nix
   ./acs-shell.nix
@@ -12,6 +12,7 @@ flake-utils.lib.meld inputs [
   ./gui-apps.nix
   ./minecraft-client.nix
   ./network-manager-applet.nix
+  ./opencode.nix
   ./packages.nix
   ./preamble.nix
   ./shell.nix
