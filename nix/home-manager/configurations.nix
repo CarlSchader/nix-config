@@ -152,7 +152,6 @@ in {
       self.homeModules.bluetooth-applet
       self.homeModules.network-manager-applet
       self.homeModules.preamble
-      self.homeModules.packages
       self.homeModules.gpg-agent
 
       self.homeModules.spotify-player

@@ -77,7 +77,6 @@
       luajitPackages.luarocks-nix
       lua51Packages.lua
       (lib.hiPrio clang)
-      gcc
       cargo
       rustc
       protobuf
