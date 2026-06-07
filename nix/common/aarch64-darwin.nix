@@ -3,8 +3,7 @@
   refresh-auth-sock,
   cococrawl,
   ...
-}:
-let
+}: let
   system = "aarch64-darwin";
 
   pkgs = import nixpkgs {
@@ -13,8 +12,7 @@ let
       allowUnfree = true;
     };
   };
-in
-{
+in {
   common.${system} = {
     user-packages = [
       refresh-auth-sock.packages.${system}.default
@@ -22,7 +20,7 @@ in
       pkgs.tailscale
       pkgs.darwin.binutils
       pkgs.home-manager
-      pkgs.darwin.PowerManagement
+      # pkgs.darwin.PowerManagement
     ];
 
     system-packages = with pkgs; [
