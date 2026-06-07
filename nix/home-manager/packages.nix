@@ -28,6 +28,7 @@
       tree
       awscli2
       sshfs
+      parallel
 
       # image/video/audio
       ffmpeg-full
