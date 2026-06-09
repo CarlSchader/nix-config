@@ -36,6 +36,8 @@
       awscli2
       sshfs
 
+      foxglove-studio
+
       # image/video/audio
       ffmpeg-full
       mpv

@@ -30,6 +30,8 @@
       sshfs
       parallel
 
+      foxglove-studio
+
       # image/video/audio
       ffmpeg-full
       mpv
