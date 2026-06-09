@@ -4,7 +4,6 @@ with pkgs; [
   slurp
   wf-recorder
   wl-clipboard
-  wofi
   wdisplays
   kanshi
   brightnessctl

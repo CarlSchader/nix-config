@@ -42,6 +42,16 @@
       enable = true;
     };
 
+    # Wifi GUI
+    programs.wofi = {
+      enable = true;
+      settings = {
+        allow_images = true;
+        insensitive = true;
+        run-always_parse_args = true;
+      };
+    };
+
     wayland.windowManager.sway = {
       enable = true;
       wrapperFeatures.gtk = true;
@@ -138,6 +148,16 @@
     # Notification Center
     services.swaync = {
       enable = true;
+    };
+
+    # Wifi GUI
+    programs.wofi = {
+      enable = true;
+      settings = {
+        allow_images = true;
+        insensitive = true;
+        run-always_parse_args = true;
+      };
     };
 
     wayland.windowManager.sway = {
