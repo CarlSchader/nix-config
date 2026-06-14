@@ -1,4 +1,4 @@
-{...}: {
+{nixpkgs-android-studio-otter, ...}: {
   homeModules.gui-apps = {pkgs, ...}: {
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
@@ -28,6 +28,7 @@
       mailspring
       slack
       foxglove-studio
+      nixpkgs-android-studio-otter.android-studio-full
     ];
   };
 }

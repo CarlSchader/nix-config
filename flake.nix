@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # nixpkgs.url = "github:NixOS/nixpkgs/b86751bc4085f48661017fa226dee99fab6c651b"; # nvidia 590
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-android-studio-otter.url = "github:NixOS/nixpkgs/b24d19186b6e1f4c092bf29750fb9b450a8533c0";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
