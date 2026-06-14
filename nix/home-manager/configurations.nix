@@ -143,6 +143,7 @@ in {
       )
 
       self.homeModules.acs-packages
+      self.homeModules.gui-apps-non-nixos
       self.homeModules.acs-ssh
       self.homeModules.acs-shell
       {
