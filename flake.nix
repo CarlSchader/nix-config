@@ -8,7 +8,6 @@
     nixpkgs-android-studio-otter.url = "github:NixOS/nixpkgs/b24d19186b6e1f4c092bf29750fb9b450a8533c0";
     flake-utils = {
       url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";

@@ -13,7 +13,15 @@
   # Variant for non-NixOS (generic Linux) hosts. The chrome-sandbox SUID
   # helper cannot be root-owned in the read-only /nix/store, so Electron and
   # Chromium apps abort. Disable the sandbox instead.
-  homeModules.gui-apps-non-nixos = {pkgs, ...}: {
+  homeModules.gui-apps-non-nixos = {pkgs, ...}: let
+    pkgs-android-studio-otter = import nixpkgs-android-studio-otter {
+      system = pkgs.stdenv.system;
+      config = {
+        allowUnfree = true;
+        android_sdk.accept_license = true;
+      };
+    };
+  in {
     nixpkgs.config.allowUnfree = true;
 
     # Electron reads this to skip the SUID chrome-sandbox helper. Covers
@@ -28,7 +36,7 @@
       mailspring
       slack
       foxglove-studio
-      nixpkgs-android-studio-otter.android-studio-full
+      pkgs-android-studio-otter.android-studio
     ];
   };
 }
