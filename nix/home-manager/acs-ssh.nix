@@ -10,34 +10,29 @@ in {
       enable = true;
       enableDefaultConfig = false;
       settings = {
-        "*" = {
-          ControlMaster = "auto";
-          ControlPath = "~/.ssh/sockets/%r@%n-%p";
-          ControlPersist = "1h";
-        };
         "desktop-cisco" = {
           HostName = "10.0.20.145";
           User = "carl";
           ForwardAgent = true;
-          ForwardX11 = true;
+          ForwardX11Trusted = true;
           # identityFile = "~/.ssh/id_ed25519";
         };
         "desktop-ts" = {
           HostName = "100.64.0.18";
           User = "carl";
           ForwardAgent = true;
-          ForwardX11 = true;
+          ForwardX11Trusted = true;
           # identityFile = "~/.ssh/id_ed25519";
         };
         "ml-pc" = {
           HostName = "100.64.0.5";
           ForwardAgent = true;
-          ForwardX11 = true;
+          ForwardX11Trusted = true;
         };
       };
     };
 
-    home.file.".ssh/sockets/.keep".text = "";
+    # home.file.".ssh/sockets/.keep".text = "";
 
     home.packages = [pkgs.x11_ssh_askpass];
 
