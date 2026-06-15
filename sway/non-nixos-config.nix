@@ -3,11 +3,9 @@
   config,
   lib,
   ...
-}:
-let
+}: let
   mod = config.wayland.windowManager.sway.config.modifier;
-in
-{
+in {
   modifier = "Mod4";
   terminal = "wezterm-gl";
   menu = "${pkgs.wofi}/bin/wofi --show drun";
@@ -24,6 +22,9 @@ in
     }
     {
       command = "sh -c 'for p in /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 /usr/libexec/polkit-gnome-authentication-agent-1 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1; do [ -x \"$p\" ] && exec \"$p\"; done'";
+    }
+    {
+      command = "sh -c 'export XAUTHORITY=$HOME/.Xauthority; ${pkgs.xorg.xauth}/bin/xauth generate :0 . trusted 2>/dev/null || ${pkgs.xorg.xauth}/bin/xauth add :0 . $(${pkgs.coreutils}/bin/head -c16 /dev/urandom | ${pkgs.coreutils}/bin/od -An -tx1 | tr -d \" \\n\")'";
     }
   ];
   keybindings = lib.mkOptionDefault {

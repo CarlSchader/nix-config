@@ -15,6 +15,7 @@ in {
           User = "carl";
           ForwardAgent = true;
           ForwardX11Trusted = true;
+          ForwardX11 = true;
           # identityFile = "~/.ssh/id_ed25519";
         };
         "desktop-ts" = {
@@ -22,12 +23,14 @@ in {
           User = "carl";
           ForwardAgent = true;
           ForwardX11Trusted = true;
+          ForwardX11 = true;
           # identityFile = "~/.ssh/id_ed25519";
         };
         "ml-pc" = {
           HostName = "100.64.0.5";
           ForwardAgent = true;
           ForwardX11Trusted = true;
+          ForwardX11 = true;
         };
       };
     };
@@ -40,6 +43,7 @@ in {
       SSH_ASKPASS = "${pkgs.x11_ssh_askpass}/libexec/x11-ssh-askpass";
       # Often needed to trigger the popup correctly in headless-ish environments
       SSH_ASKPASS_REQUIRE = "prefer";
+      XAUTHORITY = "$HOME/.Xauthority";
     };
 
     home.file.".ssh/authorized_keys" = {
