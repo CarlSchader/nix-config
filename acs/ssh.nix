@@ -1,5 +1,5 @@
 {...}: let
-  keys = import ../lib/keys.nix;
+  keys = import ../nix/lib/keys.nix;
 in {
   homeModules.acs-ssh = {
     pkgs,
@@ -24,6 +24,8 @@ in {
           ForwardAgent = true;
           ForwardX11Trusted = true;
           ForwardX11 = true;
+          Compression = true;
+          # CompressionLevel = 9;
           # identityFile = "~/.ssh/id_ed25519";
         };
         "ml-pc" = {

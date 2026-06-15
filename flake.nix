@@ -45,6 +45,7 @@
 
   outputs = {flake-utils, ...} @ inputs:
     flake-utils.lib.meld inputs [
+      ./acs
       ./aerospace
       ./nix
       ./sway

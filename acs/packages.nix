@@ -35,6 +35,7 @@
       tree
       awscli2
       sshfs
+      freerdp
 
       # image/video/audio
       ffmpeg-full

@@ -1,8 +1,5 @@
 {flake-utils, ...} @ inputs:
 flake-utils.lib.meld inputs [
-  ./acs-packages.nix
-  ./acs-shell.nix
-  ./acs-ssh.nix
   ./bluetooth-applet.nix
   ./configurations.nix
   ./darwin-permissions.nix
