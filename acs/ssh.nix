@@ -25,7 +25,7 @@ in {
           ForwardX11Trusted = true;
           ForwardX11 = true;
           Compression = true;
-          # CompressionLevel = 9;
+          CompressionLevel = 9;
           # identityFile = "~/.ssh/id_ed25519";
         };
         "ml-pc" = {
