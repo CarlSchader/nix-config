@@ -3,6 +3,7 @@
   nixpkgs,
   home-manager,
   nixgl,
+  sops-nix,
   ...
 }: let
   x86_64-linux-pkgs = import nixpkgs {
@@ -93,6 +94,12 @@ in {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
       }
+
+      sops-nix.homeManagerModules.sops
+      {
+        sops.age.sshKeyPaths = ["/home/carl/.ssh/id_ed25519"];
+      }
+      self.homeModules.acs-rdp-host
     ];
   };
 }
