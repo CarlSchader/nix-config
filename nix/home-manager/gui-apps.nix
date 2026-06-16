@@ -36,7 +36,7 @@
       mailspring
       slack
       foxglove-studio
-      pkgs-android-studio-otter.android-studio
+      # pkgs-android-studio-otter.android-studio
     ];
   };
 }
