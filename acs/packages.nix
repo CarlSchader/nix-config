@@ -36,6 +36,7 @@
       awscli2
       sshfs
       freerdp
+      simple-mtpfs
 
       # image/video/audio
       ffmpeg-full
