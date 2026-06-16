@@ -10,6 +10,12 @@ in {
       enable = true;
       enableDefaultConfig = false;
       settings = {
+        "github.com" = {
+          HostName = "github.com";
+          ControlMaster = "auto";
+          ControlPath = "~/.ssh/sockets/%r@%n-%p";
+          ControlPersist = "1h";
+        };
         "desktop-cisco" = {
           HostName = "10.0.20.145";
           User = "carl";
@@ -28,6 +34,9 @@ in {
           # identityFile = "~/.ssh/id_ed25519";
         };
         "ml-pc" = {
+          ControlMaster = "auto";
+          ControlPath = "~/.ssh/sockets/%r@%n-%p";
+          ControlPersist = "1h";
           HostName = "100.64.0.5";
           ForwardAgent = true;
           ForwardX11Trusted = true;
@@ -36,7 +45,7 @@ in {
       };
     };
 
-    # home.file.".ssh/sockets/.keep".text = "";
+    home.file.".ssh/sockets/.keep".text = "";
 
     home.packages = [pkgs.x11_ssh_askpass];
 
