@@ -49,6 +49,12 @@ wezterm.on("toggle-colorscheme", function(window, pane)
 	end
 
 	window:set_config_overrides(overrides)
+
+	if current_theme == "light" then
+		pane:send_text("\x1b[2031;1~") -- tell nvim: light
+	else
+		pane:send_text("\x1b[2031;2~") -- tell nvim: dark
+	end
 end)
 
 config.keys = {
