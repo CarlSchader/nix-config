@@ -15,6 +15,7 @@ in {
           ControlMaster = "auto";
           ControlPath = "~/.ssh/sockets/%r@%n-%p";
           ControlPersist = "1h";
+          User = "git";
         };
         "desktop-cisco" = {
           HostName = "10.0.20.145";

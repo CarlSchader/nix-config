@@ -9,6 +9,7 @@
           ControlMaster = "auto";
           ControlPath = "~/.ssh/sockets/%r@%n-%p";
           ControlPersist = "1h";
+          User = "git";
         };
         "ml-pc" = {
           ControlMaster = "auto";

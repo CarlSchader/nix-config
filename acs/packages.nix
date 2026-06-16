@@ -81,6 +81,7 @@
       cargo
       rustc
       protobuf
+      yarn
 
       # nix
       nix-output-monitor
