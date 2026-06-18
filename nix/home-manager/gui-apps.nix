@@ -7,6 +7,7 @@
       mailspring
       slack
       foxglove-studio
+      spotify
     ];
   };
 
@@ -36,6 +37,7 @@
       mailspring
       slack
       foxglove-studio
+      spotify
       # pkgs-android-studio-otter.android-studio
     ];
   };
