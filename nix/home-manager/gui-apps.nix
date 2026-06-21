@@ -6,7 +6,6 @@
       brave
       mailspring
       slack
-      foxglove-studio
       spotify
     ];
   };
