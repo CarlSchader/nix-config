@@ -4,7 +4,6 @@
     home.packages = with pkgs; [
       obsidian
       brave
-      mailspring
       slack
       spotify
     ];
@@ -33,9 +32,7 @@
       obsidian
       # Brave is Chromium, not Electron, so it ignores ELECTRON_DISABLE_SANDBOX.
       (brave.override {commandLineArgs = "--no-sandbox";})
-      mailspring
       slack
-      foxglove-studio
       spotify
       # pkgs-android-studio-otter.android-studio
     ];
