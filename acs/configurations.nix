@@ -40,7 +40,6 @@ in {
       self.homeModules.preamble
       self.homeModules.gpg-agent
 
-      self.homeModules.spotify-player
       self.homeModules.sway-non-nixos
       self.homeModules.tmux
       self.homeModules.wezterm-non-nixos
@@ -82,7 +81,6 @@ in {
       self.homeModules.preamble
       self.homeModules.gpg-agent
 
-      self.homeModules.spotify-player
       self.homeModules.sway-non-nixos
       self.homeModules.tmux
       self.homeModules.wezterm-non-nixos

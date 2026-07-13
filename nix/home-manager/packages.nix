@@ -31,8 +31,7 @@
       parallel
 
       # image/video/audio
-      ffmpeg-full
-      mpv
+      ffmpeg
 
       # networking
       netcat

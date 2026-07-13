@@ -39,7 +39,6 @@ in {
         programs.shell.enable = true;
       }
 
-      self.homeModules.spotify-player
       self.homeModules.ssh
       self.homeModules.sway
       self.homeModules.tmux
@@ -87,7 +86,6 @@ in {
       {
         programs.shell.enable = true;
       }
-      self.homeModules.spotify-player
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm
@@ -114,7 +112,6 @@ in {
       {
         programs.shell.enable = true;
       }
-      self.homeModules.spotify-player
       self.homeModules.ssh
       self.homeModules.tmux
       self.homeModules.wezterm
