@@ -26,9 +26,12 @@
       android-tools
       ncdu
       tree
-      awscli2
       sshfs
       parallel
+
+      # cloud
+      awscli2
+      terraform
 
       # image/video/audio
       ffmpeg
