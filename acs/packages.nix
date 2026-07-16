@@ -33,10 +33,13 @@
       android-tools
       ncdu
       tree
-      awscli2
       sshfs
       freerdp
       simple-mtpfs
+
+      # cloud
+      awscli2
+      terraform
 
       # image/video/audio
       ffmpeg-full
