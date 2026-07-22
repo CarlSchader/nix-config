@@ -26,11 +26,8 @@ in {
           # identityFile = "~/.ssh/id_ed25519";
         };
         "bastion" = {
-          HostName = "ec2-3-144-253-244.us-east-2.compute.amazonaws.com";
+          HostName = "ec2-18-217-235-120.us-east-2.compute.amazonaws.com";
           User = "ec2-user";
-          ForwardAgent = true;
-          ForwardX11Trusted = true;
-          ForwardX11 = true;
         };
         "desktop-ts" = {
           HostName = "100.64.0.18";
