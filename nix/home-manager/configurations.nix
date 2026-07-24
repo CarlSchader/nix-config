@@ -40,6 +40,7 @@ in {
       }
 
       self.homeModules.ssh
+      self.homeModules.librewolf
       self.homeModules.sway
       self.homeModules.tmux
       self.homeModules.wezterm
@@ -87,6 +88,7 @@ in {
         programs.shell.enable = true;
       }
       self.homeModules.ssh
+      self.homeModules.librewolf
       self.homeModules.tmux
       self.homeModules.wezterm
 
@@ -113,6 +115,7 @@ in {
         programs.shell.enable = true;
       }
       self.homeModules.ssh
+      self.homeModules.librewolf
       self.homeModules.tmux
       self.homeModules.wezterm
 

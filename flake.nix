@@ -51,6 +51,7 @@
     flake-utils.lib.meld inputs [
       ./acs
       ./aerospace
+      ./librewolf
       ./nix
       ./sway
       ./tmux
