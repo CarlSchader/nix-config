@@ -31,7 +31,6 @@
 
       # cloud
       awscli2
-      terraform
 
       # image/video/audio
       ffmpeg
