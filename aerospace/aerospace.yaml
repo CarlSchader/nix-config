@@ -75,7 +75,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
     cmd-shift-c = 'reload-config'
 
-    cmd-shift-r = 'mode resize'
+    cmd-alt-r = 'mode resize'
 
 [mode.resize.binding]
     h = 'resize width -50'

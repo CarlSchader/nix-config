@@ -35,6 +35,8 @@ in {
         programs.shell.enable = true;
       }
 
+      self.homeModules.librewolf-acs
+
       self.homeModules.bluetooth-applet
       self.homeModules.network-manager-applet
       self.homeModules.preamble
@@ -75,6 +77,8 @@ in {
       {
         programs.shell.enable = true;
       }
+
+      self.homeModules.librewolf-acs
 
       self.homeModules.bluetooth-applet
       self.homeModules.network-manager-applet
