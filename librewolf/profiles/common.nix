@@ -28,13 +28,21 @@
     "sidebar.revamp" = true;
     "sidebar.verticalTabs" = true;
     "sidebar.visibility" = "expand-on-hover";
+
+    # remember passwords
+    "signon.rememberSignons" = true;
+
+    # autofill passwords
+    "signon.autofillForms" = true;
   };
 
   bookmarks = {
     force = true;
     settings = [
       (import ../bookmarks/nix-sites.nix)
+      (import ../bookmarks/finance.nix)
       (import ../bookmarks/ai.nix)
+      (import ../bookmarks/cloud.nix)
       (import ../bookmarks/proton.nix)
     ];
   };

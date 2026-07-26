@@ -6,16 +6,28 @@
       name = "finance";
       bookmarks = [
         {
-          name = "search";
-          url = "https://search.nixos.org/packages?channel=unstable&";
+          name = "carta";
+          url = "https://app.carta.com/investors/individual/2232337/portfolio/";
         }
         {
-          name = "options";
-          url = "https://search.nixos.org/options?channel=unstable";
+          name = "mohela";
+          url = "https://myaccount.mohela.studentaid.gov/AccountSummary?LandingFrom=CALM";
         }
         {
-          name = "home";
-          url = "https://home-manager-options.extranix.com/?query=&release=master";
+          name = "toyota";
+          url = "https://www.toyotafinancial.com/dss/secure/dashboard";
+        }
+        {
+          name = "chase";
+          url = "https://secure.chase.com/web/auth/dashboard#/dashboard/overview";
+        }
+        {
+          name = "fidelity";
+          url = "https://digital.fidelity.com/ftgw/digital/portfolio/summary";
+        }
+        {
+          name = "kraken";
+          url = "https://pro.kraken.com/app/home";
         }
       ];
     }
