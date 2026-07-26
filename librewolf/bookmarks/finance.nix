@@ -1,9 +1,9 @@
 {
-  name = "nix";
+  name = "finance";
   toolbar = true;
   bookmarks = [
     {
-      name = "nix";
+      name = "finance";
       bookmarks = [
         {
           name = "search";

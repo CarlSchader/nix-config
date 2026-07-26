@@ -34,6 +34,8 @@
     force = true;
     settings = [
       (import ../bookmarks/nix-sites.nix)
+      (import ../bookmarks/ai.nix)
+      (import ../bookmarks/proton.nix)
     ];
   };
 
