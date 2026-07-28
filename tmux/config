@@ -37,3 +37,7 @@ set -g visual-activity off
 
 # Prevent tmux from managing the ssh session
 set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
+
+# Prevent stripping modifier info from keys so pi coding agent harness works in tmux
+set -g extended-keys on
+set -g extended-keys-format csi-u

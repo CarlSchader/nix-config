@@ -64,6 +64,7 @@
 
       # ai
       claude-code
+      pi-coding-agent
 
       # libraries
       boost
