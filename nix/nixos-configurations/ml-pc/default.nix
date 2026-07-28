@@ -2,12 +2,10 @@
   self,
   nixpkgs,
   ...
-}:
-let
+}: let
   system = "x86_64-linux";
   keys = import ../../lib/keys.nix;
-in
-{
+in {
   nixosConfigurations.ml-pc = nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
@@ -38,7 +36,6 @@ in
       self.nixosModules.sway
       self.nixosModules.tailscaled
       self.nixosModules.thunderbolt
-      # self.nixosModules.xrdp-gnome
       self.nixosModules.yubikey
 
       self.nixosModules."${system}-carl-user"

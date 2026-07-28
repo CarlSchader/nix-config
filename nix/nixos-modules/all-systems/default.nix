@@ -1,4 +1,4 @@
-{ flake-utils, ... }@inputs:
+{flake-utils, ...} @ inputs:
 flake-utils.lib.meld inputs [
   ./bluetooth.nix
   ./aarch64-linux-builders.nix
@@ -19,6 +19,5 @@ flake-utils.lib.meld inputs [
   ./swap-file.nix
   ./tailscaled.nix
   ./thunderbolt.nix
-  ./xrdp-gnome.nix
   ./yubikey.nix
 ]

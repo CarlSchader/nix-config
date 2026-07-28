@@ -47,6 +47,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.opencode
+      self.homeModules.pi-coding-agent
 
       {
         home.username = "carl";
@@ -93,6 +94,7 @@ in {
       self.homeModules.wezterm
 
       self.homeModules.opencode
+      self.homeModules.pi-coding-agent
 
       {
         home.username = "carl";
@@ -120,6 +122,7 @@ in {
       self.homeModules.wezterm
 
       self.homeModules.opencode
+      self.homeModules.pi-coding-agent
 
       {
         home.username = "carlschader";

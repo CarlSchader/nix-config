@@ -12,7 +12,6 @@
 
     all-systems-packages = with pkgs; [
       claude-code
-      pi-coding-agent
       nixgl.packages.${pkgs.system}.nixGLDefault
 
       ## dev tools
@@ -35,7 +34,6 @@
       ncdu
       tree
       sshfs
-      freerdp
       simple-mtpfs
 
       # cloud

@@ -48,6 +48,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.opencode
+      self.homeModules.pi-coding-agent
 
       {
         home.username = "carl";
@@ -91,6 +92,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.opencode
+      self.homeModules.pi-coding-agent
 
       {
         home.username = "carl";
@@ -101,7 +103,6 @@ in {
       {
         sops.age.sshKeyPaths = ["/home/carl/.ssh/id_ed25519"];
       }
-      self.homeModules.acs-rdp-host
     ];
   };
 }
