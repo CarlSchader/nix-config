@@ -8,6 +8,7 @@
       settings = {
         packages = [
           "npm:pi-plan"
+          "npm:@dreki-gg/pi-ask-mode"
         ];
       };
     };
