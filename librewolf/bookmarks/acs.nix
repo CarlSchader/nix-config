@@ -47,6 +47,14 @@
           name = "s3";
           url = "https://us-east-2.console.aws.amazon.com/s3/home?region=us-east-2#";
         }
+        {
+          name = "s3";
+          url = "https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#logsV2:log-groups";
+        }
+        {
+          name = "s3";
+          url = "https://us-east-2.console.aws.amazon.com/apigateway/main/apis?region=us-east-2";
+        }
       ];
     }
   ];
