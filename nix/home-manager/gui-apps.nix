@@ -3,7 +3,6 @@
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
       obsidian
-      brave
       slack
       spotify
     ];
@@ -30,8 +29,6 @@
 
     home.packages = with pkgs; [
       obsidian
-      # Brave is Chromium, not Electron, so it ignores ELECTRON_DISABLE_SANDBOX.
-      (brave.override {commandLineArgs = "--no-sandbox";})
       slack
       spotify
       # pkgs-android-studio-otter.android-studio

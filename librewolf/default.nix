@@ -1,13 +1,16 @@
 {...}: {
-  homeModules.librewolf = {...}: {
+  homeModules.librewolf = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.librewolf = {
       enable = true;
       profiles.carl = (import ./profiles/carl.nix) // {isDefault = true;};
-      profiles.acs = import ./profiles/acs.nix;
+      profiles.acs = (import ./profiles/acs.nix) // {isDefault = false;};
     };
 
-    # Set librewolf as default browser
-    xdg.mimeApps = {
+    xdg.mimeApps = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
       enable = true;
       defaultApplications = {
         "text/html" = "librewolf.desktop";
@@ -19,18 +22,21 @@
       };
     };
 
-    home.sessionVariables.BROWSER = "librewolf";
+    home.sessionVariables.BROWSER = lib.mkIf pkgs.stdenv.hostPlatform.isLinux "librewolf";
   };
 
-  homeModules.librewolf-acs = {...}: {
+  homeModules.librewolf-acs = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.librewolf = {
       enable = true;
       profiles.carl = (import ./profiles/carl.nix) // {isDefault = false;};
       profiles.acs = (import ./profiles/acs.nix) // {isDefault = true;};
     };
 
-    # Set librewolf as default browser
-    xdg.mimeApps = {
+    xdg.mimeApps = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
       enable = true;
       defaultApplications = {
         "text/html" = "librewolf.desktop";
@@ -42,6 +48,6 @@
       };
     };
 
-    home.sessionVariables.BROWSER = "librewolf";
+    home.sessionVariables.BROWSER = lib.mkIf pkgs.stdenv.hostPlatform.isLinux "librewolf";
   };
 }

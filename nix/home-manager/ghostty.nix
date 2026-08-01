@@ -1,16 +1,13 @@
-{ ... }:
-{
-  homeModules.ghostty =
-    { pkgs, ... }:
-    {
-      programs.ghostty = {
-        enable = true;
-        enableZshIntegration = true;
-        settings = {
-          theme = "Synthwave";
-          cursor-style = "block";
-          cursor-style-blink = false;
-        };
+{...}: {
+  homeModules.ghostty = {...}: {
+    programs.ghostty = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        theme = "Synthwave";
+        cursor-style = "block";
+        cursor-style-blink = false;
       };
     };
+  };
 }
