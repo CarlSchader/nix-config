@@ -1,13 +1,12 @@
-{
+let
+  homepage = "https://gemini.google.com/app";
+in {
   settings = {
     "browser.bookmarks.showMobileBookmarks" = true;
-    "browser.startup.homepage" = "https://nixos.org";
-    "browser.newtabpage.pinned" = [
-      {
-        title = "NixOS";
-        url = "https://nixos.org";
-      }
-    ];
+
+    # 1 = Blank page, 2 = Previous session, 3 = Home page, 4 = Custom URL
+    "browser.startup.page" = 3;
+    "browser.startup.homepage" = homepage;
 
     # enable profiles
     "browser.profiles.enabled" = true;
