@@ -62,9 +62,6 @@
       gnumake
       cmake
 
-      # ai
-      claude-code
-
       # libraries
       boost
       libfido2 # FIDO2 library for hardware security keys
@@ -72,7 +69,7 @@
       # databases
       postgresql
 
-      ## language tools
+      # language tools
       nodejs_24
       python312
       uv
