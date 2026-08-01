@@ -20,10 +20,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     cmd-enter = 'exec-and-forget open -na Wezterm'
 
     # i3 wraps focus by default
-    cmd-h = 'focus --boundaries-action wrap-around-the-workspace left'
-    cmd-j = 'focus --boundaries-action wrap-around-the-workspace down'
-    cmd-k = 'focus --boundaries-action wrap-around-the-workspace up'
-    cmd-l = 'focus --boundaries-action wrap-around-the-workspace right'
+    cmd-h = 'focus --boundaries all-monitors-outer-frame left'
+    cmd-j = 'focus --boundaries all-monitors-outer-frame down'
+    cmd-k = 'focus --boundaries all-monitors-outer-frame up'
+    cmd-l = 'focus --boundaries all-monitors-outer-frame right'
 
     cmd-shift-h = 'move left'
     cmd-shift-j = 'move down'
