@@ -14,6 +14,12 @@ in {
 
       self.nixosModules.x86_64-linux-system-packages
       self.nixosModules.aarch64-linux-builders
+      {
+        aarch64-linux-builders = {
+          enable = true;
+          sshKeyPath = "/home/carl/.ssh/id_ed25519_sk_rk";
+        };
+      }
       self.nixosModules.bluetooth
       self.nixosModules.download-buffer
       self.nixosModules.experimental-features

@@ -1,27 +1,12 @@
 # nix-config
 
+
 Personal Nix flake configuration for macOS and NixOS machines.
 
-## Machines
+## Nix Builders
+Because this repo is public and on the internet I am hesitant to store sops encrypted secrets in here.
 
-| Machine | Platform | Users |
-|---------|----------|-------|
-| `Carls-MacBook-Pro-2` | aarch64-darwin | carlschader |
-| `Carls-MacBook-Air-2` | aarch64-darwin | carl |
-| `Carls-MacBook-Pro` | aarch64-darwin | carlschader |
-| `Carls-MacBook-Air` | aarch64-darwin | carl.schader |
-| `ml-pc` | x86_64-linux | carl, connor |
-
-## Structure
-
-```
-nix/
-├── common/                 # Platform-specific package lists
-├── darwin-configurations/  # macOS machine configs
-├── nixos-configurations/   # NixOS machine configs (ml-pc)
-├── nixos-modules/          # Reusable modules (services, users)
-└── lib/                    # Home-manager config, SSH keys
-```
+So to allow you to use the nix builders you need to have the appropriate nixbuild ssh key which is private to Carl Schader. If you are given this key by him, configure your machines builders to point to the location of that key. Otherwise you can't use the builders.
 
 ## Usage
 
@@ -33,6 +18,11 @@ darwin-rebuild switch --flake .#<machine-name>
 **NixOS**
 ```sh
 nixos-rebuild switch --flake .#ml-pc
+```
+
+**Home Manager**
+```sh
+home-manager switch --flake .#<user>
 ```
 
 ## License

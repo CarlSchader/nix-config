@@ -27,7 +27,7 @@ in {
       extraGroups = [
         "kvm"
       ];
-      openssh.authorizedKeys.keys = keys.nixbuild ++ keys.carl;
+      openssh.authorizedKeys.keys = keys.nixbuild;
     };
     nix.settings.trusted-users = ["nixbuild"];
   };
