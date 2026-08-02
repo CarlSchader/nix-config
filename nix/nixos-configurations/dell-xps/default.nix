@@ -1,0 +1,51 @@
+{
+  self,
+  nixpkgs,
+  ...
+}: let
+  system = "x86_64-linux";
+  keys = import ../../lib/keys.nix;
+in {
+  nixosConfigurations.dell-xps = nixpkgs.lib.nixosSystem {
+    inherit system;
+    modules = [
+      ./configuration.nix
+      ./hardware-configuration.nix
+
+      self.nixosModules.x86_64-linux-system-packages
+      self.nixosModules.aarch64-linux-builders
+      {
+        aarch64-linux-builders = {
+          enable = false;
+          sshKeyPath = "/home/carl/.ssh/id_ed25519_sk_rk";
+        };
+      }
+      self.nixosModules.bluetooth
+      self.nixosModules.download-buffer
+      self.nixosModules.experimental-features
+
+      self.nixosModules.git-server
+      {
+        services.git-server = {
+          enable = true;
+          ssh-keys = keys.carl;
+        };
+      }
+
+      # self.nixosModules.gnome
+      self.nixosModules.greetd
+      self.nixosModules.nix-ld
+      self.nixosModules.openssh
+      self.nixosModules.parallelism
+      self.nixosModules.polkit
+      self.nixosModules.swap-file
+      self.nixosModules.sway
+      self.nixosModules.tailscaled
+      self.nixosModules.thunderbolt
+      self.nixosModules.yubikey
+
+      self.nixosModules."${system}-carl-user"
+      # self.nixosModules."${system}-openclaw-user"
+    ];
+  };
+}
