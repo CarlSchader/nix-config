@@ -1,5 +1,8 @@
-(import ./common.nix)
-// {
-  id = 0;
-  name = "carl";
-}
+{lib}:
+lib.mkMerge [
+  (import ./common.nix)
+  {
+    id = 0;
+    name = "carl";
+  }
+]

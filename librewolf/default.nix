@@ -26,8 +26,8 @@ in {
     programs.librewolf = {
       inherit policies;
       enable = true;
-      profiles.carl = (import ./profiles/carl.nix) // {isDefault = true;};
-      profiles.acs = (import ./profiles/acs.nix) // {isDefault = false;};
+      profiles.carl = lib.mkMerge [(import ./profiles/carl.nix {inherit lib;}) {isDefault = true;}];
+      profiles.acs = lib.mkMerge [(import ./profiles/acs.nix {inherit lib;}) {isDefault = false;}];
     };
 
     xdg.mimeApps = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
@@ -53,8 +53,8 @@ in {
     programs.librewolf = {
       inherit policies;
       enable = true;
-      profiles.carl = (import ./profiles/carl.nix) // {isDefault = false;};
-      profiles.acs = (import ./profiles/acs.nix) // {isDefault = true;};
+      profiles.carl = lib.mkMerge [(import ./profiles/carl.nix {inherit lib;}) {isDefault = false;}];
+      profiles.acs = lib.mkMerge [(import ./profiles/acs.nix {inherit lib;}) {isDefault = true;}];
     };
 
     xdg.mimeApps = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
