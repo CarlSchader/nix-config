@@ -40,7 +40,7 @@ in {
         };
         "dell-xps" = {
           User = "carl";
-          HostName = "dell-xps";
+          HostName = "100.64.0.20";
           ControlMaster = "auto";
           ControlPath = "~/.ssh/sockets/%r@%n-%p";
           ControlPersist = "1h";
