@@ -38,6 +38,16 @@ in {
           Compression = true;
           # identityFile = "~/.ssh/id_ed25519";
         };
+        "dell-xps" = {
+          User = "carl";
+          HostName = "dell-xps";
+          ControlMaster = "auto";
+          ControlPath = "~/.ssh/sockets/%r@%n-%p";
+          ControlPersist = "1h";
+          ForwardAgent = true;
+          ForwardX11 = true;
+          ForwardX11Trusted = true;
+        };
         "ml-pc" = {
           ControlMaster = "auto";
           ControlPath = "~/.ssh/sockets/%r@%n-%p";
