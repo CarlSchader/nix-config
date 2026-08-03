@@ -20,6 +20,9 @@ in {
         "desktop-cisco" = {
           HostName = "10.0.20.145";
           User = "carl";
+          ControlMaster = "auto";
+          ControlPath = "~/.ssh/sockets/%r@%n-%p";
+          ControlPersist = "1h";
           ForwardAgent = true;
           ForwardX11Trusted = true;
           ForwardX11 = true;
@@ -32,6 +35,9 @@ in {
         "desktop-ts" = {
           HostName = "100.64.0.18";
           User = "carl";
+          ControlMaster = "auto";
+          ControlPath = "~/.ssh/sockets/%r@%n-%p";
+          ControlPersist = "1h";
           ForwardAgent = true;
           ForwardX11Trusted = true;
           ForwardX11 = true;
