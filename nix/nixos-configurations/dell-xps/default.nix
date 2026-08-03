@@ -11,6 +11,7 @@ in {
     modules = [
       ./configuration.nix
       ./hardware-configuration.nix
+      ./forgejo.nix
 
       self.nixosModules.x86_64-linux-system-packages
       self.nixosModules.aarch64-linux-builders
