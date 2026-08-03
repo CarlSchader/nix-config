@@ -33,6 +33,17 @@ in {
 
     # autofill passwords
     "signon.autofillForms" = true;
+
+    # Do not clear website sessions/cookies on shutdown
+    "privacy.sanitize.sanitizeOnShutdown" = false;
+    "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+
+    # Older/compat pref names
+    "privacy.clearOnShutdown.cookies" = false;
+    "privacy.clearOnShutdown.offlineApps" = false;
+
+    # LibreWolf disables this by default
+    "signon.formlessCapture.enabled" = true;
   };
 
   bookmarks = {

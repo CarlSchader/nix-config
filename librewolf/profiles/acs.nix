@@ -9,6 +9,9 @@ lib.mkMerge [
       settings = [
         (import ../bookmarks/nix-sites.nix)
         (import ../bookmarks/ai.nix)
+        (import ../bookmarks/code.nix)
+        (import ../bookmarks/cloud.nix)
+        (import ../bookmarks/finance.nix)
         (import ../bookmarks/proton.nix)
         (import ../bookmarks/acs.nix)
       ];
