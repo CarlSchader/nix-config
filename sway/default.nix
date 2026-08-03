@@ -57,6 +57,12 @@
       wrapperFeatures.gtk = true;
       extraOptions = ["--unsupported-gpu"];
       config = import ./nixos-config.nix inputs;
+
+      # Turn screen off when lid is closed.
+      extraConfig = ''
+        bindswitch --reload --locked lid:on output eDP-1 disable
+        bindswitch --reload --locked lid:off output eDP-1 enable
+      '';
     };
   };
 
