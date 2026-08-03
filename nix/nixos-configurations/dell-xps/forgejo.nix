@@ -8,16 +8,16 @@
   cfg = config.services.forgejo;
   srv = cfg.settings.server;
 in {
-  services.nginx = {
-    virtualHosts.${cfg.settings.server.DOMAIN} = {
-      forceSSL = true;
-      enableACME = true;
-      extraConfig = ''
-        client_max_body_size 512M;
-      '';
-      locations."/".proxyPass = "http://localhost:${toString srv.HTTP_PORT}";
-    };
-  };
+  # services.nginx = {
+  #   virtualHosts.${cfg.settings.server.DOMAIN} = {
+  #     forceSSL = true;
+  #     enableACME = true;
+  #     extraConfig = ''
+  #       client_max_body_size 512M;
+  #     '';
+  #     locations."/".proxyPass = "http://localhost:${toString srv.HTTP_PORT}";
+  #   };
+  # };
 
   services.forgejo = {
     enable = true;
@@ -30,9 +30,10 @@ in {
         # You need to specify this to remove the port from URLs in the web UI.
         ROOT_URL = "https://${srv.DOMAIN}/";
         HTTP_PORT = 3000;
+        SSH_PORT = lib.head config.services.openssh.ports;
       };
       # You can temporarily allow registration to create an admin user.
-      service.DISABLE_REGISTRATION = true;
+      service.DISABLE_REGISTRATION = false;
       # Add support for actions, based on act: https://github.com/nektos/act
       actions = {
         ENABLED = true;
