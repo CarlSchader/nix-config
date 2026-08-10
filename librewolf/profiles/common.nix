@@ -52,6 +52,7 @@ in {
       (import ../bookmarks/nix-sites.nix)
       (import ../bookmarks/finance.nix)
       (import ../bookmarks/ai.nix)
+      (import ../bookmarks/errands.nix)
       (import ../bookmarks/cloud.nix)
       (import ../bookmarks/code.nix)
       (import ../bookmarks/proton.nix)
