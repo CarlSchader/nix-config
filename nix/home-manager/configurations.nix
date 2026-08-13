@@ -46,7 +46,6 @@ in {
       self.homeModules.wezterm
       self.homeModules.zathura
 
-      self.homeModules.opencode
       self.homeModules.pi-coding-agent
 
       {
@@ -93,7 +92,6 @@ in {
       self.homeModules.tmux
       self.homeModules.wezterm
 
-      self.homeModules.opencode
       self.homeModules.pi-coding-agent
 
       {
@@ -121,7 +119,6 @@ in {
       self.homeModules.tmux
       self.homeModules.wezterm
 
-      self.homeModules.opencode
       self.homeModules.pi-coding-agent
 
       {

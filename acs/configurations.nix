@@ -47,7 +47,6 @@ in {
       self.homeModules.wezterm-non-nixos
       self.homeModules.zathura
 
-      self.homeModules.opencode
       self.homeModules.pi-coding-agent
 
       {
@@ -91,7 +90,6 @@ in {
       self.homeModules.wezterm-non-nixos
       self.homeModules.zathura
 
-      self.homeModules.opencode
       self.homeModules.pi-coding-agent
 
       {
