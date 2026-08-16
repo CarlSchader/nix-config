@@ -11,7 +11,7 @@
         }
         {
           name = "forgejo";
-          url = "http://dell-xps:3000/";
+          url = "http://dell-xps:3000/carl";
         }
       ];
     }
