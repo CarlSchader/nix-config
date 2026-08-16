@@ -17,8 +17,6 @@ in
 {
   common.${system} = {
     user-packages = with pkgs; [
-      refresh-auth-sock.packages.${system}.default
-      # cococrawl.packages.${system}.default
       tailscale
       binutils
       home-manager
