@@ -25,14 +25,6 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    refresh-auth-sock = {
-      url = "github:carlschader/refresh-auth-sock";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-    cococrawl = {
-      url = "github:carlschader/cococrawl";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
     neovim-config = {
       url = "github:carlschader/neovim-config";
       # inputs.nixpkgs.follows = "nixpkgs";

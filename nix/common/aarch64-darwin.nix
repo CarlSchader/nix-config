@@ -1,9 +1,4 @@
-{
-  nixpkgs,
-  refresh-auth-sock,
-  cococrawl,
-  ...
-}: let
+{nixpkgs, ...}: let
   system = "aarch64-darwin";
 
   pkgs = import nixpkgs {
@@ -15,8 +10,6 @@
 in {
   common.${system} = {
     user-packages = [
-      refresh-auth-sock.packages.${system}.default
-      cococrawl.packages.${system}.default
       pkgs.tailscale
       pkgs.darwin.binutils
       pkgs.home-manager

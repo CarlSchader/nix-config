@@ -1,10 +1,4 @@
-{
-  nixpkgs,
-  refresh-auth-sock,
-  # cococrawl,
-  ...
-}:
-let
+{nixpkgs, ...}: let
   system = "x86_64-linux";
 
   pkgs = import nixpkgs {
@@ -13,8 +7,7 @@ let
       allowUnfree = true;
     };
   };
-in
-{
+in {
   common.${system} = {
     user-packages = with pkgs; [
       tailscale
