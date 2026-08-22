@@ -29,6 +29,10 @@
           name = "kraken";
           url = "https://pro.kraken.com/app/home";
         }
+        {
+          name = "usaa";
+          url = "https://www.usaa.com/my/usaa/";
+        }
       ];
     }
   ];
