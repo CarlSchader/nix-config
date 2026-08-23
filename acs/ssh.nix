@@ -54,7 +54,7 @@ in {
           ForwardX11 = true;
           ForwardX11Trusted = true;
         };
-        "rtx4090-server" = {
+        "rtx4090-tower" = {
           ControlMaster = "auto";
           ControlPath = "~/.ssh/sockets/%r@%n-%p";
           ControlPersist = "1h";

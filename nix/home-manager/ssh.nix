@@ -11,11 +11,11 @@
           ControlPersist = "1h";
           User = "git";
         };
-        "rtx4090-server" = {
+        "rtx4090-tower" = {
           ControlMaster = "auto";
           ControlPath = "~/.ssh/sockets/%r@%n-%p";
           ControlPersist = "1h";
-          HostName = "rtx4090-server";
+          HostName = "rtx4090-tower";
           User = "carl";
           ForwardAgent = true;
           ForwardX11 = true;
