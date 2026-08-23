@@ -5,7 +5,7 @@
 }: let
   system = "x86_64-linux";
 in {
-  nixosConfigurations.ml-pc = nixpkgs.lib.nixosSystem {
+  nixosConfigurations.rtx4090-tower = nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
       ./configuration.nix
