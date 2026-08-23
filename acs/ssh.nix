@@ -54,11 +54,11 @@ in {
           ForwardX11 = true;
           ForwardX11Trusted = true;
         };
-        "ml-pc" = {
+        "rtx4090-server" = {
           ControlMaster = "auto";
           ControlPath = "~/.ssh/sockets/%r@%n-%p";
           ControlPersist = "1h";
-          HostName = "100.64.0.5";
+          HostName = "100.64.0.22";
           ForwardAgent = true;
           ForwardX11Trusted = true;
           ForwardX11 = true;
