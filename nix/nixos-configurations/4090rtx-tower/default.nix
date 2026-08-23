@@ -4,7 +4,6 @@
   ...
 }: let
   system = "x86_64-linux";
-  keys = import ../../lib/keys.nix;
 in {
   nixosConfigurations.ml-pc = nixpkgs.lib.nixosSystem {
     inherit system;
@@ -12,27 +11,11 @@ in {
       ./configuration.nix
       ./hardware-configuration.nix
 
+      self.nixosModules."${system}-carl-user"
       self.nixosModules.x86_64-linux-system-packages
-      self.nixosModules.aarch64-linux-builders
-      {
-        aarch64-linux-builders = {
-          enable = true;
-          sshKeyPath = "/home/carl/.ssh/id_ed25519_sk_rk";
-        };
-      }
       self.nixosModules.bluetooth
       self.nixosModules.download-buffer
       self.nixosModules.experimental-features
-
-      self.nixosModules.git-server
-      {
-        services.git-server = {
-          enable = true;
-          ssh-keys = keys.carl;
-        };
-      }
-
-      # self.nixosModules.gnome
       self.nixosModules.greetd
       self.nixosModules.nix-ld
       self.nixosModules.openssh
@@ -43,9 +26,6 @@ in {
       self.nixosModules.tailscaled
       self.nixosModules.thunderbolt
       self.nixosModules.yubikey
-
-      self.nixosModules."${system}-carl-user"
-      # self.nixosModules."${system}-openclaw-user"
     ];
   };
 }
