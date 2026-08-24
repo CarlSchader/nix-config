@@ -1,5 +1,5 @@
 let
-  homepage = "https://gemini.google.com/app";
+  homepage = "https://chatgpt.com/";
 in {
   settings = {
     "browser.bookmarks.showMobileBookmarks" = true;
