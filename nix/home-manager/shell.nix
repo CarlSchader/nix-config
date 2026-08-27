@@ -37,7 +37,7 @@
     slu = "sudo systemctl list-units";
 
     # nix
-    nixdev = "nix develop -c $SHELL -i";
+    nixdev = "nom develop -c $SHELL -i";
 
     # git aliases
     gfa = "git fetch --all";
