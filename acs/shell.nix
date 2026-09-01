@@ -5,9 +5,6 @@
   };
 
   initContent = ''
-    export OPENAI_API_KEY=$(cat ~/.secrets/openai-api-key)
-    export GEMINI_API_KEY=$(cat ~/.secrets/gemini-api-key)
-
     eval "$(direnv hook zsh)"
 
     # Start ssh-agent and add keys if not in an SSH session
