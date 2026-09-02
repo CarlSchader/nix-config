@@ -29,7 +29,7 @@ in {
       }
 
       self.homeModules.ssh
-      self.homeModules.librewolf
+      self.homeModules.librewolf-acs
       self.homeModules.sway
       self.homeModules.tmux
       self.homeModules.wezterm
