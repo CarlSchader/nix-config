@@ -13,6 +13,37 @@
     };
   };
 in {
+  homeConfigurations."x86_64-nixos-acs" = home-manager.lib.homeManagerConfiguration {
+    pkgs = x86_64-linux-pkgs;
+    modules = [
+      self.homeModules.preamble
+      self.homeModules.packages
+      self.homeModules.bluetooth-applet
+      self.homeModules.network-manager-applet
+      self.homeModules.gpg-agent
+      self.homeModules.gui-apps
+      self.homeModules.gnome-keyring
+      self.homeModules.shell
+      {
+        programs.shell.enable = true;
+      }
+
+      self.homeModules.ssh
+      self.homeModules.librewolf
+      self.homeModules.sway
+      self.homeModules.tmux
+      self.homeModules.wezterm
+      self.homeModules.zathura
+
+      self.homeModules.pi-coding-agent
+
+      {
+        home.username = "carl";
+        home.homeDirectory = "/home/carl";
+      }
+    ];
+  };
+
   homeConfigurations."acs-laptop" = home-manager.lib.homeManagerConfiguration {
     pkgs = x86_64-linux-pkgs;
     extraSpecialArgs = {inherit nixgl;};

@@ -10,9 +10,9 @@ in {
     modules = [
       ./configuration.nix
       ./hardware-configuration.nix
-      ./forgejo.nix
 
       self.nixosModules.x86_64-linux-system-packages
+      self.nixosModules.aarch64-linux-builders
       self.nixosModules.bluetooth
       self.nixosModules.download-buffer
       self.nixosModules.experimental-features
@@ -21,7 +21,6 @@ in {
       self.nixosModules.openssh
       self.nixosModules.parallelism
       self.nixosModules.polkit
-      self.nixosModules.swap-file
       self.nixosModules.sway
       self.nixosModules.tailscaled
       self.nixosModules.thunderbolt

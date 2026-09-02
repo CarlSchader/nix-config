@@ -1,5 +1,4 @@
 {flake-utils, ...} @ inputs:
 flake-utils.lib.meld inputs [
-  ./home-manager
-  ./nixos-configurations
+  ./x1-carbon
 ]
