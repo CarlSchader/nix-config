@@ -21,6 +21,7 @@ in {
       self.nixosModules.openssh
       self.nixosModules.parallelism
       self.nixosModules.polkit
+      self.nixosModules.steam
       self.nixosModules.swap-file
       self.nixosModules.sway
       self.nixosModules.tailscaled

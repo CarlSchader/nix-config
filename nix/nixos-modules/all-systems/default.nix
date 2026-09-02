@@ -16,6 +16,7 @@ flake-utils.lib.meld inputs [
   ./parallelism.nix
   ./polkit.nix
   ./rust-overlay-module.nix
+  ./steam.nix
   ./swap-file.nix
   ./tailscaled.nix
   ./thunderbolt.nix
