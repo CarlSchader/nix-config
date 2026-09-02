@@ -5,7 +5,7 @@
 }: let
   system = "x86_64-linux";
 in {
-  nixosConfigurations.dell-xps = nixpkgs.lib.nixosSystem {
+  nixosConfigurations.x1-carbon = nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
       ./configuration.nix
