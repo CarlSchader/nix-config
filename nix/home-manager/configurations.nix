@@ -55,6 +55,51 @@ in {
     ];
   };
 
+  homeConfigurations."rtx4090-tower" = home-manager.lib.homeManagerConfiguration {
+    pkgs = x86_64-linux-pkgs;
+    modules = [
+      self.homeModules.preamble
+      self.homeModules.packages
+      self.homeModules.bluetooth-applet
+      self.homeModules.network-manager-applet
+      self.homeModules.gpg-agent
+      self.homeModules.gui-apps
+      self.homeModules.gnome-keyring
+      self.homeModules.shell
+      {
+        programs.shell.enable = true;
+      }
+
+      self.homeModules.ssh
+      self.homeModules.librewolf
+      self.homeModules.sway
+      self.homeModules.tmux
+      self.homeModules.wezterm
+      self.homeModules.zathura
+
+      self.homeModules.pi-coding-agent
+      {
+        my.pi-coding-agent.models = {
+          providers = {
+            rtx4090-tower = {
+              api = "openai-completions";
+              apiKey = "EMPTY";
+              baseUrl = "http://0.0.0.0:8000/v1";
+              models = [
+                {id = "qwen-27b";}
+              ];
+            };
+          };
+        };
+      }
+
+      {
+        home.username = "carl";
+        home.homeDirectory = "/home/carl";
+      }
+    ];
+  };
+
   homeConfigurations."aarch64-linux-carl" = home-manager.lib.homeManagerConfiguration {
     pkgs = aarch64-linux-pkgs;
     modules = [
