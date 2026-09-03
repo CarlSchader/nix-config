@@ -86,7 +86,10 @@ in {
               apiKey = "EMPTY";
               baseUrl = "http://0.0.0.0:8000/v1";
               models = [
-                {id = "qwen-27b";}
+                {
+                  id = "qwen-27b";
+                  contextWindow = 32768;
+                }
               ];
             };
           };
