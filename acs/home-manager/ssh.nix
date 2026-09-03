@@ -1,5 +1,5 @@
 {...}: let
-  keys = import ../nix/lib/keys.nix;
+  keys = import ../../nix/lib/keys.nix;
 in {
   homeModules.acs-ssh = {
     pkgs,
