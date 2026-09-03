@@ -122,6 +122,20 @@ in {
       self.homeModules.zathura
 
       self.homeModules.pi-coding-agent
+      {
+        my.pi-coding-agent.models = {
+          providers = {
+            rtx4090-tower = {
+              api = "openai-completions";
+              apiKey = "EMPTY";
+              baseUrl = "http://100.64.0.22:8000/v1";
+              models = [
+                {id = "qwen-27b";}
+              ];
+            };
+          };
+        };
+      }
 
       {
         home.username = "carl";

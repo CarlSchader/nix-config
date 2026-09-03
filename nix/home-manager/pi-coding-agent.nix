@@ -1,8 +1,13 @@
 {...}: {
-  homeModules.pi-coding-agent = {...}: {
-    programs.pi-coding-agent = {
-      enable = true;
-      models = {
+  homeModules.pi-coding-agent = {
+    config,
+    lib,
+    ...
+  }: {
+    options.my.pi-coding-agent.models = lib.mkOption {
+      type = lib.types.attrs;
+      description = "Model/provider configuration for pi-coding-agent.";
+      default = {
         providers = {
           rtx4090-tower = {
             api = "openai-completions";
@@ -14,6 +19,11 @@
           };
         };
       };
+    };
+
+    config.programs.pi-coding-agent = {
+      enable = true;
+      models = config.my.pi-coding-agent.models;
       settings = {
         packages = [
           "npm:pi-plan"
