@@ -1,4 +1,4 @@
-{...}: {
+{self, ...}: {
   homeModules.pi-coding-agent = {
     config,
     lib,
@@ -8,21 +8,7 @@
       models = lib.mkOption {
         type = lib.types.attrs;
         description = "Model/provider configuration for pi-coding-agent.";
-        default = {
-          providers = {
-            rtx4090-tower = {
-              api = "openai-completions";
-              apiKey = "EMPTY";
-              baseUrl = "http://rtx4090-tower:8000/v1";
-              models = [
-                {
-                  id = "qwen-27b";
-                  contextWindow = 32768;
-                }
-              ];
-            };
-          };
-        };
+        default = self.pi-models-options.default;
       };
 
       defaultProvider = lib.mkOption {
@@ -34,7 +20,7 @@
       defaultModel = lib.mkOption {
         type = lib.types.str;
         description = "Default model";
-        default = "qwen-27b";
+        default = "Qwen3.8-27B-INT4-FP8Cache"; # see https://github.com/carlschader/vllm-nix
       };
     };
 

@@ -123,21 +123,7 @@ in {
 
       self.homeModules.pi-coding-agent
       {
-        my.pi-coding-agent.models = {
-          providers = {
-            rtx4090-tower = {
-              api = "openai-completions";
-              apiKey = "EMPTY";
-              baseUrl = "http://100.64.0.22:8000/v1";
-              models = [
-                {
-                  id = "qwen-27b";
-                  contextWindow = 32768;
-                }
-              ];
-            };
-          };
-        };
+        my.pi-coding-agent.models = self.pi-models-options.acs;
       }
 
       {

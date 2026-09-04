@@ -11,7 +11,6 @@ flake-utils.lib.meld inputs [
   ./network-manager-applet.nix
   ./opencode.nix
   ./packages.nix
-  ./pi-coding-agent.nix
   ./preamble.nix
   ./shell.nix
   ./ssh.nix
