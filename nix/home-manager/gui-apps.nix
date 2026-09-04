@@ -5,6 +5,7 @@
       obsidian
       slack
       spotify
+      foxglove-studio
     ];
   };
 
