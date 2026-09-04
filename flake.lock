@@ -139,22 +139,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-android-studio-otter": {
-      "locked": {
-        "lastModified": 1769305694,
-        "narHash": "sha256-jskZRUa4X63D2YeuzJq7b9BMSr9GJCfZYDTqNFQJDD0=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b24d19186b6e1f4c092bf29750fb9b450a8533c0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b24d19186b6e1f4c092bf29750fb9b450a8533c0",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1786410043,
@@ -180,7 +164,6 @@
         "nix-darwin": "nix-darwin",
         "nixgl": "nixgl",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-android-studio-otter": "nixpkgs-android-studio-otter",
         "rust-overlay": "rust-overlay",
         "sops-nix": "sops-nix",
         "vllm-nix": "vllm-nix"

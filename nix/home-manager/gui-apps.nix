@@ -1,12 +1,17 @@
 {...}: {
-  homeModules.gui-apps = {pkgs, ...}: {
+  homeModules.gui-apps = {
+    pkgs,
+    lib,
+    ...
+  }: {
     nixpkgs.config.allowUnfree = true;
-    home.packages = with pkgs; [
-      obsidian
-      slack
-      spotify
-      foxglove-studio
-    ];
+    home.packages =
+      (with pkgs; [
+        obsidian
+        slack
+        spotify
+      ])
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (with pkgs; [foxglove-studio]);
   };
 
   # Variant for non-NixOS (generic Linux) hosts. The chrome-sandbox SUID
