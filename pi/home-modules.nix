@@ -31,9 +31,15 @@
         defaultProvider = config.my.pi-coding-agent.defaultProvider;
         defaultModel = config.my.pi-coding-agent.defaultModel;
         packages = [
-          "npm:pi-plan"
-          "npm:@dreki-gg/pi-ask-mode"
+          "npm:pi-mcp-adapter"
           "npm:pi-web-access"
+          "npm:pi-subagents"
+          "npm:@juicesharp/rpiv-ask-user-question"
+          "npm:@juicesharp/rpiv-todo"
+          "npm:context-mode"
+          "npm:pi-lens"
+          "npm:@plannotator/pi-extension"
+          # "npm:@dreki-gg/pi-ask-mode"
         ];
       };
     };

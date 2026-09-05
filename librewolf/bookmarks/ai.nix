@@ -13,6 +13,14 @@
           name = "claude";
           url = "https://claude.ai/new";
         }
+        {
+          name = "chatgpt";
+          url = "https://chatgpt.com";
+        }
+        {
+          name = "pi-packages";
+          url = "https://pi.dev/packages";
+        }
       ];
     }
   ];

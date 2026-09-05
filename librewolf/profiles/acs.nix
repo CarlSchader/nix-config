@@ -12,6 +12,7 @@ lib.mkMerge [
         (import ../bookmarks/code.nix)
         (import ../bookmarks/cloud.nix)
         (import ../bookmarks/finance.nix)
+        (import ../bookmarks/shopping.nix)
         (import ../bookmarks/proton.nix)
         (import ../bookmarks/acs.nix)
       ];
