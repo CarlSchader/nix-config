@@ -36,8 +36,8 @@
           "npm:pi-subagents"
           "npm:@juicesharp/rpiv-ask-user-question"
           "npm:@juicesharp/rpiv-todo"
-          "npm:context-mode"
-          "npm:pi-lens"
+          # "npm:context-mode"
+          # "npm:pi-lens"
           # "npm:@plannotator/pi-extension"
           "npm:@dreki-gg/pi-ask-mode"
         ];
