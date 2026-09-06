@@ -18,6 +18,10 @@
           url = "https://chatgpt.com";
         }
         {
+          name = "huggingface";
+          url = "https://huggingface.co";
+        }
+        {
           name = "pi-packages";
           url = "https://pi.dev/packages";
         }
