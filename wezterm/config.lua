@@ -7,6 +7,8 @@ local LIGHT_COLOR_SCHEME = "One Light (base16)"
 
 local THEME_PATH = os.getenv("HOME") .. "/.local/state/theme"
 
+config.font = wezterm.font("Fira Code")
+
 local function read_theme()
 	local content = "dark"
 	local theme_file, err = io.open(THEME_PATH, "r")
