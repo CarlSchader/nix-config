@@ -13,6 +13,10 @@ in {
       ./configuration.nix
       ./hardware-configuration.nix
 
+      ({pkgs, ...}: {
+        environment.systemPackages = with pkgs; [nvtopPackages.nvidia];
+      })
+
       self.nixosModules."${system}-carl-user"
       self.nixosModules.x86_64-linux-system-packages
       self.nixosModules.bluetooth
