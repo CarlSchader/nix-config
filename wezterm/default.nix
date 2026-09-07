@@ -1,5 +1,9 @@
 {...}: {
-  homeModules.wezterm = {pkgs, ...}: {
+  homeModules.wezterm = {
+    pkgs,
+    lib,
+    ...
+  }: {
     home.packages = with pkgs; [
       wezterm
       fira-code
@@ -11,6 +15,13 @@
     };
 
     fonts.fontconfig.enable = true;
+
+    home.file = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
+      "Library/Fonts/fira-code" = {
+        source = "${pkgs.fira-code}/share/fonts/truetype";
+        recursive = true;
+      };
+    };
   };
 
   homeModules.wezterm-non-nixos = {
