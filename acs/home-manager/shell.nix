@@ -30,6 +30,7 @@
     g = "grep";
     k = "kubectl";
     jfu = "journalctl -f -u";
+    ssctl = "sudo systemctl";
     slu = "sudo systemctl list-units";
 
     # nix
