@@ -11,6 +11,16 @@
           ControlPersist = "1h";
           User = "git";
         };
+        "dgx-spark" = {
+          ControlMaster = "auto";
+          ControlPath = "~/.ssh/sockets/%r@%n-%p";
+          ControlPersist = "1h";
+          HostName = "dgx-spark";
+          User = "carl";
+          ForwardAgent = true;
+          ForwardX11 = true;
+          ForwardX11Trusted = true;
+        };
         "rtx4090-tower" = {
           ControlMaster = "auto";
           ControlPath = "~/.ssh/sockets/%r@%n-%p";
