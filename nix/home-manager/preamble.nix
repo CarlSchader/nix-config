@@ -6,7 +6,7 @@
   }: let
     linuxOptions = {
       # force update mimeapps
-      xdg.configFile."mimeapps.list".force = true;
+      # xdg.configFile."mimeapps.list".force = true;
     };
     darwinOptions = {
     };
