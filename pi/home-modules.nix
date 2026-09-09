@@ -46,10 +46,8 @@
             "npm:@gotgenes/pi-permission-system"
           ];
         };
-      };
 
-      home.file.".pi/web-search.json".text = builtins.toJSON {
-        workflow = "auto-summary"; # don't open browser curator; auto-generate summary
+        context = builtins.readFile ./AGENTS.md;
       };
 
       home.file.".pi/agent/extensions/pi-permission-system/config.json".source = (pkgs.formats.json {}).generate "pi-permission-config.json" {
@@ -62,6 +60,10 @@
             "git push *" = "ask";
           };
         };
+      };
+
+      home.file.".pi/web-search.json".text = builtins.toJSON {
+        workflow = "auto-summary"; # don't open browser curator; auto-generate summary
       };
     };
   };
