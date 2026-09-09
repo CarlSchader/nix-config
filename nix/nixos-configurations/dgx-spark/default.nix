@@ -35,7 +35,11 @@ in {
           enable = true;
           package = sglang-nix.packages.${system}.sglangEnv;
           openFirewall = true;
-          ui.enable = true;
+          ui = {
+            enable = true;
+            host = "0.0.0.0";
+            openFirewall = true;
+          };
         };
       }
     ];
