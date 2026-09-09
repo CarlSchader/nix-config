@@ -6,7 +6,11 @@
       name = "ai";
       bookmarks = [
         {
-          name = "vllm";
+          name = "dgx-spark-chat";
+          url = "http://dgx-spark:8080";
+        }
+        {
+          name = "rtx4090-chat";
           url = "http://rtx4090-tower:8080";
         }
         {
