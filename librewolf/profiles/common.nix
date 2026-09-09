@@ -1,5 +1,5 @@
 let
-  homepage = "https://chatgpt.com/";
+  homepage = "http://dgx-spark:8080/";
 in {
   settings = {
     "browser.bookmarks.showMobileBookmarks" = true;
