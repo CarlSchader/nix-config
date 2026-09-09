@@ -35,7 +35,8 @@
           packages = [
             "npm:pi-mcp-adapter"
             "npm:pi-web-access"
-            "npm:pi-subagents"
+            # "npm:pi-subagents"
+            "npm:@tintinweb/pi-subagents"
             "npm:@juicesharp/rpiv-ask-user-question"
             "npm:@juicesharp/rpiv-todo"
             # "npm:context-mode"
@@ -47,9 +48,14 @@
         };
       };
 
+      home.file.".pi/web-search.json".text = builtins.toJSON {
+        workflow = "auto-summary"; # don't open browser curator; auto-generate summary
+      };
+
       home.file.".pi/agent/extensions/pi-permission-system/config.json".source = (pkgs.formats.json {}).generate "pi-permission-config.json" {
         permission = {
-          external_directory = "ask";
+          "*" = "allow";
+          # external_directory = "ask";
           bash = {
             "*" = "allow";
             "git commit *" = "ask";
