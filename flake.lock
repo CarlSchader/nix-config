@@ -214,11 +214,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788956393,
-        "narHash": "sha256-1+fmVT9lTGmrN0eny5QCH7NHSE19M1bs4qeRMWdbKw8=",
+        "lastModified": 1788956883,
+        "narHash": "sha256-iMr6N4q93szVrf8ekPd5KW1LzcFyEfoxE/Zmx4Cp8t8=",
         "owner": "carlschader",
         "repo": "neovim-config",
-        "rev": "e70269261138bbc02d1fc1dea97bd346744a9a9c",
+        "rev": "322516898884e19c6b5548202b39aa403fd5993a",
         "type": "github"
       },
       "original": {
