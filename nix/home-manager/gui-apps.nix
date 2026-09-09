@@ -10,6 +10,7 @@
         obsidian
         slack
         spotify
+        telegram-desktop
       ])
       ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux (with pkgs; [foxglove-studio]);
   };
