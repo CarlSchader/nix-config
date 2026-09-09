@@ -14,13 +14,13 @@
       defaultProvider = lib.mkOption {
         type = lib.types.str;
         description = "Default model provider";
-        default = "rtx4090-tower";
+        default = "dgx-spark";
       };
 
       defaultModel = lib.mkOption {
         type = lib.types.str;
         description = "Default model";
-        default = "Qwen3.8-27B-INT4-FP8Cache"; # see https://github.com/carlschader/vllm-nix
+        default = "qwen3.8-27b"; # see https://github.com/carlschader/vllm-nix
       };
     };
 
