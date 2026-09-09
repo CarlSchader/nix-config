@@ -45,6 +45,7 @@
             "npm:@dreki-gg/pi-ask-mode"
             "npm:@ff-labs/pi-fff"
             "npm:@gotgenes/pi-permission-system"
+            "npm:@llblab/pi-telegram"
           ];
         };
 
