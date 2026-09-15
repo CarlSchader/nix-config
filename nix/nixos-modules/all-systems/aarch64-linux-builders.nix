@@ -6,7 +6,7 @@
     ...
   }: let
     cfg = config.aarch64-linux-builders;
-    isDarwin = pkgs.stdenv.isDarwin;
+    isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
     nixDarwinManagesNix = config.nix.enable or true;
     useEtcMachines = isDarwin && !nixDarwinManagesNix;
   in {

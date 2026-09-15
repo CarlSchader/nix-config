@@ -88,6 +88,13 @@
           ForwardX11 = true;
           ForwardX11Trusted = true;
         };
+        "mom" = {
+          Hostname = "imac-chaucy";
+          User = "chaucyschader";
+          ForwardAgent = true;
+          ForwardX11 = true;
+          ForwardX11Trusted = true;
+        };
       };
     };
 
