@@ -1,0 +1,1 @@
+- Get a git home-manager module so my machines always have sensible default git settings. For example, setting default branch to main and using rebase instead of merge pulls.
