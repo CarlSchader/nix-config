@@ -78,7 +78,6 @@
       (lib.hiPrio clang)
       cargo
       rustc
-      protobuf
 
       # nix
       nix-output-monitor

@@ -82,7 +82,6 @@
       lua51Packages.lua
       cargo
       rustc
-      protobuf
       yarn
 
       # nix
