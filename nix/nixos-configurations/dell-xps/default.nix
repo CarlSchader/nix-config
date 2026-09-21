@@ -10,12 +10,12 @@ in {
     modules = [
       ./configuration.nix
       ./hardware-configuration.nix
-      ./forgejo.nix
 
       self.nixosModules.x86_64-linux-system-packages
       self.nixosModules.bluetooth
       self.nixosModules.download-buffer
       self.nixosModules.experimental-features
+      self.nixosModules.forgejo
       self.nixosModules.greetd
       self.nixosModules.nix-ld
       self.nixosModules.openssh

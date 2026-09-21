@@ -5,6 +5,7 @@ flake-utils.lib.meld inputs [
   ./dockerd.nix
   ./download-buffer.nix
   ./experimental-featurs.nix
+  ./forgejo.nix
   ./git-server.nix
   ./gnome.nix
   ./greetd.nix
