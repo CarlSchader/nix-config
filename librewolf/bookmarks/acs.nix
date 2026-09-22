@@ -23,6 +23,11 @@
     }
 
     {
+      name = "doc-control";
+      url = "https://acs-doc-control-1027962684409.us-central1.run.app/";
+    }
+
+    {
       name = "acs-repos";
       bookmarks = [
         {
