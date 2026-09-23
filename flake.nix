@@ -35,6 +35,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    # zsa app for flashing keyboards
+    zapp = {
+      url = "github:zsa/zapp";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vllm-nix = {
       url = "github:carlschader/vllm-nix";
       inputs.nixpkgs.follows = "nixpkgs";

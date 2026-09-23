@@ -495,7 +495,8 @@
         "rust-overlay": "rust-overlay",
         "sglang-nix": "sglang-nix",
         "sops-nix": "sops-nix",
-        "vllm-nix": "vllm-nix"
+        "vllm-nix": "vllm-nix",
+        "zapp": "zapp"
       }
     },
     "rust-overlay": {
@@ -652,6 +653,26 @@
       "original": {
         "owner": "carlschader",
         "repo": "vllm-nix",
+        "type": "github"
+      }
+    },
+    "zapp": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783587726,
+        "narHash": "sha256-K+L8Hyw8BFyYoHGofRJrZqwTwth3Q2ypAq3uj8rO57I=",
+        "owner": "zsa",
+        "repo": "zapp",
+        "rev": "a1be75837323001ad1ae8e5787d88cd33f2ccc46",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zsa",
+        "repo": "zapp",
         "type": "github"
       }
     }
