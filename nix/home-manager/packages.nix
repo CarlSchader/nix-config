@@ -1,4 +1,8 @@
-{neovim-config, ...}: {
+{
+  neovim-config,
+  zapp,
+  ...
+}: {
   homeModules.packages = {
     pkgs,
     lib,
@@ -61,6 +65,9 @@
       pwgen
       gnumake
       cmake
+
+      # peripherals
+      zapp.packages.${system}.default
 
       # libraries
       boost

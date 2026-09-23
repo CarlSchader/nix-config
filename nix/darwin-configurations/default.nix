@@ -1,7 +1,6 @@
 {
   self,
   nix-darwin,
-  zapp,
   ...
 }: let
   system = "aarch64-darwin";
@@ -24,8 +23,6 @@ in {
           sshKeyPath = "/var/root/.ssh/nixbuild-key";
         };
       }
-      zapp.darwinModules.default
-      {programs.zapp.enable = true;}
       # self.nixosModules.mullvad
     ];
   };
@@ -47,8 +44,6 @@ in {
           sshKeyPath = "/var/root/.ssh/nixbuild-key";
         };
       }
-      zapp.darwinModules.default
-      {programs.zapp.enable = true;}
       # self.nixosModules.mullvad
     ];
   };
