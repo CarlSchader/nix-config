@@ -3,6 +3,7 @@
   nixpkgs,
   dgx-spark,
   sglang-nix,
+  speech-server,
   ...
 }: let
   system = "aarch64-linux";
@@ -42,6 +43,19 @@ in {
           };
         };
       }
+
+      speech-server.nixosModules.speech
+      speech-server.nixosModules.dgx-spark
+      {
+        services.speech = {
+          enable = true;
+          package = speech-server.packages.${system}.speechEnv;
+          agent.openFirewall = true;
+        };
+      }
+      ({config, ...}: {
+        services.sglang.ui.environment = config.services.speech.openWebUi.env;
+      })
     ];
   };
 }
