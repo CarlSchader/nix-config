@@ -1,6 +1,5 @@
 # nix-config
 
-
 Personal Nix flake configuration for macOS and NixOS machines.
 
 ## Overview
@@ -23,6 +22,7 @@ The flake is composed from several top-level modules using `flake-utils.lib.meld
 - `zathura/` - Zathura PDF viewer Home Manager module and configuration.
 
 ## Nix Builders
+
 Because this repo is public and on the internet I am hesitant to store sops encrypted secrets in here.
 
 So to allow you to use the nix builders you need to have the appropriate nixbuild ssh key which is private to Carl Schader. If you are given this key by him, configure your machines builders to point to the location of that key. Otherwise you can't use the builders.
@@ -30,16 +30,19 @@ So to allow you to use the nix builders you need to have the appropriate nixbuil
 ## Usage
 
 **macOS (Darwin)**
+
 ```sh
 darwin-rebuild switch --flake .#<machine-name>
 ```
 
 **NixOS**
+
 ```sh
 nixos-rebuild switch --flake .#ml-pc
 ```
 
 **Home Manager**
+
 ```sh
 home-manager switch --flake .#<user>
 ```
@@ -114,7 +117,7 @@ home-manager switch --flake .#acs-laptop
 - `macbook-pro-m1` - Apple Silicon macOS system managed with nix-darwin.
 - `macbook-air-m4` - Apple Silicon macOS system managed with nix-darwin.
 - `ml-pc` - x86_64 NixOS workstation with Sway, Tailscale, OpenSSH, YubiKey support, git server support, and aarch64 Linux builders enabled.
-- `dell-xps` - x86_64 NixOS machine with Sway, Tailscale, OpenSSH, YubiKey support, git server support, and Forgejo configuration.
+- `dell-xps` - x86_64 NixOS machine with Sway, Tailscale, OpenSSH, YubiKey support, git server support.
 - `ampere-a1` - aarch64 NixOS host using Disko for disk layout configuration.
 - `acs-laptop` - ACS-specific non-NixOS Linux Home Manager profile.
 - `acs-desktop` - ACS-specific non-NixOS Linux Home Manager profile with sops-nix Home Manager integration.

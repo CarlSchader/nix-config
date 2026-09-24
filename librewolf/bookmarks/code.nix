@@ -11,7 +11,7 @@
         }
         {
           name = "forgejo";
-          url = "http://dell-xps:3000/carl";
+          url = "http://rtx4090-tower:3000/carlschader";
         }
       ];
     }

@@ -34,13 +34,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Forgejo (self-hosted git forge)
-  forgejo = {
-    enable = true;
-    # Keep registration open until the admin account is created.
-    allowRegistration = true;
-  };
-
   # Set your time zone.
   time.timeZone = "America/Indiana/Vincennes";
 

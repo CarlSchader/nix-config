@@ -15,7 +15,6 @@ in {
       self.nixosModules.bluetooth
       self.nixosModules.download-buffer
       self.nixosModules.experimental-features
-      self.nixosModules.forgejo
       self.nixosModules.greetd
       self.nixosModules.nix-ld
       self.nixosModules.openssh
