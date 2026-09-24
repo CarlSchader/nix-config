@@ -1,7 +1,6 @@
 {
   self,
   nixpkgs,
-  vllm-nix,
   ...
 }: let
   system = "x86_64-linux";
@@ -34,26 +33,15 @@ in {
       self.nixosModules.thunderbolt
       self.nixosModules.yubikey
 
-      # # vllm
-      # vllm-nix.nixosModules.vllm
-      # {
-      #   services.vllm = {
-      #     enable = true;
-      #     package = vllm-nix.packages.${pkgs.system}.vllmEnv;
-      #     model = {
-      #       hfId = "RedHatAI/Qwen3.8-27B-INT4";
-      #       servedModelName = "Qwen3.8-27B-INT4-FP8Cache";
-      #       maxModelLen = 65536;
-      #     };
-      #     kvCacheDtype = "fp8";
-      #     attentionBackend = "TRITON_ATTN";
-      #     ui = {
-      #       enable = true;
-      #       host = "0.0.0.0";
-      #       webSearch.enable = true;
-      #     };
-      #   };
-      # }
+      # git forge
+      self.nixosModules.forgejo
+      {
+        forgejo = {
+          enable = true;
+          # Keep registration open until the admin account is created.
+          allowRegistration = true;
+        };
+      }
     ];
   };
 }
