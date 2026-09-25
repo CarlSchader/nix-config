@@ -95,6 +95,13 @@
           ForwardX11 = true;
           ForwardX11Trusted = true;
         };
+        "jetson" = {
+          Hostname = "jetson";
+          User = "carl";
+          ForwardAgent = true;
+          ForwardX11 = true;
+          ForwardX11Trusted = true;
+        };
       };
     };
 
