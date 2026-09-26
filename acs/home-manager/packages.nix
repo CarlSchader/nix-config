@@ -11,7 +11,6 @@
     system = pkgs.stdenv.system;
 
     all-systems-packages = with pkgs; [
-      claude-code
       nixgl.packages.${pkgs.system}.nixGLDefault
 
       ## dev tools
@@ -34,7 +33,6 @@
       ncdu
       tree
       sshfs
-      simple-mtpfs
 
       # cloud
       awscli2
@@ -83,6 +81,9 @@
       cargo
       rustc
       yarn
+
+      # ai
+      herdr
 
       # nix
       nix-output-monitor
