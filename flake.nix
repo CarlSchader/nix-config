@@ -50,6 +50,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    bonsai-nix = {
+      url = "github:carlschader/bonsai-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     speech-server = {
       url = "github:carlschader/speech-server";
       inputs.nixpkgs.follows = "nixpkgs";

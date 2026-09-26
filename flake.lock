@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "bonsai-nix": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790455023,
+        "narHash": "sha256-Idp59ESEpg4dM6bd0fxF8tfNa5QKSZoViyKpxr4Txt8=",
+        "owner": "carlschader",
+        "repo": "bonsai-nix",
+        "rev": "588d41f5b3e85d648af9c3daa87ba6c52de5ef6e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "carlschader",
+        "repo": "bonsai-nix",
+        "type": "github"
+      }
+    },
     "dgx-spark": {
       "inputs": {
         "disko": "disko",
@@ -534,6 +557,7 @@
     },
     "root": {
       "inputs": {
+        "bonsai-nix": "bonsai-nix",
         "dgx-spark": "dgx-spark",
         "disko": "disko_2",
         "flake-utils": "flake-utils",

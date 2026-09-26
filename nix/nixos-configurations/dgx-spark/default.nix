@@ -2,8 +2,9 @@
   self,
   nixpkgs,
   dgx-spark,
-  sglang-nix,
-  speech-server,
+  # sglang-nix,
+  bonsai-nix,
+  # speech-server,
   ...
 }: let
   system = "aarch64-linux";
@@ -29,12 +30,11 @@ in {
       self.nixosModules.thunderbolt
       self.nixosModules.yubikey
 
-      sglang-nix.nixosModules.sglang
-      sglang-nix.nixosModules.dgx-spark-qwen38
+      bonsai-nix.nixosModules.bonsai
+      bonsai-nix.nixosModules.dgx-spark-bonsai2
       {
-        services.sglang = {
+        services.bonsai = {
           enable = true;
-          package = sglang-nix.packages.${system}.sglangEnv;
           openFirewall = true;
           ui = {
             enable = true;
@@ -44,18 +44,33 @@ in {
         };
       }
 
-      speech-server.nixosModules.speech
-      speech-server.nixosModules.dgx-spark
-      {
-        services.speech = {
-          enable = true;
-          package = speech-server.packages.${system}.speechEnv;
-          agent.openFirewall = true;
-        };
-      }
-      ({config, ...}: {
-        services.sglang.ui.environment = config.services.speech.openWebUi.env;
-      })
+      # sglang-nix.nixosModules.sglang
+      # sglang-nix.nixosModules.dgx-spark-qwen38
+      # {
+      #   services.sglang = {
+      #     enable = true;
+      #     package = sglang-nix.packages.${system}.sglangEnv;
+      #     openFirewall = true;
+      #     ui = {
+      #       enable = true;
+      #       host = "0.0.0.0";
+      #       openFirewall = true;
+      #     };
+      #   };
+      # }
+      #
+      # speech-server.nixosModules.speech
+      # speech-server.nixosModules.dgx-spark
+      # {
+      #   services.speech = {
+      #     enable = true;
+      #     package = speech-server.packages.${system}.speechEnv;
+      #     agent.openFirewall = true;
+      #   };
+      # }
+      # ({config, ...}: {
+      #   services.sglang.ui.environment = config.services.speech.openWebUi.env;
+      # })
     ];
   };
 }
