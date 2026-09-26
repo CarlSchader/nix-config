@@ -47,6 +47,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.pi-coding-agent
+      self.homeModules.herdr
 
       {
         home.username = "carl";
@@ -78,6 +79,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.pi-coding-agent
+      self.homeModules.herdr
       {
         my.pi-coding-agent.models = self.pi-models-options.rtx4090-tower;
       }
@@ -112,6 +114,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.pi-coding-agent
+      self.homeModules.herdr
 
       {
         home.username = "carl";
@@ -146,6 +149,7 @@ in {
       {
         my.pi-coding-agent.models = self.pi-models-options.dgx-spark;
       }
+      self.homeModules.herdr
 
       {
         home.username = "carl";
@@ -173,6 +177,7 @@ in {
       self.homeModules.wezterm
 
       self.homeModules.pi-coding-agent
+      self.homeModules.herdr
 
       {
         home.username = "carl";
@@ -200,6 +205,7 @@ in {
       self.homeModules.wezterm
 
       self.homeModules.pi-coding-agent
+      self.homeModules.herdr
 
       {
         home.username = "carlschader";

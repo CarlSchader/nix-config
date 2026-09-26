@@ -42,6 +42,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.pi-coding-agent
+      self.homeModules.herdr
 
       {
         home.username = "carl";
@@ -73,6 +74,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.pi-coding-agent
+      self.homeModules.herdr
 
       {
         home.username = "carl";
@@ -116,6 +118,7 @@ in {
       self.homeModules.zathura
 
       self.homeModules.pi-coding-agent
+      self.homeModules.herdr
 
       {
         home.username = "carl";
@@ -162,6 +165,7 @@ in {
       {
         my.pi-coding-agent.models = self.pi-models-options.acs;
       }
+      self.homeModules.herdr
 
       {
         home.username = "carl";

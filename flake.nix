@@ -61,6 +61,7 @@
     flake-utils.lib.meld inputs [
       ./acs
       ./aerospace
+      ./herdr
       ./librewolf
       ./nix
       ./pi

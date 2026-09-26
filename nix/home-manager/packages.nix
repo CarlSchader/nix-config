@@ -86,9 +86,6 @@
       cargo
       rustc
 
-      # ai
-      herdr
-
       # nix
       nix-output-monitor
       nix-index

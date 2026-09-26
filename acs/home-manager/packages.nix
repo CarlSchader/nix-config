@@ -82,9 +82,6 @@
       rustc
       yarn
 
-      # ai
-      herdr
-
       # nix
       nix-output-monitor
       nix-index
