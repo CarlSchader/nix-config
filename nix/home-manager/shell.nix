@@ -54,6 +54,18 @@
 
     pwgen-secure = "pwgen -1cns 16";
   };
+
+  siteFunctions = {
+    nixos-rebuild = ''
+      command nixos-rebuild "$@" 2>&1 | nom
+    '';
+    home-manager = ''
+      command home-manager "$@" 2>&1 | nom
+    '';
+    darwin-rebuild = ''
+      command darwin-rebuild "$@" 2>&1 | nom
+    '';
+  };
 in {
   homeModules.shell = {
     pkgs,
@@ -115,6 +127,7 @@ in {
 
             inherit sessionVariables;
             inherit shellAliases;
+            inherit siteFunctions;
           };
         }
 
