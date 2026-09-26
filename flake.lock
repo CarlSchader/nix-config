@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790455023,
-        "narHash": "sha256-Idp59ESEpg4dM6bd0fxF8tfNa5QKSZoViyKpxr4Txt8=",
+        "lastModified": 1790456675,
+        "narHash": "sha256-ibY99ZWTP2Yn2oPeLEMo9vYcJcI3zi3En4Z4bfJjWpc=",
         "owner": "carlschader",
         "repo": "bonsai-nix",
-        "rev": "588d41f5b3e85d648af9c3daa87ba6c52de5ef6e",
+        "rev": "220ea4ed976c6cc16b6b247cc9d19d88da62a939",
         "type": "github"
       },
       "original": {
