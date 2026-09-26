@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "ssh": [
+    {
+      "id": "99e77c85ee0c286ec09bca0e40b33204",
+      "label": "rtx4090-tower",
+      "target": "rtx4090-tower",
+      "session": "default",
+      "enabled": true
+    },
+    {
+      "id": "cbe6f429c3eede784ea97e5b2e336b96",
+      "label": "dgx-spark",
+      "target": "dgx-spark",
+      "session": "default",
+      "enabled": true
+    },
+    {
+      "id": "3fe26ab42182395080998983481d6f67",
+      "label": "acs-desktop",
+      "target": "acs-desktop",
+      "session": "default",
+      "enabled": true
+    }
+  ]
+}

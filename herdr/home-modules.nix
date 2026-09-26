@@ -1,5 +1,14 @@
 {...}: {
-  homeModules.herdr = {...}: {
+  homeModules.herdr = {lib, ...}: {
+    # Declarative herdr machine catalog (Nix-owned; edits via `herdr machine`
+    # will be overwritten on the next home-manager switch).
+    # Installed as a real 0600 file (not a store symlink) so herdr can still
+    # read/rewrite it with its private-file semantics.
+    home.activation.herdrEndpoints = lib.hm.dag.entryAfter ["writeBoundaryFile"] ''
+      run mkdir -p "$HOME/.local/state/herdr/client"
+      run install -m 0600 ${./endpoints.json} "$HOME/.local/state/herdr/client/endpoints.json"
+    '';
+
     programs.herdr = {
       enable = true;
       settings = {
