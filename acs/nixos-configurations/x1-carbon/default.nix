@@ -23,6 +23,7 @@ in {
       self.nixosModules.polkit
       self.nixosModules.sway
       self.nixosModules.tailscaled
+      self.nixosModules.herdr
       self.nixosModules.thunderbolt
       self.nixosModules.yubikey
       self.nixosModules."${system}-carl-user"
