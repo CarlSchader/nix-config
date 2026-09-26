@@ -21,7 +21,8 @@
       defaultModel = lib.mkOption {
         type = lib.types.str;
         description = "Default model";
-        default = "qwen3.8-27b"; # see https://github.com/carlschader/vllm-nix
+        # default = "qwen3.8-27b";
+        default = "bonsai-2-27b";
       };
     };
 

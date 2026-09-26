@@ -36,10 +36,12 @@ in {
         services.bonsai = {
           enable = true;
           openFirewall = true;
+          port = 30000;
           ui = {
             enable = true;
             host = "0.0.0.0";
             openFirewall = true;
+            port = 8080;
           };
         };
       }
