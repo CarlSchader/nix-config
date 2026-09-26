@@ -3,6 +3,7 @@
     programs.herdr = {
       enable = true;
       settings = {
+        onboarding = false;
         theme = {
           auto_switch = true;
           dark_name = "vesper";

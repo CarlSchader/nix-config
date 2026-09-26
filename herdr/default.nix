@@ -1,4 +1,4 @@
-{flake-utils, ...}:
-flake-utils.lib.meld [
+{flake-utils, ...} @ inputs:
+flake-utils.lib.meld inputs [
   ./home-modules.nix
 ]
