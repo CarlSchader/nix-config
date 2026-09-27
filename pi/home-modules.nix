@@ -21,8 +21,8 @@
       defaultModel = lib.mkOption {
         type = lib.types.str;
         description = "Default model";
-        # default = "qwen3.8-27b";
-        default = "bonsai-2-27b";
+        default = "qwen3.8-27b";
+        # default = "bonsai-2-27b";
       };
     };
 

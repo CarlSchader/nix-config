@@ -1,7 +1,7 @@
 {
   vllm-nix,
-  # sglang-nix,
-  bonsai-nix,
+  sglang-nix,
+  # bonsai-nix,
   ...
 }: {
   pi-models-options = {
@@ -11,8 +11,8 @@
           api = "openai-completions";
           apiKey = "EMPTY";
           baseUrl = "http://dgx-spark:30000/v1";
-          # models = sglang-nix.models;
-          models = bonsai-nix.models;
+          models = sglang-nix.models;
+          # models = bonsai-nix.models;
         };
         rtx4090-tower = {
           api = "openai-completions";
@@ -29,8 +29,8 @@
           api = "openai-completions";
           apiKey = "EMPTY";
           baseUrl = "http://100.64.0.24:30000/v1";
-          # models = sglang-nix.models;
-          models = bonsai-nix.models;
+          models = sglang-nix.models;
+          # models = bonsai-nix.models;
         };
         rtx4090-tower = {
           api = "openai-completions";
@@ -47,8 +47,8 @@
           api = "openai-completions";
           apiKey = "EMPTY";
           baseUrl = "http://dgx-spark:30000/v1";
-          # models = sglang-nix.models;
-          models = bonsai-nix.models;
+          models = sglang-nix.models;
+          # models = bonsai-nix.models;
         };
         rtx4090-tower = {
           api = "openai-completions";
@@ -65,8 +65,8 @@
           api = "openai-completions";
           apiKey = "EMPTY";
           baseUrl = "http://0.0.0.0:30000/v1";
-          # models = sglang-nix.models;
-          models = bonsai-nix.models;
+          models = sglang-nix.models;
+          # models = bonsai-nix.models;
         };
         rtx4090-tower = {
           api = "openai-completions";

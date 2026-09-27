@@ -2,8 +2,8 @@
   self,
   nixpkgs,
   dgx-spark,
-  # sglang-nix,
-  bonsai-nix,
+  sglang-nix,
+  # bonsai-nix,
   # speech-server,
   ...
 }: let
@@ -31,37 +31,37 @@ in {
       self.nixosModules.thunderbolt
       self.nixosModules.yubikey
 
-      bonsai-nix.nixosModules.bonsai
-      bonsai-nix.nixosModules.dgx-spark-bonsai2
-      {
-        services.bonsai = {
-          enable = true;
-          openFirewall = true;
-          port = 30000;
-          ui = {
-            enable = true;
-            host = "0.0.0.0";
-            openFirewall = true;
-            port = 8080;
-          };
-        };
-      }
-
-      # sglang-nix.nixosModules.sglang
-      # sglang-nix.nixosModules.dgx-spark-qwen38
+      # bonsai-nix.nixosModules.bonsai
+      # bonsai-nix.nixosModules.dgx-spark-bonsai2
       # {
-      #   services.sglang = {
+      #   services.bonsai = {
       #     enable = true;
-      #     package = sglang-nix.packages.${system}.sglangEnv;
       #     openFirewall = true;
+      #     port = 30000;
       #     ui = {
       #       enable = true;
       #       host = "0.0.0.0";
       #       openFirewall = true;
+      #       port = 8080;
       #     };
       #   };
       # }
-      #
+
+      sglang-nix.nixosModules.sglang
+      sglang-nix.nixosModules.dgx-spark-qwen38
+      {
+        services.sglang = {
+          enable = true;
+          package = sglang-nix.packages.${system}.sglangEnv;
+          openFirewall = true;
+          ui = {
+            enable = true;
+            host = "0.0.0.0";
+            openFirewall = true;
+          };
+        };
+      }
+
       # speech-server.nixosModules.speech
       # speech-server.nixosModules.dgx-spark
       # {
