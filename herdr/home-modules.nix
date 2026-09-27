@@ -1,5 +1,5 @@
 {...}: {
-  homeModules.herdr = {lib, ...}: {
+  homeModules.herdr = {lib, pkgs, ...}: {
     # Declarative herdr machine catalog (Nix-owned; edits via `herdr machine`
     # will be overwritten on the next home-manager switch).
     # Installed as a real 0600 file (not a store symlink) so herdr can still
@@ -18,6 +18,11 @@
           dark_name = "vesper";
           light_name = "solarized-light";
           name = "vesper";
+        };
+        # On NixOS the `herdr` nixosModule runs `herdr server` as a system
+        # service at boot; make it listen on all interfaces there.
+        server = lib.mkIf pkgs.stdenv.isLinux {
+          listen_address = "0.0.0.0";
         };
         ui = {
           agent_panel_sort = "priority";
