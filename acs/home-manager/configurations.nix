@@ -77,8 +77,8 @@ in {
       self.homeModules.herdr
 
       {
-        home.username = "carl";
-        home.homeDirectory = "/home/carl";
+        home.username = "acs";
+        home.homeDirectory = "/home/acs";
       }
 
       ({pkgs, ...}: {
