@@ -23,6 +23,7 @@
       lsof
       direnv
       gh
+      forgejo-cli
       tokei
       ledger
       htop
