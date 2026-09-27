@@ -607,11 +607,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1790465019,
-        "narHash": "sha256-uR6rQEATxFzfIou37Zd4614Byh3m8Wfouuue0PElNYM=",
+        "lastModified": 1790469772,
+        "narHash": "sha256-SQwOW7JWq4vI5MaUG16804KKP6iP/LJ7XnOgNnZjMl4=",
         "owner": "carlschader",
         "repo": "sglang-nix",
-        "rev": "cd85e157234d1bb23fef31be45e905722d6c3e0b",
+        "rev": "8bf348ef9ccb5985bc2bbfb094626afe76291790",
         "type": "github"
       },
       "original": {
