@@ -80,6 +80,16 @@ in {
         home.username = "carl";
         home.homeDirectory = "/home/carl";
       }
+
+      ({pkgs, ...}: {
+        # turret-vision C++ builds on Jetson: the CMake presets use the Ninja
+        # generator, and guncam_cpp/setup.py picks up ccache when present.
+        home.packages = with pkgs; [ninja ccache];
+
+        # The nixpkgs patch to CMake's FindCUDAToolkit strips the default
+        # /usr/local/cuda auto-discovery, so point CMake at JetPack's CUDA.
+        home.sessionVariables.CUDAToolkit_ROOT = "/usr/local/cuda";
+      })
     ];
   };
 
