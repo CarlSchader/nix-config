@@ -21,6 +21,41 @@
       "target": "acs-desktop",
       "session": "default",
       "enabled": true
+    },
+    {
+      "id": "14f07b3a51c268b7ab23cf8438c1db1e",
+      "label": "x1-carbon",
+      "target": "x1-carbon",
+      "session": "default",
+      "enabled": true
+    },
+    {
+      "id": "2d3a20e7749cfa98eb5ce1b9486bcd03",
+      "label": "carls-air",
+      "target": "carls-air",
+      "session": "default",
+      "enabled": true
+    },
+    {
+      "id": "d46e45404809d1867871bd2d03e2e9ab",
+      "label": "jetson",
+      "target": "jetson",
+      "session": "default",
+      "enabled": true
+    },
+    {
+      "id": "3fbe080a9c5bc7ca995669bc1fc6deeb",
+      "label": "macbook-pro-m1",
+      "target": "macbook-pro-m1",
+      "session": "default",
+      "enabled": true
+    },
+    {
+      "id": "f60214ea6bfa11a6569da7392e237128",
+      "label": "dell-xps",
+      "target": "dell-xps",
+      "session": "default",
+      "enabled": true
     }
   ]
 }
