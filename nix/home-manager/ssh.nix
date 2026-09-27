@@ -97,7 +97,7 @@
         };
         "jetson" = {
           Hostname = "jetson";
-          User = "carl";
+          User = "acs";
           ForwardAgent = true;
           ForwardX11 = true;
           ForwardX11Trusted = true;
