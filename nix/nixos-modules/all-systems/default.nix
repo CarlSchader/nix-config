@@ -9,6 +9,7 @@ flake-utils.lib.meld inputs [
   ./git-server.nix
   ./gnome.nix
   ./greetd.nix
+  ./herdr.nix
   ./kanshi.nix
   ./mullvad.nix
   ./nginx-reverse-proxy.nix
