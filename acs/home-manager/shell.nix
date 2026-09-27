@@ -7,18 +7,24 @@
   initContent = ''
     eval "$(direnv hook zsh)"
 
-    # Start ssh-agent and add keys if not in an SSH session
-    if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ] && [ -z "$SSH_CONNECTION" ]; then
-    	source <(ssh-agent)
-    	ssh-add
-    	ssh-add ~/.ssh/id_ed25519_sk_rk
+    # SSH agent handling.
+    # A forwarded agent (from sshd) always wins: pin it to a stable path so
+    # long-lived sessions (tmux, etc.) keep working across reconnects.
+    if [ -n "$SSH_AUTH_SOCK" ] && [[ "$SSH_AUTH_SOCK" == *".sshd."* ]]; then
+    	ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
     fi
-
-    # If this is an SSH session, symlink the current agent socket to a static path
-    if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
-    		ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+    if [ -S "$HOME/.ssh/ssh_auth_sock" ]; then
+    	export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
     fi
-    export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+    # Only start a local agent if there is genuinely no usable agent
+    # (ssh-add -l exits 2 when it can't talk to an agent). Never symlink a
+    # locally spawned agent over a forwarded one.
+    ssh-add -l >/dev/null 2>&1
+    if [ $? -eq 2 ]; then
+    	source <(ssh-agent) >/dev/null
+    	ssh-add 2>/dev/null
+    	[ -f ~/.ssh/id_ed25519_sk_rk ] && ssh-add ~/.ssh/id_ed25519_sk_rk 2>/dev/null
+    fi
   '';
 
   shellAliases = {
