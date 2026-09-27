@@ -31,8 +31,29 @@
             enabled = true;
           };
           toast = {
-            delivery = "herdr";
+            # "system" -> OS notification service (swaync on the sway
+            # machines, macOS notifications on darwin), instead of an
+            # in-app toast. Sound still plays via ui.sound (client-side).
+            delivery = "system";
           };
+        };
+        keys = {
+          # Sidebar (navigate mode): vim up/down instead of arrow keys
+          # (navigate_pane_* already default to h/j/k/l).
+          navigate_workspace_up = "k";
+          navigate_workspace_down = "j";
+          # Pane movement already defaults to prefix+h/j/k/l; add
+          # prefix-free ctrl+alt chords (the one modifier family that
+          # terminals and desktops leave free).
+          focus_pane_left = [ "prefix+h" "ctrl+alt+h" ];
+          focus_pane_down = [ "prefix+j" "ctrl+alt+j" ];
+          focus_pane_up = [ "prefix+k" "ctrl+alt+k" ];
+          focus_pane_right = [ "prefix+l" "ctrl+alt+l" ];
+          # tmux-style copy/scroll mode: prefix+[ (vim keys inside).
+          # No direct chord: ctrl+alt+[ is the previous_tab chord.
+          copy_mode = "prefix+[";
+          next_tab = [ "prefix+n" "ctrl+alt+]" ];
+          previous_tab = [ "prefix+p" "ctrl+alt+[" ];
         };
       };
     };
